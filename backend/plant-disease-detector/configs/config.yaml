@@ -1,0 +1,30 @@
+data:
+  data_dir: "data/plantvillage"
+  # Leakage-free split built by scripts/make_splits.py (grouped by source image)
+  manifest: "data/splits.json"
+  img_size: 224
+  batch_size: 64
+  num_workers: 4          # set to 0 if the Windows DataLoader hangs
+
+model:
+  num_classes: 38
+  dropout: 0.4
+  pretrained: true
+
+training:
+  # Raised from 25: on the previous run validation accuracy was still rising
+  # at the cap, so the run was capped rather than converged. The cap now sits
+  # far enough out that early stopping (patience below) decides when to stop.
+  num_epochs: 40
+  warmup_epochs: 5          # Phase 1: train head only
+  head_lr: 1.0e-3
+  backbone_lr: 1.0e-5       # Much lower lr for pretrained layers
+  weight_decay: 1.0e-4
+  early_stopping_patience: 7
+
+paths:
+  save_dir: "models"
+  output_dir: "outputs"
+  log_file: "logs/training.log"
+
+seed: 42

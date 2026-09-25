@@ -1,0 +1,27 @@
+# Pinned so CI is reproducible: ruff's default rule set changes between
+# releases, and an unpinned `ruff check` turns a version bump into a red build.
+line-length = 100
+target-version = "py310"
+
+[lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "I",    # import sorting
+    "UP",   # pyupgrade
+    "B",    # bugbear
+    "RUF",  # ruff-specific
+]
+ignore = [
+    "E501",    # line length is enforced by review, not by a hard failure
+    "RUF001",  # "224×224" and "α_k" are deliberate notation, not typos
+    "RUF002",
+    "RUF003",
+]
+
+[lint.per-file-ignores]
+# Entry-point scripts insert the repo root on sys.path before importing `src`,
+# so those imports genuinely cannot sit at the top of the file.
+"scripts/*.py" = ["E402"]
+"app/app.py" = ["E402"]
+"tests/*.py" = ["E402"]

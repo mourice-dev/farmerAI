@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Training artifacts (auto-generated — do not commit)
+runs/
+demo_cache/
+dataset/crops/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# Credentials
+kaggle.json
+*.env
+
+# Large model files (download separately)
+*.pt
+*.pth

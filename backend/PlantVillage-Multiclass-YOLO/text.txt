@@ -1,0 +1,100 @@
+git clone https://github.com/sunsmarterjie/yolov12.git
+conda activate snake-nlp
+
+
+
+1) Stay in the env and (optionally) keep user‑site disabled
+bash
+Copy
+Edit
+conda activate snake-nlp
+# good practice so ~/.local packages never shadow your env
+export PYTHONNOUSERSITE=1
+conda env config vars set PYTHONNOUSERSITE=1
+conda activate snake-nlp
+2) Decide: GPU or CPU?
+First, check if you have an NVIDIA GPU available:
+
+bash
+Copy
+Edit
+nvidia-smi
+If it prints a table (driver/CUDA info), install the GPU build.
+
+If it says command not found or no GPUs, install the CPU‑only build.
+
+GPU build (CUDA 12.1 is common; if your driver supports 11.8, use that)
+bash
+Copy
+Edit
+# CUDA 12.1 example
+conda install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# If your environment requires CUDA 11.8 instead, do this:
+# conda install -y pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+CPU‑only build
+bash
+Copy
+Edit
+conda install -y pytorch torchvision torchaudio cpuonly -c pytorch
+Tip: If you’re unsure which CUDA to pick: run nvidia-smi and note the “CUDA Version”. If it shows 12.x, use pytorch-cuda=12.1. If it shows 11.x, use pytorch-cuda=11.8.
+
+3) (Recommended) Update Ultralytics inside the env
+bash
+Copy
+Edit
+pip install -U ultralytics
+4) Verify Torch is now in this env (and that the allocator var is gone)
+bash
+Copy
+Edit
+python - << 'PY'
+import torch, os, sys
+print("python exe:", sys.executable)
+print("torch path:", torch.__file__)
+print("torch version:", torch.__version__)
+print("torch.version.cuda:", getattr(torch.version, "cuda", None))
+print("cuda available:", torch.cuda.is_available())
+print("PYTORCH_CUDA_ALLOC_CONF:", os.environ.get("PYTORCH_CUDA_ALLOC_CONF"))
+PY
+Expect:
+
+torch path under .../.conda/envs/snake-nlp/...
+
+PYTORCH_CUDA_ALLOC_CONF: None (empty)
+
+cuda available: True only if you installed the GPU build and have a GPU
+
+If PYTORCH_CUDA_ALLOC_CONF still shows expandable_segments:true, clear it:
+
+bash
+Copy
+Edit
+unset PYTORCH_CUDA_ALLOC_CONF
+conda env config vars unset PYTORCH_CUDA_ALLOC_CONF
+conda activate snake-nlp
+5) Run training
+GPU (auto‑detected if available):
+
+bash
+Copy
+Edit
+/home/ashres34/.conda/envs/snake-nlp/bin/python /home/ashres34/Desktop/cosc591/train_yolo.py
+Force CPU (to unblock immediately if you’re still sorting CUDA):
+
+bash
+Copy
+Edit
+CUDA_VISIBLE_DEVICES="" PYTORCH_CUDA_ALLOC_CONF="" \
+/home/ashres34/.conda/envs/snake-nlp/bin/python /home/ashres34/Desktop/cosc591/train_yolo.py
+…and/or set device="cpu" in your model.train(...).
+
+6) If anything still fails, paste these outputs
+bash
+Copy
+Edit
+which python
+python -c "import sys; print(sys.executable)"
+python -c "import torch, os; print(torch.__file__, torch.__version__, getattr(torch.version,'cuda',None), torch.cuda.is_available()); print('ALLOC=', os.environ.get('PYTORCH_CUDA_ALLOC_CONF'))"
+python -c "import site; print(site.getusersitepackages())"
+nvidia-smi

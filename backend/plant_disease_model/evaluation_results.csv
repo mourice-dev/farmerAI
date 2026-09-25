@@ -1,0 +1,512 @@
+Source Directory,Category,Image File,True Class,Predicted Class,Confidence (%),Result
+Test Leaves - Mun Suen/,Apple - Black Rot,blackrotapple_28.9.jpg,Apple___Black_rot,Apple___Cedar_apple_rust,56.95,INCORRECT
+Test Leaves - Mun Suen/,Apple - Black Rot,Apple Black Rot 1.jpg,Apple___Black_rot,Tomato___Septoria_leaf_spot,82.89,INCORRECT
+Test Leaves - Mun Suen/,Apple - Black Rot,Apple Black Rot 3.jpg,Apple___Black_rot,Tomato___Late_blight,13.08,INCORRECT
+Test Leaves - Mun Suen/,Apple - Black Rot,Apple Black Rot 2.jpg,Apple___Black_rot,Tomato___Septoria_leaf_spot,20.09,INCORRECT
+Test Leaves - Mun Suen/,Apple - Ceder Rust Leaf,AppleCedarRustLeaf 3.jpg,Apple___Cedar_apple_rust,Apple___Cedar_apple_rust,44.40,CORRECT
+Test Leaves - Mun Suen/,Apple - Ceder Rust Leaf,AppleCedarRustLeaf 2.jpg,Apple___Cedar_apple_rust,Grape___Black_rot,47.82,INCORRECT
+Test Leaves - Mun Suen/,Apple - Ceder Rust Leaf,AppleCedarRust Leaf 1.jpg,Apple___Cedar_apple_rust,Grape___Black_rot,95.54,INCORRECT
+Test Leaves - Mun Suen/,Apple - Healthy,AppleHealthy 3.jpg,Apple___healthy,Apple___Apple_scab,13.48,INCORRECT
+Test Leaves - Mun Suen/,Apple - Healthy,AppleHealthy 2.jpg,Apple___healthy,Cherry_(including_sour)___healthy,99.41,INCORRECT
+Test Leaves - Mun Suen/,Apple - Healthy,AppleHealthy 1.jpg,Apple___healthy,Grape___healthy,97.55,INCORRECT
+Test Leaves - Mun Suen/,Apple - Scab,AppleScab3.jpg,Apple___Apple_scab,Apple___Apple_scab,94.72,CORRECT
+Test Leaves - Mun Suen/,Apple - Scab,AppleScab2.jpg,Apple___Apple_scab,Apple___healthy,66.35,INCORRECT
+Test Leaves - Mun Suen/,Apple - Scab,AppleScab1.jpg,Apple___Apple_scab,Peach___Bacterial_spot,51.15,INCORRECT
+Test Leaves - Mun Suen/,Apple - Scab,AppleScab5.png,Apple___Apple_scab,Apple___Apple_scab,84.05,CORRECT
+Test Leaves - Mun Suen/,Apple - Scab,AppleScab4.jpg,Apple___Apple_scab,Apple___Apple_scab,48.88,CORRECT
+Test Leaves - Mun Suen/,Blueberry - Healthy,BlueberryHealthy1.jpg,Blueberry___healthy,Blueberry___healthy,29.22,CORRECT
+Test Leaves - Mun Suen/,Blueberry - Healthy,BlueberryHealthy3.jpg,Blueberry___healthy,Tomato___healthy,24.98,INCORRECT
+Test Leaves - Mun Suen/,Blueberry - Healthy,BlueberryHealthy2.jpg,Blueberry___healthy,Grape___Esca_(Black_Measles),29.40,INCORRECT
+Test Leaves - Mun Suen/,Blueberry - Healthy,BlueberryHealthy4.jpg,Blueberry___healthy,Grape___Esca_(Black_Measles),38.81,INCORRECT
+Test Leaves - Mun Suen/,Cherry - Healthy,CherryHealthy2.jpg,Cherry_(including_sour)___healthy,Cherry_(including_sour)___healthy,67.53,CORRECT
+Test Leaves - Mun Suen/,Cherry - Healthy,CherryHealthy1.JPG,Cherry_(including_sour)___healthy,Grape___Black_rot,49.39,INCORRECT
+Test Leaves - Mun Suen/,Cherry - Powdery,CherryPowdery1.jpg,Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour)___Powdery_mildew,69.72,CORRECT
+Test Leaves - Mun Suen/,Cherry - Powdery,CherryPowdery2.webp,Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour)___Powdery_mildew,70.16,CORRECT
+Test Leaves - Mun Suen/,Corn - Common Rust,CornCommonRust1.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,27.48,INCORRECT
+Test Leaves - Mun Suen/,Corn - Common Rust,CornCommonRust2.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Common_rust_,99.86,CORRECT
+Test Leaves - Mun Suen/,Corn - Common Rust,CornCommonRust3.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Northern_Leaf_Blight,67.94,INCORRECT
+Test Leaves - Mun Suen/,Corn - Gray Leaf Spot,CornGrayLeafSpot4.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,99.13,CORRECT
+Test Leaves - Mun Suen/,Corn - Gray Leaf Spot,CornGrayLeafSpot1.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,85.22,CORRECT
+Test Leaves - Mun Suen/,Corn - Gray Leaf Spot,CornGrayLeafSpot3.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,94.60,CORRECT
+Test Leaves - Mun Suen/,Corn - Gray Leaf Spot,CornGrayLeafSpot2.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,96.57,CORRECT
+Test Leaves - Mun Suen/,Corn - Healthy,CornHealthy1.png,Corn_(maize)___healthy,Cherry_(including_sour)___healthy,24.50,INCORRECT
+Test Leaves - Mun Suen/,Corn - Leaf Blight,CornLeafBlight4.jpg,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Northern_Leaf_Blight,95.71,CORRECT
+Test Leaves - Mun Suen/,Corn - Leaf Blight,CornLeafBlight2.jpg,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Northern_Leaf_Blight,99.55,CORRECT
+Test Leaves - Mun Suen/,Corn - Leaf Blight,CornLeafBlight3.jpg,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Northern_Leaf_Blight,87.89,CORRECT
+Test Leaves - Mun Suen/,Corn - Leaf Blight,CornLeafBlight1.jpg,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Northern_Leaf_Blight,99.69,CORRECT
+Test Leaves - Mun Suen/,Grape - Black Measles,GrapeBlackMeasles1.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),49.02,CORRECT
+Test Leaves - Mun Suen/,Grape - Black Measles,GrapeBlackMeasles2.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),73.23,CORRECT
+Test Leaves - Mun Suen/,Grape - Black Measles,GrapeBlackMeasles3.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),55.38,CORRECT
+Test Leaves - Mun Suen/,Grape - Black Measles,GrapeBlackMeasles4.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),62.06,CORRECT
+Test Leaves - Mun Suen/,Grape - Black Rot,GrapeBlackrot1.jpg,Grape___Black_rot,Grape___Black_rot,74.92,CORRECT
+Test Leaves - Mun Suen/,Grape - Black Rot,GrapeBlackrot3.jpg,Grape___Black_rot,Grape___Black_rot,98.99,CORRECT
+Test Leaves - Mun Suen/,Grape - Black Rot,GrapeBlackrot2.jpg,Grape___Black_rot,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),43.16,INCORRECT
+Test Leaves - Mun Suen/,Grape - Black Rot,GrapeBlackrot4.jpg,Grape___Black_rot,Grape___Black_rot,99.72,CORRECT
+Test Leaves - Mun Suen/,Grape - Healthy,GrapeHealthy2.jpg,Grape___healthy,Grape___healthy,70.71,CORRECT
+Test Leaves - Mun Suen/,Grape - Healthy,GrapeHealthy3.jpg,Grape___healthy,Grape___healthy,74.58,CORRECT
+Test Leaves - Mun Suen/,Grape - Healthy,GrapeHealthy1.jpg,Grape___healthy,Grape___Black_rot,52.68,INCORRECT
+Test Leaves - Mun Suen/,Orange - Citrus Greening,OrangeCitrusGreening1.jpg,Orange___Haunglongbing_(Citrus_greening),Tomato___Late_blight,14.65,INCORRECT
+Test Leaves - Mun Suen/,Orange - Citrus Greening,OrangeCitrusGreening2.jpg,Orange___Haunglongbing_(Citrus_greening),Orange___Haunglongbing_(Citrus_greening),29.23,CORRECT
+Test Leaves - Mun Suen/,Peach - Bacterial Spot,PeachBacterialSpot.jpg,Peach___Bacterial_spot,Peach___Bacterial_spot,99.68,CORRECT
+Test Leaves - Mun Suen/,Pepper - Bacterial Spot,PepperBacterialSpot1.jpg,"Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",31.83,CORRECT
+Test Leaves - Mun Suen/,Pepper - Bacterial Spot,PepperBacterialSpot2.jpg,"Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",92.14,CORRECT
+Test Leaves - Mun Suen/,Pepper - Bacterial Spot,PepperBacterialSpot3.jpg,"Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",84.04,CORRECT
+Test Leaves - Mun Suen/,Pepper - Healthy,PepperHealthy1.jpg,"Pepper,_bell___healthy","Pepper,_bell___healthy",58.70,CORRECT
+Test Leaves - Mun Suen/,Pepper - Healthy,PepperHealthy2.jpg,"Pepper,_bell___healthy",Peach___healthy,15.81,INCORRECT
+Test Leaves - Mun Suen/,Pepper - Healthy,PepperHealthy3.jpg,"Pepper,_bell___healthy",Cherry_(including_sour)___healthy,87.29,INCORRECT
+Test Leaves - Mun Suen/,Potato - Early Blight,PotatoEarlyBlight4.jpg,Potato___Early_blight,Potato___Early_blight,97.04,CORRECT
+Test Leaves - Mun Suen/,Potato - Early Blight,PotatoEarlyBlight2.jpg,Potato___Early_blight,Potato___Early_blight,84.16,CORRECT
+Test Leaves - Mun Suen/,Potato - Early Blight,PotatoEarlyBlight3.jpg,Potato___Early_blight,Potato___Early_blight,96.50,CORRECT
+Test Leaves - Mun Suen/,Potato - Early Blight,PotatoEarlyBlight1.jpg,Potato___Early_blight,"Pepper,_bell___Bacterial_spot",60.35,INCORRECT
+Test Leaves - Mun Suen/,Potato - Healthy,PotatoHealthy1.jpg,Potato___healthy,Blueberry___healthy,78.58,INCORRECT
+Test Leaves - Mun Suen/,Potato - Healthy,PotatoHealthy3.jpg,Potato___healthy,Potato___healthy,32.49,CORRECT
+Test Leaves - Mun Suen/,Potato - Healthy,PotatoHealthy2.jpg,Potato___healthy,Potato___healthy,65.21,CORRECT
+Test Leaves - Mun Suen/,Potato - Healthy,PotatoHealthy6.jpg,Potato___healthy,Potato___healthy,42.02,CORRECT
+Test Leaves - Mun Suen/,Potato - Healthy,PotatoHealthy5.jpg,Potato___healthy,Potato___healthy,73.08,CORRECT
+Test Leaves - Mun Suen/,Potato - Healthy,PotatoHealthy4.jpg,Potato___healthy,Potato___healthy,86.77,CORRECT
+Test Leaves - Mun Suen/,Potato - Late Blight,PotatoLateBlight4.jpg,Potato___Late_blight,Potato___Late_blight,91.52,CORRECT
+Test Leaves - Mun Suen/,Potato - Late Blight,PotatoLateBlight1.jpg,Potato___Late_blight,Potato___Late_blight,93.36,CORRECT
+Test Leaves - Mun Suen/,Potato - Late Blight,PotatoLateBlight2.jpg,Potato___Late_blight,Potato___Late_blight,90.02,CORRECT
+Test Leaves - Mun Suen/,Potato - Late Blight,PotatoLateBlight3.jpg,Potato___Late_blight,Potato___Late_blight,77.30,CORRECT
+Test Leaves - Mun Suen/,Rasberry - Healthy,RaspberryHealthy2.jpg,Raspberry___healthy,Raspberry___healthy,55.48,CORRECT
+Test Leaves - Mun Suen/,Rasberry - Healthy,RaspberryHealthy1.jpg,Raspberry___healthy,Raspberry___healthy,99.59,CORRECT
+Test Leaves - Mun Suen/,Soybean - Healthy,SoybeanHealthy1.jpg,Soybean___healthy,Soybean___healthy,13.12,CORRECT
+Test Leaves - Mun Suen/,Soybean - Healthy,SoybeanHealthy2.jpg,Soybean___healthy,Tomato___healthy,7.89,INCORRECT
+Test Leaves - Mun Suen/,Squash - Powdery,SquashMildew3.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,99.99,CORRECT
+Test Leaves - Mun Suen/,Squash - Powdery,SquashMildew2.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,94.25,CORRECT
+Test Leaves - Mun Suen/,Squash - Powdery,SquashMildew1.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,68.14,CORRECT
+Test Leaves - Mun Suen/,Squash - Powdery,SquashMildew5.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,28.32,CORRECT
+Test Leaves - Mun Suen/,Squash - Powdery,SquashMildew4.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,92.48,CORRECT
+Test Leaves - Mun Suen/,Strawberry - Healthy,StrawberryHealthy.jpg,Strawberry___healthy,Strawberry___healthy,98.36,CORRECT
+Test Leaves - Mun Suen/,Strawberry - Leaf Scorch,StrawberryLeafScorch2.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,96.67,CORRECT
+Test Leaves - Mun Suen/,Strawberry - Leaf Scorch,StrawberryLeafScorch1.jpg,Strawberry___Leaf_scorch,Tomato___Early_blight,90.39,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Bacterial Spot,TomatoBacterialSpot1.jpg,Tomato___Bacterial_spot,Tomato___Bacterial_spot,28.33,CORRECT
+Test Leaves - Mun Suen/,Tomato - Bacterial Spot,TomatoBacterialSpot3.jpg,Tomato___Bacterial_spot,Peach___Bacterial_spot,76.61,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Bacterial Spot,TomatoBacterialSpot2.jpg,Tomato___Bacterial_spot,Tomato___Bacterial_spot,44.49,CORRECT
+Test Leaves - Mun Suen/,Tomato - Early Blight,TomatoEarlyBlight2.jpg,Tomato___Early_blight,Tomato___Early_blight,98.44,CORRECT
+Test Leaves - Mun Suen/,Tomato - Early Blight,TomatoEarlyBlight3.jpg,Tomato___Early_blight,Tomato___Late_blight,33.41,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Early Blight,TomatoEarlyBlight1.jpg,Tomato___Early_blight,Tomato___Early_blight,98.93,CORRECT
+Test Leaves - Mun Suen/,Tomato - Healthy,Tomato Healthy 2.jpg,Tomato___healthy,Tomato___Tomato_Yellow_Leaf_Curl_Virus,31.57,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Healthy,Tomato Healthy 3.jpg,Tomato___healthy,Tomato___Septoria_leaf_spot,43.22,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Healthy,Tomato Healthy 1.jpg,Tomato___healthy,Tomato___Late_blight,26.87,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Healthy,TomatoHealthy1.jpg,Tomato___healthy,Apple___healthy,27.52,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Late Blight,TomatoLateBlight2.jpg,Tomato___Late_blight,Tomato___Late_blight,89.77,CORRECT
+Test Leaves - Mun Suen/,Tomato - Late Blight,TomatoLateBlight1.jpg,Tomato___Late_blight,Tomato___Late_blight,84.65,CORRECT
+Test Leaves - Mun Suen/,Tomato - Leaf Mold,TomatoLeafMold2.jpg,Tomato___Leaf_Mold,Tomato___Leaf_Mold,99.99,CORRECT
+Test Leaves - Mun Suen/,Tomato - Leaf Mold,TomatoLeafMold.jpg,Tomato___Leaf_Mold,Tomato___Late_blight,99.95,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Mosaic Virus,TomatoMosaicVirus1.jpg,Tomato___Tomato_mosaic_virus,Tomato___Leaf_Mold,50.93,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Septoria Leaf Spot,TomatoSeptoriaLeafSpot1.jpg,Tomato___Septoria_leaf_spot,Tomato___Septoria_leaf_spot,99.78,CORRECT
+Test Leaves - Mun Suen/,Tomato - Septoria Leaf Spot,TomatoSeptoriaLeafSpot2.jpg,Tomato___Septoria_leaf_spot,Tomato___Septoria_leaf_spot,95.07,CORRECT
+Test Leaves - Mun Suen/,Tomato - Septoria Leaf Spot,TomatoSeptoriaLeafSpot3.jpg,Tomato___Septoria_leaf_spot,Tomato___Septoria_leaf_spot,99.84,CORRECT
+Test Leaves - Mun Suen/,Tomato - Yellow Leaf Curl Virus,TomatoYelloLeafCurlVirus2.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,96.43,CORRECT
+Test Leaves - Mun Suen/,Tomato - Yellow Leaf Curl Virus,TomatoYelloLeafCurlVirus1.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,53.84,CORRECT
+Test Leaves - Mun Suen/,Tomato - Yellow Leaf Curl Virus,TomatoYellowCurlVirus3.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Apple___Black_rot,10.04,INCORRECT
+Test Leaves - Mun Suen/,Tomato - Yellow Leaf Curl Virus,TomatoYellowCurlVirus4.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,89.35,CORRECT
+Test Leaves - Zoey/,Apple - Black Rot,Apple Black Rot 1.jpg,Apple___Black_rot,Tomato___Septoria_leaf_spot,82.89,INCORRECT
+Test Leaves - Zoey/,Apple - Black Rot,Apple Black Rot 3.jpg,Apple___Black_rot,Tomato___Late_blight,13.08,INCORRECT
+Test Leaves - Zoey/,Apple - Black Rot,Apple Black Rot 2.jpg,Apple___Black_rot,Tomato___Septoria_leaf_spot,20.09,INCORRECT
+Test Leaves - Zoey/,Apple - Ceder Rust Leaf,Apple Ceder Rust Leaf 3.jpg,Apple___Cedar_apple_rust,Peach___Bacterial_spot,19.64,INCORRECT
+Test Leaves - Zoey/,Apple - Ceder Rust Leaf,Apple Ceder Rust Leaf 2.jpg,Apple___Cedar_apple_rust,Apple___Cedar_apple_rust,74.65,CORRECT
+Test Leaves - Zoey/,Apple - Ceder Rust Leaf,Apple Ceder Rust Leaf 1.jpg,Apple___Cedar_apple_rust,Peach___Bacterial_spot,86.72,INCORRECT
+Test Leaves - Zoey/,Apple - Healthy,Apple Healthy 1.jpg,Apple___healthy,Potato___Early_blight,22.07,INCORRECT
+Test Leaves - Zoey/,Apple - Healthy,Apple Healthy 2.png,Apple___healthy,Blueberry___healthy,99.99,INCORRECT
+Test Leaves - Zoey/,Apple - Healthy,Apple Healthy 3.jpg,Apple___healthy,Apple___healthy,99.85,CORRECT
+Test Leaves - Zoey/,Apple - Scab,Apple Scab 3.jpg,Apple___Apple_scab,Apple___Apple_scab,54.07,CORRECT
+Test Leaves - Zoey/,Apple - Scab,Apple Scab 2.jpg,Apple___Apple_scab,Apple___Apple_scab,47.31,CORRECT
+Test Leaves - Zoey/,Blueberry - Healthy,Blueberry Healthy 3.jpg,Blueberry___healthy,Blueberry___healthy,100.00,CORRECT
+Test Leaves - Zoey/,Blueberry - Healthy,Blueberry Healthy 2.jpg,Blueberry___healthy,Blueberry___healthy,100.00,CORRECT
+Test Leaves - Zoey/,Blueberry - Healthy,Blueberry Healthy 1.jpg,Blueberry___healthy,"Pepper,_bell___healthy",8.31,INCORRECT
+Test Leaves - Zoey/,Blueberry - Healthy,Blueberry Healthy 5.jpg,Blueberry___healthy,Potato___Late_blight,86.57,INCORRECT
+Test Leaves - Zoey/,Blueberry - Healthy,Blueberry Healthy 4.jpg,Blueberry___healthy,Apple___Black_rot,39.05,INCORRECT
+Test Leaves - Zoey/,Cherry - Healthy,Cherry Healthy 3.jpg,Cherry_(including_sour)___healthy,Blueberry___healthy,99.29,INCORRECT
+Test Leaves - Zoey/,Cherry - Healthy,Cherry Healthy 1.jpg,Cherry_(including_sour)___healthy,Apple___healthy,87.29,INCORRECT
+Test Leaves - Zoey/,Cherry - Healthy,Cherry Healthy 2.webp,Cherry_(including_sour)___healthy,Apple___healthy,35.53,INCORRECT
+Test Leaves - Zoey/,Cherry - Powdery,Cherry Powdery 2.jpg,Cherry_(including_sour)___Powdery_mildew,Corn_(maize)___Common_rust_,32.48,INCORRECT
+Test Leaves - Zoey/,Cherry - Powdery,Cherry Powdery 3.jpg,Cherry_(including_sour)___Powdery_mildew,Tomato___Target_Spot,9.29,INCORRECT
+Test Leaves - Zoey/,Cherry - Powdery,Cherry Powdery 1.jpg,Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour)___Powdery_mildew,73.94,CORRECT
+Test Leaves - Zoey/,Corn - Common Rust,Corn Common Rust 3.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Northern_Leaf_Blight,55.92,INCORRECT
+Test Leaves - Zoey/,Corn - Common Rust,Corn Common Rust 2.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,84.91,INCORRECT
+Test Leaves - Zoey/,Corn - Common Rust,Corn Common Rust 1.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Common_rust_,78.59,CORRECT
+Test Leaves - Zoey/,Corn - Gray Leaf Spot,Corn Gray Leaf Spot 1.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,51.24,CORRECT
+Test Leaves - Zoey/,Corn - Gray Leaf Spot,Corn Gray Leaf Spot 2.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,43.18,CORRECT
+Test Leaves - Zoey/,Corn - Gray Leaf Spot,Corn Gray Leaf Spot 3.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Common_rust_,37.67,INCORRECT
+Test Leaves - Zoey/,Corn - Healthy,Corn Healthy 3.jpg,Corn_(maize)___healthy,Soybean___healthy,47.27,INCORRECT
+Test Leaves - Zoey/,Corn - Healthy,Corn Healthy 2.jpg,Corn_(maize)___healthy,Corn_(maize)___healthy,22.36,CORRECT
+Test Leaves - Zoey/,Corn - Healthy,Corn Healthy 1.jpg,Corn_(maize)___healthy,Corn_(maize)___healthy,48.42,CORRECT
+Test Leaves - Zoey/,Corn - Leaf Blight,Corn Leaf Blight 1.jpg,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,83.99,INCORRECT
+Test Leaves - Zoey/,Corn - Leaf Blight,Corn Leaf Blight 3.jpg,Corn_(maize)___Northern_Leaf_Blight,Peach___healthy,76.81,INCORRECT
+Test Leaves - Zoey/,Corn - Leaf Blight,Corn Leaf Blight 2.jpg,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,91.46,INCORRECT
+Test Leaves - Zoey/,Grape - Black Measles,Grape Black Measles 1.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),99.95,CORRECT
+Test Leaves - Zoey/,Grape - Black Measles,Grape Black Measles 3.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),99.76,CORRECT
+Test Leaves - Zoey/,Grape - Black Measles,Grape Black Measles 2.jpg,Grape___Esca_(Black_Measles),Strawberry___Leaf_scorch,97.42,INCORRECT
+Test Leaves - Zoey/,Grape - Black Rot,Grape Black Rot 1.jpg,Grape___Black_rot,Grape___Black_rot,20.75,CORRECT
+Test Leaves - Zoey/,Grape - Black Rot,Grape Black Rot 3.jpg,Grape___Black_rot,Potato___Early_blight,19.23,INCORRECT
+Test Leaves - Zoey/,Grape - Black Rot,Grape Black Rot 2.jpg,Grape___Black_rot,Grape___Black_rot,99.94,CORRECT
+Test Leaves - Zoey/,Grape - Healthy,Grape Healthy 1.jpg,Grape___healthy,Grape___healthy,51.37,CORRECT
+Test Leaves - Zoey/,Grape - Healthy,Grape Healthy 3.jpg,Grape___healthy,Apple___Apple_scab,75.09,INCORRECT
+Test Leaves - Zoey/,Grape - Healthy,Grape Healthy 2.jpg,Grape___healthy,Grape___healthy,100.00,CORRECT
+Test Leaves - Zoey/,Grape - Isariopsis Leaf Spot,Grape Isariopsis Leaf Spot 1.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Leaf_blight_(Isariopsis_Leaf_Spot),99.51,CORRECT
+Test Leaves - Zoey/,Grape - Isariopsis Leaf Spot,Grape Isariopsis Leaf Spot 3.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Strawberry___Leaf_scorch,54.38,INCORRECT
+Test Leaves - Zoey/,Grape - Isariopsis Leaf Spot,Grape Isariopsis Leaf Spot 2.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Black_rot,42.68,INCORRECT
+Test Leaves - Zoey/,Orange - Citrus Greening,Orange Citrus Greening 1.jpg,Orange___Haunglongbing_(Citrus_greening),Tomato___Tomato_Yellow_Leaf_Curl_Virus,15.36,INCORRECT
+Test Leaves - Zoey/,Orange - Citrus Greening,Orange Citrus Greening 2.jpg,Orange___Haunglongbing_(Citrus_greening),Potato___healthy,60.20,INCORRECT
+Test Leaves - Zoey/,Orange - Citrus Greening,Orange Citrus Greening 3.jpg,Orange___Haunglongbing_(Citrus_greening),Orange___Haunglongbing_(Citrus_greening),26.76,CORRECT
+Test Leaves - Zoey/,Peach - Bacterial Spot,Peach Bacterial Spot 2.jpg,Peach___Bacterial_spot,"Pepper,_bell___Bacterial_spot",27.53,INCORRECT
+Test Leaves - Zoey/,Peach - Bacterial Spot,Peach Bacterial Spot 3.jpg,Peach___Bacterial_spot,"Pepper,_bell___Bacterial_spot",66.62,INCORRECT
+Test Leaves - Zoey/,Peach - Bacterial Spot,Peach Bacterial Spot 1.jpg,Peach___Bacterial_spot,Peach___Bacterial_spot,52.41,CORRECT
+Test Leaves - Zoey/,Peach - Healthy,Peach Healthy 1.jpg,Peach___healthy,Cherry_(including_sour)___healthy,32.14,INCORRECT
+Test Leaves - Zoey/,Peach - Healthy,Peach Healthy 2.jpg,Peach___healthy,Apple___healthy,41.57,INCORRECT
+Test Leaves - Zoey/,Peach - Healthy,Peach Healthy 3.jpg,Peach___healthy,Blueberry___healthy,99.98,INCORRECT
+Test Leaves - Zoey/,Pepper - Bacterial Spot,Pepper Bacterial Spot 3.jpg,"Pepper,_bell___Bacterial_spot",Tomato___Bacterial_spot,15.37,INCORRECT
+Test Leaves - Zoey/,Pepper - Bacterial Spot,Pepper Bacterial Spot 2.jpg,"Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",98.23,CORRECT
+Test Leaves - Zoey/,Pepper - Bacterial Spot,Pepper Bacterial Spot 1.jpg,"Pepper,_bell___Bacterial_spot",Tomato___Late_blight,89.79,INCORRECT
+Test Leaves - Zoey/,Pepper - Healthy,Pepper Healthy 3.jpg,"Pepper,_bell___healthy","Pepper,_bell___healthy",65.50,CORRECT
+Test Leaves - Zoey/,Pepper - Healthy,Pepper Healthy 2.jpg,"Pepper,_bell___healthy",Tomato___Early_blight,22.81,INCORRECT
+Test Leaves - Zoey/,Pepper - Healthy,Pepper Healthy 1.webp,"Pepper,_bell___healthy","Pepper,_bell___healthy",93.52,CORRECT
+Test Leaves - Zoey/,Potato - Early Blight,Potato Early Blight 3.jpg,Potato___Early_blight,Potato___Early_blight,93.78,CORRECT
+Test Leaves - Zoey/,Potato - Early Blight,Potato Early Blight 2.jpg,Potato___Early_blight,Tomato___Septoria_leaf_spot,34.53,INCORRECT
+Test Leaves - Zoey/,Potato - Early Blight,Potato Early Blight 1.jpg,Potato___Early_blight,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),54.41,INCORRECT
+Test Leaves - Zoey/,Potato - Healthy,Potato Healthy 1.jpg,Potato___healthy,Soybean___healthy,29.19,INCORRECT
+Test Leaves - Zoey/,Potato - Healthy,Potato Healthy 2.jpg,Potato___healthy,Potato___healthy,95.32,CORRECT
+Test Leaves - Zoey/,Potato - Healthy,Potato Healthy 3.jpg,Potato___healthy,Soybean___healthy,68.39,INCORRECT
+Test Leaves - Zoey/,Potato - Late Blight,Potato Late Blight 1.jpg,Potato___Late_blight,Apple___healthy,16.26,INCORRECT
+Test Leaves - Zoey/,Potato - Late Blight,Potato Late Blight 2.jpg,Potato___Late_blight,Potato___Late_blight,100.00,CORRECT
+Test Leaves - Zoey/,Potato - Late Blight,Potato Late Blight 3.jpg,Potato___Late_blight,Apple___Apple_scab,78.28,INCORRECT
+Test Leaves - Zoey/,Rasberry - Healthy,Rasberry Healthy 2.webp,Raspberry___healthy,Apple___healthy,45.92,INCORRECT
+Test Leaves - Zoey/,Rasberry - Healthy,Rasberry Healthy 3.jpg,Raspberry___healthy,Raspberry___healthy,73.89,CORRECT
+Test Leaves - Zoey/,Rasberry - Healthy,Rasberry Healthy 1.jpg,Raspberry___healthy,Apple___healthy,20.76,INCORRECT
+Test Leaves - Zoey/,Soybean - Healthy,Soybean Healthy 3.jpg,Soybean___healthy,Blueberry___healthy,48.48,INCORRECT
+Test Leaves - Zoey/,Soybean - Healthy,Soybean Healthy 2.jpg,Soybean___healthy,Blueberry___healthy,71.85,INCORRECT
+Test Leaves - Zoey/,Soybean - Healthy,Soybean Healthy 1.jpg,Soybean___healthy,Blueberry___healthy,99.52,INCORRECT
+Test Leaves - Zoey/,Squash - Powdery,Squash Powdery 3.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,69.59,CORRECT
+Test Leaves - Zoey/,Squash - Powdery,Squash Powdery 1.jpg,Squash___Powdery_mildew,Apple___healthy,39.93,INCORRECT
+Test Leaves - Zoey/,Squash - Powdery,Squash Powdery 2.webp,Squash___Powdery_mildew,Cherry_(including_sour)___Powdery_mildew,96.42,INCORRECT
+Test Leaves - Zoey/,Strawberry - Healthy,Strawberry Healthy 2.jpg,Strawberry___healthy,Strawberry___healthy,99.74,CORRECT
+Test Leaves - Zoey/,Strawberry - Healthy,Strawberry Healthy 3.jpg,Strawberry___healthy,Strawberry___healthy,99.62,CORRECT
+Test Leaves - Zoey/,Strawberry - Healthy,Strawberry Healthy 1.jpg,Strawberry___healthy,Tomato___Late_blight,26.45,INCORRECT
+Test Leaves - Zoey/,Strawberry - Leaf Scorch,Strawberry Leaf Scorch 3.jpg,Strawberry___Leaf_scorch,Tomato___Septoria_leaf_spot,75.18,INCORRECT
+Test Leaves - Zoey/,Strawberry - Leaf Scorch,Strawberry Leaf Scorch 2.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,100.00,CORRECT
+Test Leaves - Zoey/,Strawberry - Leaf Scorch,Strawberry Leaf Scorch 1.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,99.74,CORRECT
+Test Leaves - Zoey/,Tomato - Bacterial Spot,Tomato Bacterial Spot 2.jpg,Tomato___Bacterial_spot,"Pepper,_bell___Bacterial_spot",75.14,INCORRECT
+Test Leaves - Zoey/,Tomato - Bacterial Spot,Tomato Bacterial Spot 3.jpg,Tomato___Bacterial_spot,Tomato___Early_blight,76.78,INCORRECT
+Test Leaves - Zoey/,Tomato - Bacterial Spot,Tomato Bacterial Spot 1.jpg,Tomato___Bacterial_spot,Strawberry___Leaf_scorch,94.47,INCORRECT
+Test Leaves - Zoey/,Tomato - Early Blight,Tomato Early Blight 1.jpg,Tomato___Early_blight,Tomato___Septoria_leaf_spot,25.48,INCORRECT
+Test Leaves - Zoey/,Tomato - Early Blight,Tomato Early Blight 3.jpg,Tomato___Early_blight,Tomato___Early_blight,70.43,CORRECT
+Test Leaves - Zoey/,Tomato - Early Blight,Tomato Early Blight 2.jpg,Tomato___Early_blight,Strawberry___Leaf_scorch,86.90,INCORRECT
+Test Leaves - Zoey/,Tomato - Healthy,Tomato Healthy 2.jpg,Tomato___healthy,Tomato___Tomato_Yellow_Leaf_Curl_Virus,31.57,INCORRECT
+Test Leaves - Zoey/,Tomato - Healthy,Tomato Healthy 3.jpg,Tomato___healthy,Tomato___Septoria_leaf_spot,43.22,INCORRECT
+Test Leaves - Zoey/,Tomato - Healthy,Tomato Healthy 1.jpg,Tomato___healthy,Tomato___Late_blight,26.87,INCORRECT
+Test Leaves - Zoey/,Tomato - Late Blight,Tomato Late Blight 3.jpg,Tomato___Late_blight,Potato___Late_blight,57.27,INCORRECT
+Test Leaves - Zoey/,Tomato - Late Blight,Tomato Late Blight 2.jpg,Tomato___Late_blight,Tomato___Late_blight,82.59,CORRECT
+Test Leaves - Zoey/,Tomato - Late Blight,Tomato Late Blight 1.jpg,Tomato___Late_blight,Tomato___Late_blight,73.84,CORRECT
+Test Leaves - Zoey/,Tomato - Leaf Mold,Tomato Leaf Mold 1.jpg,Tomato___Leaf_Mold,Tomato___Early_blight,59.07,INCORRECT
+Test Leaves - Zoey/,Tomato - Leaf Mold,Tomato Leaf Mold 3.jpg,Tomato___Leaf_Mold,Tomato___Late_blight,25.93,INCORRECT
+Test Leaves - Zoey/,Tomato - Leaf Mold,Tomato Leaf Mold 2.jpg,Tomato___Leaf_Mold,"Pepper,_bell___healthy",75.33,INCORRECT
+Test Leaves - Zoey/,Tomato - Mosaic Virus,Tomato Mosaic Virus 2.jpg,Tomato___Tomato_mosaic_virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,95.95,INCORRECT
+Test Leaves - Zoey/,Tomato - Mosaic Virus,Tomato Mosaic Virus 3.jpg,Tomato___Tomato_mosaic_virus,Tomato___Septoria_leaf_spot,14.54,INCORRECT
+Test Leaves - Zoey/,Tomato - Mosaic Virus,Tomato Mosaic Virus 1.jpg,Tomato___Tomato_mosaic_virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,88.04,INCORRECT
+Test Leaves - Zoey/,Tomato - Septoria Leaf Spot,Tomato Septoria Leaf Spot 3.jpg,Tomato___Septoria_leaf_spot,Tomato___Early_blight,34.19,INCORRECT
+Test Leaves - Zoey/,Tomato - Septoria Leaf Spot,Tomato Septoria Leaf Spot 2.jpg,Tomato___Septoria_leaf_spot,Tomato___Bacterial_spot,60.86,INCORRECT
+Test Leaves - Zoey/,Tomato - Septoria Leaf Spot,Tomato Septoria Leaf Spot 1.jpg,Tomato___Septoria_leaf_spot,Tomato___Septoria_leaf_spot,99.93,CORRECT
+Test Leaves - Zoey/,Tomato - Spider Mite,Tomato Spider Mite 1.jpg,Tomato___Spider_mites Two-spotted_spider_mite,Apple___Apple_scab,17.01,INCORRECT
+Test Leaves - Zoey/,Tomato - Spider Mite,Tomato Spider Mite 3.jpg,Tomato___Spider_mites Two-spotted_spider_mite,Strawberry___Leaf_scorch,33.50,INCORRECT
+Test Leaves - Zoey/,Tomato - Spider Mite,Tomato Spider Mite 2.jpg,Tomato___Spider_mites Two-spotted_spider_mite,Tomato___healthy,43.50,INCORRECT
+Test Leaves - Zoey/,Tomato - Target Spot,Tomato Target Spot 2.jpg,Tomato___Target_Spot,Tomato___Septoria_leaf_spot,37.29,INCORRECT
+Test Leaves - Zoey/,Tomato - Target Spot,Tomato Target Spot 3.jpg,Tomato___Target_Spot,Tomato___Early_blight,92.24,INCORRECT
+Test Leaves - Zoey/,Tomato - Target Spot,Tomato Target Spot 1.jpg,Tomato___Target_Spot,Tomato___Late_blight,61.09,INCORRECT
+Test Leaves - Zoey/,Tomato - Yellow Leaf Curl Virus,Tomato Yellow Leaf Curl Virus 1.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,60.64,CORRECT
+Test Leaves - Zoey/,Tomato - Yellow Leaf Curl Virus,Tomato Yellow Leaf Curl Virus 2.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,97.29,CORRECT
+Test Leaves - Zoey/,Tomato - Yellow Leaf Curl Virus,Tomato Yellow Leaf Curl Virus 3.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Cherry_(including_sour)___Powdery_mildew,36.13,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Black Rot,Apple___Black_rot 2.jpg,Apple___Black_rot,"Pepper,_bell___Bacterial_spot",28.84,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Black Rot,Apple___Black_rot 3.jpg,Apple___Black_rot,Tomato___Septoria_leaf_spot,20.09,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Black Rot,Apple___Black_rot 1.jpg,Apple___Black_rot,Apple___Cedar_apple_rust,62.33,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Ceder Rust Leaf,Apple___Cedar_apple_rust 2.jpg,Apple___Cedar_apple_rust,"Pepper,_bell___Bacterial_spot",73.52,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Ceder Rust Leaf,Apple___Cedar_apple_rust 3.jpg,Apple___Cedar_apple_rust,Strawberry___Leaf_scorch,100.00,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Ceder Rust Leaf,Apple___Cedar_apple_rust 1.jpg,Apple___Cedar_apple_rust,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),89.72,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Healthy,Apple___healthy 1.jpg,Apple___healthy,Apple___healthy,99.85,CORRECT
+Test Leaves - Yihan/Test/,Apple - Healthy,Apple___healthy 3.jpg,Apple___healthy,Grape___healthy,63.26,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Healthy,Apple___healthy 2.jpg,Apple___healthy,Corn_(maize)___healthy,22.18,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Scab,Apple___Apple_scab 3.jpg,Apple___Apple_scab,Peach___Bacterial_spot,98.43,INCORRECT
+Test Leaves - Yihan/Test/,Apple - Scab,Apple_scab 1.jpg,Apple___Apple_scab,Apple___Apple_scab,86.19,CORRECT
+Test Leaves - Yihan/Test/,Apple - Scab,Apple_scab 2.jpg,Apple___Apple_scab,Apple___Black_rot,38.78,INCORRECT
+Test Leaves - Yihan/Test/,Blueberry - Healthy,Blueberry___healthy 2.jpg,Blueberry___healthy,Blueberry___healthy,100.00,CORRECT
+Test Leaves - Yihan/Test/,Blueberry - Healthy,Blueberry___healthy 3.jpg,Blueberry___healthy,Blueberry___healthy,100.00,CORRECT
+Test Leaves - Yihan/Test/,Blueberry - Healthy,Blueberry___healthy 1.jpg,Blueberry___healthy,Blueberry___healthy,100.00,CORRECT
+Test Leaves - Yihan/Test/,Cherry - Healthy,Cherry_(including_sour)___healthy 3.jpg,Cherry_(including_sour)___healthy,Blueberry___healthy,100.00,INCORRECT
+Test Leaves - Yihan/Test/,Cherry - Healthy,Cherry_(including_sour)___healthy 2.jpg,Cherry_(including_sour)___healthy,Blueberry___healthy,58.94,INCORRECT
+Test Leaves - Yihan/Test/,Cherry - Healthy,Cherry_(including_sour)___healthy 1.jpg,Cherry_(including_sour)___healthy,Cherry_(including_sour)___healthy,47.92,CORRECT
+Test Leaves - Yihan/Test/,Cherry - Powdery,Cherry_(including_sour)___Powdery_mildew 1.jpg,Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour)___Powdery_mildew,73.94,CORRECT
+Test Leaves - Yihan/Test/,Cherry - Powdery,Cherry_(including_sour)___Powdery_mildew 2.jpg,Cherry_(including_sour)___Powdery_mildew,Strawberry___Leaf_scorch,97.59,INCORRECT
+Test Leaves - Yihan/Test/,Cherry - Powdery,Cherry_(including_sour)___Powdery_mildew 3.jpg,Cherry_(including_sour)___Powdery_mildew,Peach___Bacterial_spot,75.21,INCORRECT
+Test Leaves - Yihan/Test/,Corn - Common Rust,Corn_(maize)___Common_rust 2.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Northern_Leaf_Blight,34.05,INCORRECT
+Test Leaves - Yihan/Test/,Corn - Common Rust,Corn_(maize)___Common_rust 3.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,71.08,INCORRECT
+Test Leaves - Yihan/Test/,Corn - Common Rust,Corn_(maize)___Common_rust 1.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Common_rust_,78.59,CORRECT
+Test Leaves - Yihan/Test/,Corn - Gray Leaf Spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot 2.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,21.41,CORRECT
+Test Leaves - Yihan/Test/,Corn - Gray Leaf Spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot 3.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,93.57,CORRECT
+Test Leaves - Yihan/Test/,Corn - Gray Leaf Spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot 1.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Northern_Leaf_Blight,42.72,INCORRECT
+Test Leaves - Yihan/Test/,Corn - Healthy,Corn_(maize)___healthy 1.jpg,Corn_(maize)___healthy,Soybean___healthy,15.39,INCORRECT
+Test Leaves - Yihan/Test/,Corn - Healthy,Corn_(maize)___healthy 2.jpg,Corn_(maize)___healthy,Tomato___Tomato_Yellow_Leaf_Curl_Virus,16.64,INCORRECT
+Test Leaves - Yihan/Test/,Corn - Healthy,Corn_(maize)___healthy 3.jpg,Corn_(maize)___healthy,Tomato___Tomato_Yellow_Leaf_Curl_Virus,31.84,INCORRECT
+Test Leaves - Yihan/Test/,Corn - Leaf Blight,Corn_(maize)___Northern_Leaf_Blight 2.jpg,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,9.18,INCORRECT
+Test Leaves - Yihan/Test/,Corn - Leaf Blight,Corn_(maize)___Northern_Leaf_Blight 3.jpg,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___healthy,93.88,INCORRECT
+Test Leaves - Yihan/Test/,Corn - Leaf Blight,Corn_(maize)___Northern_Leaf_Blight 1.jpg,Corn_(maize)___Northern_Leaf_Blight,Peach___Bacterial_spot,38.24,INCORRECT
+Test Leaves - Yihan/Test/,Grape - Black Measles,Grape___Esca_(Black_Measles) 1.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),100.00,CORRECT
+Test Leaves - Yihan/Test/,Grape - Black Measles,Grape___Esca_(Black_Measles) 2.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),58.08,CORRECT
+Test Leaves - Yihan/Test/,Grape - Black Measles,Grape___Esca_(Black_Measles) 3.jpg,Grape___Esca_(Black_Measles),Strawberry___Leaf_scorch,97.42,INCORRECT
+Test Leaves - Yihan/Test/,Grape - Black Rot,Grape___Black_rot 3.jpg,Grape___Black_rot,Tomato___Late_blight,80.39,INCORRECT
+Test Leaves - Yihan/Test/,Grape - Black Rot,Grape___Black_rot 2.jpg,Grape___Black_rot,Grape___Black_rot,20.75,CORRECT
+Test Leaves - Yihan/Test/,Grape - Black Rot,Grape___Black_rot 1.jpg,Grape___Black_rot,Grape___Black_rot,99.94,CORRECT
+Test Leaves - Yihan/Test/,Grape - Healthy,Grape___healthy 1.jpg,Grape___healthy,Tomato___Early_blight,20.18,INCORRECT
+Test Leaves - Yihan/Test/,Grape - Healthy,Grape___healthy 3.jpg,Grape___healthy,Squash___Powdery_mildew,85.77,INCORRECT
+Test Leaves - Yihan/Test/,Grape - Healthy,Grape___healthy 2.jpg,Grape___healthy,Grape___healthy,99.53,CORRECT
+Test Leaves - Yihan/Test/,Grape - Isariopsis Leaf Spot,Grape___Leaf_blight_(Isariopsis_Leaf_Spot) 2.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Leaf_blight_(Isariopsis_Leaf_Spot),100.00,CORRECT
+Test Leaves - Yihan/Test/,Grape - Isariopsis Leaf Spot,Grape___Leaf_blight_(Isariopsis_Leaf_Spot) 3.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Black_rot,100.00,INCORRECT
+Test Leaves - Yihan/Test/,Grape - Isariopsis Leaf Spot,Grape___Leaf_blight_(Isariopsis_Leaf_Spot) 1.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Black_rot,98.82,INCORRECT
+Test Leaves - Yihan/Test/,Orange - Citrus Greening,Orange___Haunglongbing_(Citrus_greening) 1.jpg,Orange___Haunglongbing_(Citrus_greening),Orange___Haunglongbing_(Citrus_greening),39.07,CORRECT
+Test Leaves - Yihan/Test/,Orange - Citrus Greening,Orange___Haunglongbing_(Citrus_greening) 2.jpg,Orange___Haunglongbing_(Citrus_greening),Orange___Haunglongbing_(Citrus_greening),30.11,CORRECT
+Test Leaves - Yihan/Test/,Orange - Citrus Greening,Orange___Haunglongbing_(Citrus_greening) 3.jpg,Orange___Haunglongbing_(Citrus_greening),Orange___Haunglongbing_(Citrus_greening),50.33,CORRECT
+Test Leaves - Yihan/Test/,Peach - Bacterial Spot,Peach___Bacterial_spot 3.jpg,Peach___Bacterial_spot,Peach___Bacterial_spot,46.57,CORRECT
+Test Leaves - Yihan/Test/,Peach - Bacterial Spot,Peach___Bacterial_spot 2.jpg,Peach___Bacterial_spot,Peach___Bacterial_spot,99.76,CORRECT
+Test Leaves - Yihan/Test/,Peach - Bacterial Spot,Peach___Bacterial_spot 1.jpg,Peach___Bacterial_spot,Peach___Bacterial_spot,95.10,CORRECT
+Test Leaves - Yihan/Test/,Peach - Healthy,Peach___healthy 1.jpg,Peach___healthy,Apple___healthy,41.57,INCORRECT
+Test Leaves - Yihan/Test/,Peach - Healthy,Peach___healthy 2.jpg,Peach___healthy,Blueberry___healthy,100.00,INCORRECT
+Test Leaves - Yihan/Test/,Peach - Healthy,Peach___healthy 3.jpg,Peach___healthy,Blueberry___healthy,96.69,INCORRECT
+Test Leaves - Yihan/Test/,Pepper - Bacterial Spot,"Pepper,_bell___Bacterial_spot 2.jpg","Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",92.34,CORRECT
+Test Leaves - Yihan/Test/,Pepper - Bacterial Spot,"Pepper,_bell___Bacterial_spot 3.jpg","Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",88.86,CORRECT
+Test Leaves - Yihan/Test/,Pepper - Bacterial Spot,"Pepper,_bell___Bacterial_spot 1.jpg","Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",41.56,CORRECT
+Test Leaves - Yihan/Test/,Pepper - Healthy,"Pepper,_bell___healthy 2.jpg","Pepper,_bell___healthy","Pepper,_bell___healthy",57.77,CORRECT
+Test Leaves - Yihan/Test/,Pepper - Healthy,"Pepper,_bell___healthy 3.jpg","Pepper,_bell___healthy","Pepper,_bell___healthy",52.18,CORRECT
+Test Leaves - Yihan/Test/,Pepper - Healthy,"Pepper,_bell___healthy 1.jpg","Pepper,_bell___healthy","Pepper,_bell___healthy",100.00,CORRECT
+Test Leaves - Yihan/Test/,Potato - Early Blight,Potato___Early_blight 1.jpg,Potato___Early_blight,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),54.41,INCORRECT
+Test Leaves - Yihan/Test/,Potato - Early Blight,Potato___Early_blight 3.jpg,Potato___Early_blight,"Pepper,_bell___Bacterial_spot",65.28,INCORRECT
+Test Leaves - Yihan/Test/,Potato - Early Blight,Potato___Early_blight 2.jpg,Potato___Early_blight,Tomato___Septoria_leaf_spot,47.96,INCORRECT
+Test Leaves - Yihan/Test/,Potato - Healthy,Potato___healthy 1.jpg,Potato___healthy,Blueberry___healthy,99.99,INCORRECT
+Test Leaves - Yihan/Test/,Potato - Healthy,Potato___healthy 2.jpg,Potato___healthy,Tomato___Late_blight,16.67,INCORRECT
+Test Leaves - Yihan/Test/,Potato - Healthy,Potato___healthy 3.jpg,Potato___healthy,Potato___Late_blight,50.79,INCORRECT
+Test Leaves - Yihan/Test/,Potato - Late Blight,Potato___Late_blight 1.jpg,Potato___Late_blight,"Pepper,_bell___Bacterial_spot",41.90,INCORRECT
+Test Leaves - Yihan/Test/,Potato - Late Blight,Potato___Late_blight 3.jpg,Potato___Late_blight,Potato___Late_blight,51.45,CORRECT
+Test Leaves - Yihan/Test/,Potato - Late Blight,Potato___Late_blight 2.jpg,Potato___Late_blight,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),54.41,INCORRECT
+Test Leaves - Yihan/Test/,Rasberry - Healthy,Raspberry___healthy 1.jpg,Raspberry___healthy,Apple___Apple_scab,46.23,INCORRECT
+Test Leaves - Yihan/Test/,Rasberry - Healthy,Raspberry___healthy 3.jpg,Raspberry___healthy,Corn_(maize)___healthy,42.38,INCORRECT
+Test Leaves - Yihan/Test/,Rasberry - Healthy,Raspberry___healthy 2.jpg,Raspberry___healthy,Strawberry___healthy,73.74,INCORRECT
+Test Leaves - Yihan/Test/,Soybean - Healthy,Soybean___healthy 3.jpg,Soybean___healthy,Blueberry___healthy,84.71,INCORRECT
+Test Leaves - Yihan/Test/,Soybean - Healthy,Soybean___healthy 2.jpg,Soybean___healthy,Tomato___healthy,38.21,INCORRECT
+Test Leaves - Yihan/Test/,Soybean - Healthy,Soybean___healthy 1.jpg,Soybean___healthy,Blueberry___healthy,94.17,INCORRECT
+Test Leaves - Yihan/Test/,Squash - Powdery,Squash___Powdery_mildew 1.jpg,Squash___Powdery_mildew,Cherry_(including_sour)___Powdery_mildew,33.69,INCORRECT
+Test Leaves - Yihan/Test/,Squash - Powdery,Squash___Powdery_mildew 3.jpg,Squash___Powdery_mildew,Tomato___Septoria_leaf_spot,23.66,INCORRECT
+Test Leaves - Yihan/Test/,Squash - Powdery,Squash___Powdery_mildew 2.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,99.98,CORRECT
+Test Leaves - Yihan/Test/,Strawberry - Healthy,Strawberry___healthy 3.jpg,Strawberry___healthy,Strawberry___healthy,97.15,CORRECT
+Test Leaves - Yihan/Test/,Strawberry - Healthy,Strawberry___healthy 2.jpg,Strawberry___healthy,Raspberry___healthy,99.55,INCORRECT
+Test Leaves - Yihan/Test/,Strawberry - Healthy,Strawberry___healthy 1.jpg,Strawberry___healthy,Tomato___Early_blight,42.68,INCORRECT
+Test Leaves - Yihan/Test/,Strawberry - Leaf Scorch,Strawberry___Leaf_scorch 1.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,99.74,CORRECT
+Test Leaves - Yihan/Test/,Strawberry - Leaf Scorch,Strawberry___Leaf_scorch 2.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,99.20,CORRECT
+Test Leaves - Yihan/Test/,Strawberry - Leaf Scorch,Strawberry___Leaf_scorch 3.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,40.53,CORRECT
+Test Leaves - Yihan/Test/,Tomato - Bacterial Spot,Tomato___Bacterial_spot 3.jpg,Tomato___Bacterial_spot,Tomato___Early_blight,92.24,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Bacterial Spot,Tomato___Bacterial_spot 2.jpg,Tomato___Bacterial_spot,Tomato___Bacterial_spot,60.86,CORRECT
+Test Leaves - Yihan/Test/,Tomato - Bacterial Spot,Tomato___Bacterial_spot 1.jpg,Tomato___Bacterial_spot,Tomato___Septoria_leaf_spot,99.72,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Early Blight,Tomato___Early_blight 1.jpg,Tomato___Early_blight,Tomato___Early_blight,70.43,CORRECT
+Test Leaves - Yihan/Test/,Tomato - Early Blight,Tomato___Early_blight 3.jpg,Tomato___Early_blight,Tomato___Septoria_leaf_spot,33.14,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Early Blight,Tomato___Early_blight 2.jpg,Tomato___Early_blight,Tomato___Septoria_leaf_spot,91.35,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Healthy,Tomato___healthy 1.jpg,Tomato___healthy,Peach___Bacterial_spot,93.19,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Healthy,Tomato___healthy 2.jpg,Tomato___healthy,Corn_(maize)___healthy,25.23,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Healthy,Tomato___healthy 3.jpg,Tomato___healthy,Squash___Powdery_mildew,99.05,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Late Blight,Tomato___Late_blight 1.jpg,Tomato___Late_blight,Potato___Early_blight,52.12,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Late Blight,Tomato___Late_blight 3.jpg,Tomato___Late_blight,Tomato___Late_blight,31.30,CORRECT
+Test Leaves - Yihan/Test/,Tomato - Late Blight,Tomato___Late_blight 2.jpg,Tomato___Late_blight,Tomato___Late_blight,26.20,CORRECT
+Test Leaves - Yihan/Test/,Tomato - Leaf Mold,Tomato___Leaf_Mold 2.jpg,Tomato___Leaf_Mold,Tomato___Tomato_Yellow_Leaf_Curl_Virus,30.03,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Leaf Mold,Tomato___Leaf_Mold 3.jpg,Tomato___Leaf_Mold,Strawberry___Leaf_scorch,67.96,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Leaf Mold,Tomato___Leaf_Mold 1.jpg,Tomato___Leaf_Mold,Tomato___Early_blight,59.07,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Mosaic Virus,Tomato_mosaic_virus 3.jpg,Tomato___Tomato_mosaic_virus,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),21.22,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Mosaic Virus,Tomato_mosaic_virus 2.jpg,Tomato___Tomato_mosaic_virus,Tomato___Septoria_leaf_spot,88.96,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Mosaic Virus,Tomato_mosaic_virus 1.jpg,Tomato___Tomato_mosaic_virus,Tomato___Septoria_leaf_spot,42.57,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Septoria Leaf Spot,Tomato___Septoria_leaf_spot 1.jpg,Tomato___Septoria_leaf_spot,Tomato___Bacterial_spot,60.86,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Septoria Leaf Spot,Tomato___Septoria_leaf_spot 3.jpg,Tomato___Septoria_leaf_spot,Tomato___Early_blight,35.01,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Septoria Leaf Spot,Tomato___Septoria_leaf_spot 2.jpg,Tomato___Septoria_leaf_spot,Tomato___Septoria_leaf_spot,82.07,CORRECT
+Test Leaves - Yihan/Test/,Tomato - Spider Mite,Tomato___Spider_mites Two-spotted_spider_mite 2.jpg,Tomato___Spider_mites Two-spotted_spider_mite,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),93.73,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Spider Mite,Tomato___Spider_mites Two-spotted_spider_mite 3.jpg,Tomato___Spider_mites Two-spotted_spider_mite,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,36.93,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Spider Mite,Tomato___Spider_mites Two-spotted_spider_mite 1.jpg,Tomato___Spider_mites Two-spotted_spider_mite,Tomato___Target_Spot,8.70,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Target Spot,Tomato___Target_Spot 1.jpg,Tomato___Target_Spot,Strawberry___Leaf_scorch,22.61,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Target Spot,Tomato___Target_Spot 2.jpg,Tomato___Target_Spot,Corn_(maize)___healthy,7.89,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Target Spot,Tomato___Target_Spot 3.jpg,Tomato___Target_Spot,Tomato___Early_blight,83.24,INCORRECT
+Test Leaves - Yihan/Test/,Tomato - Yellow Leaf Curl Virus,Tomato_Yellow_Leaf_Curl_Virus 2.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,97.29,CORRECT
+Test Leaves - Yihan/Test/,Tomato - Yellow Leaf Curl Virus,Tomato_Yellow_Leaf_Curl_Virus 3.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,98.11,CORRECT
+Test Leaves - Yihan/Test/,Tomato - Yellow Leaf Curl Virus,Tomato_Yellow_Leaf_Curl_Virus 1.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Bacterial_spot,46.63,INCORRECT
+Test Leaves - Sze Ching/,Apple - Black Rot,Apple Black Rot 3.webp,Apple___Black_rot,Tomato___Septoria_leaf_spot,92.34,INCORRECT
+Test Leaves - Sze Ching/,Apple - Black Rot,Apple Black Rot 2.jpg,Apple___Black_rot,Apple___Cedar_apple_rust,70.60,INCORRECT
+Test Leaves - Sze Ching/,Apple - Black Rot,Apple Black Rot 5.jpg,Apple___Black_rot,Peach___Bacterial_spot,37.11,INCORRECT
+Test Leaves - Sze Ching/,Apple - Black Rot,Apple Black Rot 4.jpg,Apple___Black_rot,Tomato___Septoria_leaf_spot,55.96,INCORRECT
+Test Leaves - Sze Ching/,Apple - Black Rot,Apple Black Rot 1.webp,Apple___Black_rot,Apple___Black_rot,100.00,CORRECT
+Test Leaves - Sze Ching/,Apple - Cedar Rust Leaf,Apple Cedar Rust Leaf 3.webp,Apple___Cedar_apple_rust,Tomato___Septoria_leaf_spot,59.94,INCORRECT
+Test Leaves - Sze Ching/,Apple - Cedar Rust Leaf,Apple Cedar Rust Leaf 1.jpg,Apple___Cedar_apple_rust,Apple___Cedar_apple_rust,53.31,CORRECT
+Test Leaves - Sze Ching/,Apple - Cedar Rust Leaf,Apple Cedar Rust Leaf 2.jpg,Apple___Cedar_apple_rust,Grape___Black_rot,72.47,INCORRECT
+Test Leaves - Sze Ching/,Apple - Cedar Rust Leaf,Apple Cedar Rust Leaf 4.jpg,Apple___Cedar_apple_rust,Peach___Bacterial_spot,83.70,INCORRECT
+Test Leaves - Sze Ching/,Apple - Cedar Rust Leaf,Apple Cedar Rust Leaf 5.png,Apple___Cedar_apple_rust,Grape___Esca_(Black_Measles),47.90,INCORRECT
+Test Leaves - Sze Ching/,Apple - Healthy,Apple Healthy 1.webp,Apple___healthy,Apple___healthy,29.61,CORRECT
+Test Leaves - Sze Ching/,Apple - Healthy,Apple Healthy 3.jpg,Apple___healthy,Grape___healthy,56.81,INCORRECT
+Test Leaves - Sze Ching/,Apple - Healthy,Apple Healthy 4.png,Apple___healthy,Cherry_(including_sour)___healthy,36.74,INCORRECT
+Test Leaves - Sze Ching/,Apple - Healthy,Apple Healthy 5.jpg,Apple___healthy,Apple___Cedar_apple_rust,70.60,INCORRECT
+Test Leaves - Sze Ching/,Apple - Healthy,Apple Healthy 2.webp,Apple___healthy,Soybean___healthy,72.13,INCORRECT
+Test Leaves - Sze Ching/,Apple - Scab,Apple Scab 5.jpg,Apple___Apple_scab,Apple___Apple_scab,65.63,CORRECT
+Test Leaves - Sze Ching/,Apple - Scab,Apple Scab 4.jpg,Apple___Apple_scab,Tomato___Early_blight,29.70,INCORRECT
+Test Leaves - Sze Ching/,Apple - Scab,Apple Scab 3.jpg,Apple___Apple_scab,Peach___Bacterial_spot,50.80,INCORRECT
+Test Leaves - Sze Ching/,Apple - Scab,Apple Scab 2.jpg,Apple___Apple_scab,Apple___Apple_scab,55.05,CORRECT
+Test Leaves - Sze Ching/,Apple - Scab,Apple Scab 1.jpg,Apple___Apple_scab,Potato___Early_blight,92.11,INCORRECT
+Test Leaves - Sze Ching/,Blueberry - Healthy,Blueberry Healthy 3.jpg,Blueberry___healthy,Apple___Apple_scab,15.33,INCORRECT
+Test Leaves - Sze Ching/,Blueberry - Healthy,Blueberry Healthy 1.webp,Blueberry___healthy,Blueberry___healthy,99.62,CORRECT
+Test Leaves - Sze Ching/,Blueberry - Healthy,Blueberry Healthy 2.jpg,Blueberry___healthy,Apple___Black_rot,42.69,INCORRECT
+Test Leaves - Sze Ching/,Blueberry - Healthy,Blueberry Healthy 5.jpg,Blueberry___healthy,"Pepper,_bell___healthy",50.40,INCORRECT
+Test Leaves - Sze Ching/,Blueberry - Healthy,Blueberry Healthy 4.jpg,Blueberry___healthy,Grape___Esca_(Black_Measles),75.35,INCORRECT
+Test Leaves - Sze Ching/,Cherry - Healthy,Cherry Healthy 2.jpg,Cherry_(including_sour)___healthy,"Pepper,_bell___healthy",44.95,INCORRECT
+Test Leaves - Sze Ching/,Cherry - Healthy,Cherry Healthy 3.jpg,Cherry_(including_sour)___healthy,Cherry_(including_sour)___healthy,18.11,CORRECT
+Test Leaves - Sze Ching/,Cherry - Healthy,Cherry Healthy 1.jpg,Cherry_(including_sour)___healthy,Apple___healthy,69.54,INCORRECT
+Test Leaves - Sze Ching/,Cherry - Healthy,Cherry Healthy 4.jpg,Cherry_(including_sour)___healthy,Raspberry___healthy,96.18,INCORRECT
+Test Leaves - Sze Ching/,Cherry - Healthy,Cherry Healthy 5.jpg,Cherry_(including_sour)___healthy,Apple___healthy,12.90,INCORRECT
+Test Leaves - Sze Ching/,Cherry - Powdery,Cherry Powdery 2.jpg,Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour)___Powdery_mildew,53.26,CORRECT
+Test Leaves - Sze Ching/,Cherry - Powdery,Cherry Powdery 1.png,Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour)___Powdery_mildew,28.55,CORRECT
+Test Leaves - Sze Ching/,Cherry - Powdery,Cherry Powdery 4.jpg,Cherry_(including_sour)___Powdery_mildew,Cherry_(including_sour)___Powdery_mildew,90.78,CORRECT
+Test Leaves - Sze Ching/,Cherry - Powdery,Cherry Powdery 5.png,Cherry_(including_sour)___Powdery_mildew,Corn_(maize)___Northern_Leaf_Blight,58.46,INCORRECT
+Test Leaves - Sze Ching/,Corn - Common Rust,Corn Common Rust 3.jpeg,Corn_(maize)___Common_rust_,Corn_(maize)___Northern_Leaf_Blight,82.72,INCORRECT
+Test Leaves - Sze Ching/,Corn - Common Rust,Corn Common Rust 1.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,47.57,INCORRECT
+Test Leaves - Sze Ching/,Corn - Common Rust,Corn Common Rust 5.jpg,Corn_(maize)___Common_rust_,Corn_(maize)___Northern_Leaf_Blight,79.94,INCORRECT
+Test Leaves - Sze Ching/,Corn - Common Rust,Corn Common Rust 2.webp,Corn_(maize)___Common_rust_,Corn_(maize)___Northern_Leaf_Blight,38.60,INCORRECT
+Test Leaves - Sze Ching/,Corn - Common Rust,Corn Common Rust 4.webp,Corn_(maize)___Common_rust_,Corn_(maize)___Common_rust_,69.61,CORRECT
+Test Leaves - Sze Ching/,Corn - Gray Leaf Spot,Corn Gray Leaf Spot 4.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Apple___Apple_scab,11.51,INCORRECT
+Test Leaves - Sze Ching/,Corn - Gray Leaf Spot,Corn Gray Leaf Spot 5.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,65.44,CORRECT
+Test Leaves - Sze Ching/,Corn - Gray Leaf Spot,Corn Gray Leaf Spot 3.jpg,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,30.91,CORRECT
+Test Leaves - Sze Ching/,Corn - Gray Leaf Spot,Corn Gray Leaf Spot 2.webp,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,49.62,CORRECT
+Test Leaves - Sze Ching/,Corn - Healthy,Corn Healthy 5.jpg,Corn_(maize)___healthy,Cherry_(including_sour)___healthy,30.06,INCORRECT
+Test Leaves - Sze Ching/,Corn - Healthy,Corn Healthy 4.jpg,Corn_(maize)___healthy,Corn_(maize)___healthy,22.36,CORRECT
+Test Leaves - Sze Ching/,Corn - Healthy,Corn Healthy 3.jpg,Corn_(maize)___healthy,Corn_(maize)___healthy,95.06,CORRECT
+Test Leaves - Sze Ching/,Corn - Healthy,Corn Healthy 1.jpg,Corn_(maize)___healthy,Tomato___Tomato_Yellow_Leaf_Curl_Virus,12.30,INCORRECT
+Test Leaves - Sze Ching/,Corn - Healthy,Corn Healthy 2.webp,Corn_(maize)___healthy,Tomato___Late_blight,23.40,INCORRECT
+Test Leaves - Sze Ching/,Corn - Leaf Blight,Corn Leaf Blight 5.png,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Northern_Leaf_Blight,97.12,CORRECT
+Test Leaves - Sze Ching/,Corn - Leaf Blight,Corn Leaf Blight 4.jpg,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Northern_Leaf_Blight,51.37,CORRECT
+Test Leaves - Sze Ching/,Corn - Leaf Blight,Corn Leaf Blight 2.webp,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Northern_Leaf_Blight,68.35,CORRECT
+Test Leaves - Sze Ching/,Corn - Leaf Blight,Corn Leaf Blight 1.webp,Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Northern_Leaf_Blight,44.88,CORRECT
+Test Leaves - Sze Ching/,Grape - Black Measles,Grape Black Measles 1.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),99.73,CORRECT
+Test Leaves - Sze Ching/,Grape - Black Measles,Grape Black Measles 3.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),36.85,CORRECT
+Test Leaves - Sze Ching/,Grape - Black Measles,Grape Black Measles 2.jpg,Grape___Esca_(Black_Measles),Grape___Esca_(Black_Measles),99.98,CORRECT
+Test Leaves - Sze Ching/,Grape - Black Measles,Grape Black Measles 5.jpg,Grape___Esca_(Black_Measles),Tomato___Late_blight,43.41,INCORRECT
+Test Leaves - Sze Ching/,Grape - Black Measles,Grape Black Measles 4.jpg,Grape___Esca_(Black_Measles),"Pepper,_bell___Bacterial_spot",40.07,INCORRECT
+Test Leaves - Sze Ching/,Grape - Black Rot,Grape Black Rot 1.jpg,Grape___Black_rot,Grape___Black_rot,85.52,CORRECT
+Test Leaves - Sze Ching/,Grape - Black Rot,Grape Black Rot 3.jpg,Grape___Black_rot,Strawberry___Leaf_scorch,96.50,INCORRECT
+Test Leaves - Sze Ching/,Grape - Black Rot,Grape Black Rot 2.jpg,Grape___Black_rot,Grape___Black_rot,93.86,CORRECT
+Test Leaves - Sze Ching/,Grape - Black Rot,G.B.R 5 (Peach Bacterial_spot 95.2).jpg,Grape___Black_rot,Peach___Bacterial_spot,61.55,INCORRECT
+Test Leaves - Sze Ching/,Grape - Healthy,Grape Healthy 3.jpg,Grape___healthy,Tomato___Late_blight,27.47,INCORRECT
+Test Leaves - Sze Ching/,Grape - Healthy,Grape Healthy 2.jpg,Grape___healthy,Grape___healthy,67.68,CORRECT
+Test Leaves - Sze Ching/,Grape - Healthy,Grape Healthy 1.webp,Grape___healthy,Grape___healthy,34.38,CORRECT
+Test Leaves - Sze Ching/,Grape - Healthy,Grape Healthy 5.jpg,Grape___healthy,Grape___healthy,97.37,CORRECT
+Test Leaves - Sze Ching/,Grape - Healthy,Grape Healthy 4.jpg,Grape___healthy,Grape___healthy,65.12,CORRECT
+Test Leaves - Sze Ching/,Grape - Isariopsis Leaf Spot,Grape Isariopsis Leaf Spot 1.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Leaf_blight_(Isariopsis_Leaf_Spot),94.53,CORRECT
+Test Leaves - Sze Ching/,Grape - Isariopsis Leaf Spot,Grape Isariopsis Leaf Spot 3.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Leaf_blight_(Isariopsis_Leaf_Spot),100.00,CORRECT
+Test Leaves - Sze Ching/,Grape - Isariopsis Leaf Spot,Grape Isariopsis Leaf Spot 2.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Leaf_blight_(Isariopsis_Leaf_Spot),100.00,CORRECT
+Test Leaves - Sze Ching/,Grape - Isariopsis Leaf Spot,Grape Isariopsis Leaf Spot 5.jpg,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Black_rot,100.00,INCORRECT
+Test Leaves - Sze Ching/,Grape - Isariopsis Leaf Spot,Grape Isariopsis Leaf Spot 4.png,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___Black_rot,23.07,INCORRECT
+Test Leaves - Sze Ching/,Orange - Citrus Greening,Orange Citrus Greening 1.webp,Orange___Haunglongbing_(Citrus_greening),Tomato___Late_blight,29.62,INCORRECT
+Test Leaves - Sze Ching/,Orange - Citrus Greening,Orange Citrus Greening 2.jpg,Orange___Haunglongbing_(Citrus_greening),Tomato___Late_blight,14.13,INCORRECT
+Test Leaves - Sze Ching/,Orange - Citrus Greening,Orange Citrus Greening 3.jpg,Orange___Haunglongbing_(Citrus_greening),Tomato___Tomato_Yellow_Leaf_Curl_Virus,54.92,INCORRECT
+Test Leaves - Sze Ching/,Orange - Citrus Greening,Orange Citrus Greening 4.jpg,Orange___Haunglongbing_(Citrus_greening),Cherry_(including_sour)___healthy,95.05,INCORRECT
+Test Leaves - Sze Ching/,Orange - Citrus Greening,Orange Citrus Greening 5.jpg,Orange___Haunglongbing_(Citrus_greening),Tomato___Late_blight,28.29,INCORRECT
+Test Leaves - Sze Ching/,Peach - Bacterial Spot,Peach Bacterial Spot 2.jpg,Peach___Bacterial_spot,Grape___Black_rot,50.79,INCORRECT
+Test Leaves - Sze Ching/,Peach - Bacterial Spot,Peach Bacterial Spot 3.jpg,Peach___Bacterial_spot,Tomato___Septoria_leaf_spot,35.22,INCORRECT
+Test Leaves - Sze Ching/,Peach - Bacterial Spot,Peach Bacterial Spot 1.jpg,Peach___Bacterial_spot,Peach___Bacterial_spot,99.63,CORRECT
+Test Leaves - Sze Ching/,Peach - Bacterial Spot,Peach Bacterial Spot 4.jpg,Peach___Bacterial_spot,Potato___Early_blight,99.99,INCORRECT
+Test Leaves - Sze Ching/,Peach - Bacterial Spot,Peach Bacterial Spot 5.jpg,Peach___Bacterial_spot,Tomato___Early_blight,21.70,INCORRECT
+Test Leaves - Sze Ching/,Peach - Healthy,Peach Healthy 2.webp,Peach___healthy,Peach___Bacterial_spot,22.69,INCORRECT
+Test Leaves - Sze Ching/,Peach - Healthy,Peach Healthy 3.jpeg,Peach___healthy,Tomato___Septoria_leaf_spot,19.62,INCORRECT
+Test Leaves - Sze Ching/,Peach - Healthy,Peach Healthy 4.jpg,Peach___healthy,Peach___Bacterial_spot,14.09,INCORRECT
+Test Leaves - Sze Ching/,Peach - Healthy,Peach Healthy 5.jpg,Peach___healthy,Soybean___healthy,68.57,INCORRECT
+Test Leaves - Sze Ching/,Pepper - Bacterial Spot,Pepper Bacterial Spot 5.jpg,"Pepper,_bell___Bacterial_spot",Tomato___Early_blight,32.91,INCORRECT
+Test Leaves - Sze Ching/,Pepper - Bacterial Spot,Pepper Bacterial Spot 4.jpg,"Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",98.81,CORRECT
+Test Leaves - Sze Ching/,Pepper - Bacterial Spot,Pepper Bacterial Spot 3.jpg,"Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",21.69,CORRECT
+Test Leaves - Sze Ching/,Pepper - Bacterial Spot,Pepper Bacterial Spot 2.png,"Pepper,_bell___Bacterial_spot",Potato___Early_blight,93.77,INCORRECT
+Test Leaves - Sze Ching/,Pepper - Bacterial Spot,Pepper Bacterial Spot 1.jpg,"Pepper,_bell___Bacterial_spot","Pepper,_bell___Bacterial_spot",95.45,CORRECT
+Test Leaves - Sze Ching/,Pepper - Healthy,Pepper Healthy 3.webp,"Pepper,_bell___healthy","Pepper,_bell___healthy",63.29,CORRECT
+Test Leaves - Sze Ching/,Pepper - Healthy,Pepper Healthy 2.jpg,"Pepper,_bell___healthy","Pepper,_bell___healthy",23.99,CORRECT
+Test Leaves - Sze Ching/,Pepper - Healthy,Pepper Healthy 5.jpg,"Pepper,_bell___healthy","Pepper,_bell___healthy",98.66,CORRECT
+Test Leaves - Sze Ching/,Pepper - Healthy,Pepper Healthy 4.jpg,"Pepper,_bell___healthy",Apple___Apple_scab,10.90,INCORRECT
+Test Leaves - Sze Ching/,Potato - Early Blight,Potato Early Blight 3.webp,Potato___Early_blight,Potato___Early_blight,36.48,CORRECT
+Test Leaves - Sze Ching/,Potato - Early Blight,Potato Early Blight 5.jpg,Potato___Early_blight,Potato___Early_blight,99.48,CORRECT
+Test Leaves - Sze Ching/,Potato - Early Blight,Potato Early Blight 4.jpg,Potato___Early_blight,Tomato___Septoria_leaf_spot,92.67,INCORRECT
+Test Leaves - Sze Ching/,Potato - Early Blight,Potato Early Blight 2.jpg,Potato___Early_blight,Potato___Early_blight,44.08,CORRECT
+Test Leaves - Sze Ching/,Potato - Early Blight,Potato Early Blight 1.jpg,Potato___Early_blight,Potato___Early_blight,99.75,CORRECT
+Test Leaves - Sze Ching/,Potato - Healthy,Potato Healthy 1.jpg,Potato___healthy,Tomato___healthy,18.04,INCORRECT
+Test Leaves - Sze Ching/,Potato - Healthy,Potato Healthy 5.jpg,Potato___healthy,"Pepper,_bell___healthy",30.38,INCORRECT
+Test Leaves - Sze Ching/,Potato - Healthy,Potato Healthy 4.webp,Potato___healthy,Potato___healthy,94.25,CORRECT
+Test Leaves - Sze Ching/,Potato - Healthy,Potato Healthy 3.webp,Potato___healthy,Blueberry___healthy,67.05,INCORRECT
+Test Leaves - Sze Ching/,Potato - Late Blight,Potato Late Blight 4.jpg,Potato___Late_blight,Grape___Leaf_blight_(Isariopsis_Leaf_Spot),73.06,INCORRECT
+Test Leaves - Sze Ching/,Potato - Late Blight,Potato Late Blight 5.jpg,Potato___Late_blight,Tomato___Late_blight,53.91,INCORRECT
+Test Leaves - Sze Ching/,Potato - Late Blight,Potato Late Blight 1.jpg,Potato___Late_blight,Tomato___Late_blight,97.33,INCORRECT
+Test Leaves - Sze Ching/,Potato - Late Blight,Potato Late Blight 2.jpg,Potato___Late_blight,Potato___Late_blight,60.18,CORRECT
+Test Leaves - Sze Ching/,Potato - Late Blight,Potato Late Blight 3.jpg,Potato___Late_blight,Tomato___Late_blight,96.63,INCORRECT
+Test Leaves - Sze Ching/,Raspberry - Healthy,Raspberry Healthy 3.webp,Raspberry___healthy,Strawberry___healthy,28.48,INCORRECT
+Test Leaves - Sze Ching/,Raspberry - Healthy,Raspberry Healthy 2.webp,Raspberry___healthy,Raspberry___healthy,99.46,CORRECT
+Test Leaves - Sze Ching/,Raspberry - Healthy,Raspberry Healthy 5.jpg,Raspberry___healthy,Blueberry___healthy,31.91,INCORRECT
+Test Leaves - Sze Ching/,Raspberry - Healthy,Raspberry Healthy 1.webp,Raspberry___healthy,"Pepper,_bell___healthy",20.21,INCORRECT
+Test Leaves - Sze Ching/,Soybean - Healthy,Soybean Healthy 2.jpg,Soybean___healthy,Apple___Apple_scab,13.21,INCORRECT
+Test Leaves - Sze Ching/,Soybean - Healthy,Soybean Healthy 5.jpg,Soybean___healthy,Blueberry___healthy,65.11,INCORRECT
+Test Leaves - Sze Ching/,Soybean - Healthy,Soybean Healthy 4.jpg,Soybean___healthy,Soybean___healthy,99.99,CORRECT
+Test Leaves - Sze Ching/,Soybean - Healthy,Soybean Healthy 3.webp,Soybean___healthy,Tomato___Septoria_leaf_spot,27.60,INCORRECT
+Test Leaves - Sze Ching/,Soybean - Healthy,Soybean Healthy 1.webp,Soybean___healthy,Soybean___healthy,53.84,CORRECT
+Test Leaves - Sze Ching/,Squash - Powdery,Squash Powdery 3.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,99.77,CORRECT
+Test Leaves - Sze Ching/,Squash - Powdery,Squash Powdery 1.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,70.74,CORRECT
+Test Leaves - Sze Ching/,Squash - Powdery,Squash Powdery 5.jpg,Squash___Powdery_mildew,Squash___Powdery_mildew,26.42,CORRECT
+Test Leaves - Sze Ching/,Squash - Powdery,Squash Powdery 2.webp,Squash___Powdery_mildew,Squash___Powdery_mildew,99.74,CORRECT
+Test Leaves - Sze Ching/,Squash - Powdery,Squash Powdery 4.webp,Squash___Powdery_mildew,Grape___Black_rot,12.86,INCORRECT
+Test Leaves - Sze Ching/,Strawberry - Healthy,Strawberry Healthy 1.webp,Strawberry___healthy,Strawberry___healthy,93.56,CORRECT
+Test Leaves - Sze Ching/,Strawberry - Healthy,Strawberry Healthy 3.webp,Strawberry___healthy,"Pepper,_bell___Bacterial_spot",36.93,INCORRECT
+Test Leaves - Sze Ching/,Strawberry - Healthy,Strawberry Healthy 2.jpg,Strawberry___healthy,Tomato___Early_blight,45.50,INCORRECT
+Test Leaves - Sze Ching/,Strawberry - Healthy,Strawberry Healthy 4.webp,Strawberry___healthy,Corn_(maize)___Common_rust_,91.79,INCORRECT
+Test Leaves - Sze Ching/,Strawberry - Healthy,Strawberry Healthy 5.jpg,Strawberry___healthy,Apple___Apple_scab,12.24,INCORRECT
+Test Leaves - Sze Ching/,Strawberry - Leaf Scorch,Strawberry Leaf Scorch 2.webp,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,76.74,CORRECT
+Test Leaves - Sze Ching/,Strawberry - Leaf Scorch,Strawberry Leaf Scorch 3.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,24.86,CORRECT
+Test Leaves - Sze Ching/,Strawberry - Leaf Scorch,Strawberry Leaf Scorch 1.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,89.67,CORRECT
+Test Leaves - Sze Ching/,Strawberry - Leaf Scorch,Strawberry Leaf Scorch 5.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,100.00,CORRECT
+Test Leaves - Sze Ching/,Strawberry - Leaf Scorch,Strawberry Leaf Scorch 4.jpg,Strawberry___Leaf_scorch,Strawberry___Leaf_scorch,100.00,CORRECT
+Test Leaves - Sze Ching/,Tomato - Bacterial Spot,Tomato Bacterial Spot 4.jpg,Tomato___Bacterial_spot,Tomato___Septoria_leaf_spot,60.32,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Bacterial Spot,Tomato Bacterial Spot 5.JPG,Tomato___Bacterial_spot,Strawberry___Leaf_scorch,93.40,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Bacterial Spot,Tomato Bacterial Spot 2.jpg,Tomato___Bacterial_spot,Tomato___Early_blight,38.24,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Bacterial Spot,Tomato Bacterial Spot 3.jpg,Tomato___Bacterial_spot,Tomato___Early_blight,99.18,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Bacterial Spot,Tomato Bacterial Spot 1.jpg,Tomato___Bacterial_spot,"Pepper,_bell___Bacterial_spot",99.65,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Early Blight,Tomato Early Blight 1.jpg,Tomato___Early_blight,Tomato___Early_blight,97.54,CORRECT
+Test Leaves - Sze Ching/,Tomato - Early Blight,Tomato Early Blight 3.jpg,Tomato___Early_blight,Tomato___Septoria_leaf_spot,97.09,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Early Blight,Tomato Early Blight 2.jpg,Tomato___Early_blight,Tomato___Septoria_leaf_spot,59.05,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Early Blight,Tomato Early Blight 4.jpg,Tomato___Early_blight,Tomato___Late_blight,79.13,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Healthy,Tomato Healthy 1.jpg,Tomato___healthy,Tomato___healthy,62.78,CORRECT
+Test Leaves - Sze Ching/,Tomato - Healthy,Tomato Healthy 5.jpg,Tomato___healthy,Tomato___Tomato_Yellow_Leaf_Curl_Virus,33.88,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Healthy,Tomato Healthy 2.webp,Tomato___healthy,Tomato___Late_blight,12.08,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Healthy,Tomato Healthy 3.webp,Tomato___healthy,Tomato___Tomato_Yellow_Leaf_Curl_Virus,57.45,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Healthy,Tomato Healthy 4.webp,Tomato___healthy,Strawberry___healthy,34.27,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Late Blight,Tomato Late Blight 4.webp,Tomato___Late_blight,Tomato___Late_blight,30.75,CORRECT
+Test Leaves - Sze Ching/,Tomato - Late Blight,Tomato Late Blight 2.jpg,Tomato___Late_blight,Tomato___Early_blight,24.12,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Late Blight,Tomato Late Blight 1.jpg,Tomato___Late_blight,Tomato___Late_blight,96.20,CORRECT
+Test Leaves - Sze Ching/,Tomato - Late Blight,Tomato Late Blight 5.jpg,Tomato___Late_blight,Tomato___Late_blight,99.68,CORRECT
+Test Leaves - Sze Ching/,Tomato - Late Blight,Tomato Late Blight 3.webp,Tomato___Late_blight,Tomato___Early_blight,28.25,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Leaf Mold,Tomato Leaf Mold 5.jpeg,Tomato___Leaf_Mold,Tomato___Septoria_leaf_spot,99.53,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Leaf Mold,Tomato Leaf Mold 1.jpg,Tomato___Leaf_Mold,Tomato___Septoria_leaf_spot,63.70,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Leaf Mold,Tomato Leaf Mold 3.jpg,Tomato___Leaf_Mold,Tomato___Late_blight,27.24,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Leaf Mold,Tomato Leaf Mold 2.jpg,Tomato___Leaf_Mold,Tomato___Late_blight,89.50,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Leaf Mold,Tomato Leaf Mold 4.jpg,Tomato___Leaf_Mold,Grape___Black_rot,53.34,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Mosaic Virus,Tomato Mosaic Virus 2.png,Tomato___Tomato_mosaic_virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,93.69,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Mosaic Virus,Tomato Mosaic Virus 3.png,Tomato___Tomato_mosaic_virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,97.88,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Mosaic Virus,Tomato Mosaic Virus 4.webp,Tomato___Tomato_mosaic_virus,Tomato___Target_Spot,10.38,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Mosaic Virus,Tomato Mosaic Virus 5.webp,Tomato___Tomato_mosaic_virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,97.85,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Septoria Leaf Spot,Tomato Septoria Leaf Spot 5.jpg,Tomato___Septoria_leaf_spot,Tomato___Septoria_leaf_spot,21.03,CORRECT
+Test Leaves - Sze Ching/,Tomato - Septoria Leaf Spot,Tomato Septoria Leaf Spot 4.jpg,Tomato___Septoria_leaf_spot,Tomato___Septoria_leaf_spot,99.93,CORRECT
+Test Leaves - Sze Ching/,Tomato - Septoria Leaf Spot,Tomato Septoria Leaf Spot 3.jpg,Tomato___Septoria_leaf_spot,Tomato___Early_blight,42.14,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Septoria Leaf Spot,Tomato Septoria Leaf Spot 1.jpg,Tomato___Septoria_leaf_spot,Tomato___Late_blight,19.12,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Spider Mite,Tomato Spider Mite 2.webp,Tomato___Spider_mites Two-spotted_spider_mite,Potato___Early_blight,65.05,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Spider Mite,Tomato Spider Mite 1.jpg,Tomato___Spider_mites Two-spotted_spider_mite,Tomato___Late_blight,55.00,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Spider Mite,Tomato Spider Mite 3.jpg,Tomato___Spider_mites Two-spotted_spider_mite,Tomato___Late_blight,77.14,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Spider Mite,Tomato Spider Mite 5.png,Tomato___Spider_mites Two-spotted_spider_mite,Tomato___healthy,55.04,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Spider Mite,Tomato Spider Mite 4.jpg,Tomato___Spider_mites Two-spotted_spider_mite,Squash___Powdery_mildew,99.72,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Target Spot,Tomato Target Spot 3.webp,Tomato___Target_Spot,Apple___Apple_scab,86.88,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Target Spot,Tomato Target Spot 4.jpg,Tomato___Target_Spot,Tomato___Early_blight,91.21,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Target Spot,Tomato Target Spot 5.jpg,Tomato___Target_Spot,Squash___Powdery_mildew,66.30,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Target Spot,Tomato Target Spot 2.jpg,Tomato___Target_Spot,Potato___Early_blight,94.75,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Target Spot,Tomato Target Spot 1.jpg,Tomato___Target_Spot,Tomato___Septoria_leaf_spot,19.86,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Yellow Leaf Curl Virus,Tomato Yellow Leaf Curl Virus 4.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Late_blight,35.42,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Yellow Leaf Curl Virus,Tomato Yellow Leaf Curl Virus 5.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Septoria_leaf_spot,19.82,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Yellow Leaf Curl Virus,Tomato Yellow Leaf Curl Virus 2.jpg,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Bacterial_spot,29.03,INCORRECT
+Test Leaves - Sze Ching/,Tomato - Yellow Leaf Curl Virus,Tomato Yellow Leaf Curl Virus 1.webp,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Tomato_Yellow_Leaf_Curl_Virus,98.30,CORRECT
+Test Leaves - Sze Ching/,Tomato - Yellow Leaf Curl Virus,Tomato Yellow Leaf Curl Virus 3.webp,Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Early_blight,41.97,INCORRECT
