@@ -1,0 +1,21 @@
+# ==============================================================================
+# FarmerAI Backend Requirements
+# ==============================================================================
+# Core API Microservice
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+python-multipart>=0.0.6
+pydantic>=2.0.0
+requests>=2.31.0
+httpx>=0.25.0
+
+# Deep Learning & Computer Vision Inference
+numpy>=1.24.0,<2.0.0
+pillow>=9.5.0
+onnxruntime>=1.16.0
+torch>=2.4.0
+torchvision>=0.19.0
+
+# LLM Reasoning & Text Processing
+transformers>=4.46.0
+safetensors>=0.4.5
