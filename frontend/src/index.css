@@ -1,0 +1,471 @@
+/**
+ * ==========================================================================
+ *   FarmerAI Workspace Design System
+ *   Editorial product workspace inspired by the supplied reference layout
+ *    ==========================================================================
+ *
+ * @format
+ */
+
+:root {
+  /* Product palette */
+  --qoder-violet: #2f7d4a;
+  --qoder-violet-hover: #25663b;
+  --qoder-violet-glow: rgba(47, 125, 74, 0.2);
+  --qoder-violet-subtle: rgba(47, 125, 74, 0.1);
+
+  --qoder-emerald: #2f7d4a;
+  --qoder-emerald-hover: #25663b;
+  --qoder-emerald-glow: rgba(47, 125, 74, 0.2);
+  --qoder-emerald-subtle: rgba(47, 125, 74, 0.1);
+
+  --qoder-cyan: #287ca8;
+  --qoder-amber: #b7791f;
+  --qoder-rose: #b6463a;
+
+  /* Surfaces & Obsidian Dark Layers */
+  --qoder-bg-base: #f6f7f4;
+  --qoder-bg-surface: #ffffff;
+  --qoder-bg-card: #ffffff;
+  --qoder-bg-card-hover: #f1f5f0;
+  --qoder-bg-input: #f7f8f6;
+
+  /* Borders & Grid Dividers */
+  --border-subtle: #dfe4dd;
+  --border-bright: rgba(47, 125, 74, 0.35);
+  --border-grid: #d8ddd6;
+
+  /* Typography */
+  --text-main: #172019;
+  --text-muted: #66716a;
+  --text-subtle: #89938b;
+
+  /* Font Families */
+  --font-heading: "Outfit", "Instrument Sans", -apple-system, sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(25, 45, 31, 0.06);
+  --shadow-md: 0 8px 24px rgba(25, 45, 31, 0.08);
+  --shadow-lg: 0 16px 48px rgba(25, 45, 31, 0.1);
+  --shadow-qoder: 0 0 32px var(--qoder-violet-glow);
+
+  /* Legacy aliases for component compatibility */
+  --primary: var(--qoder-emerald);
+  --primary-glow: var(--qoder-emerald-glow);
+  --accent-gold: var(--qoder-amber);
+  --bg-deep: var(--qoder-bg-base);
+  --bg-surface: var(--qoder-bg-surface);
+  --bg-card: var(--qoder-bg-card);
+  --success: var(--qoder-emerald);
+  --success-bg: var(--qoder-emerald-subtle);
+  --warning: var(--qoder-amber);
+  --warning-bg: rgba(245, 158, 11, 0.12);
+  --danger: var(--qoder-rose);
+  --danger-bg: rgba(244, 63, 94, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--qoder-bg-base);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(to right, rgba(45, 75, 53, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(45, 75, 53, 0.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-attachment: fixed;
+}
+
+/* Qoder Glass Panels */
+.glass-panel {
+  background: var(--qoder-bg-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.glass-panel-elevated {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(247, 250, 246, 0.98) 100%
+  );
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 24px rgba(47, 125, 74, 0.08);
+}
+
+/* Qoder Divider with Crosshair '+' Marks */
+.qoder-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: var(--text-subtle);
+}
+
+.qoder-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-subtle),
+    transparent
+  );
+}
+
+.qoder-crosshair {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: rgba(139, 92, 246, 0.6);
+  user-select: none;
+}
+
+/* Qoder Glowing Breathing Dot */
+.qoder-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: var(--qoder-emerald);
+  box-shadow: 0 0 10px var(--qoder-emerald);
+  animation: qoder-pulse 2s infinite ease-in-out;
+}
+
+.qoder-dot-violet {
+  background-color: var(--qoder-violet);
+  box-shadow: 0 0 10px var(--qoder-violet);
+}
+
+.qoder-dot-amber {
+  background-color: var(--qoder-amber);
+  box-shadow: 0 0 10px var(--qoder-amber);
+}
+
+@keyframes qoder-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* Typography styles */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* Qoder Button Variations */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-qoder-primary {
+  background: var(--qoder-emerald);
+  color: #ffffff;
+  box-shadow: 0 4px 16px var(--qoder-violet-glow);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+.btn-qoder-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px var(--qoder-violet-glow);
+  filter: brightness(1.1);
+}
+
+.btn-primary {
+  background: var(--qoder-emerald);
+  color: #ffffff;
+  box-shadow: 0 4px 16px var(--qoder-emerald-glow);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px var(--qoder-emerald-glow);
+  filter: brightness(1.08);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-secondary:hover {
+  background: #f0f5ef;
+  color: var(--text-main);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline-gold {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--qoder-amber);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.btn-outline-gold:hover {
+  background: rgba(245, 158, 11, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(244, 63, 94, 0.35);
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  border-radius: var(--radius-xs);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge-risk-low {
+  background: var(--qoder-emerald-subtle);
+  color: var(--qoder-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-risk-moderate {
+  background: rgba(245, 158, 11, 0.14);
+  color: var(--qoder-amber);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.badge-risk-high {
+  background: rgba(244, 63, 94, 0.14);
+  color: #fb7185;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.2);
+}
+
+.badge-risk-critical {
+  background: linear-gradient(135deg, #f43f5e, #9f1239);
+  color: #fff;
+  animation: pulse-critical 2s infinite ease-in-out;
+}
+
+@keyframes pulse-critical {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(244, 63, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(244, 63, 94, 0.8);
+  }
+}
+
+/* Scanner Animation */
+.scanner-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+.scanner-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8b5cf6,
+    #38bdf8,
+    #10b981,
+    transparent
+  );
+  box-shadow:
+    0 0 16px #8b5cf6,
+    0 0 32px #38bdf8;
+  animation: scan-vertical 2.2s infinite ease-in-out;
+  z-index: 10;
+}
+
+@keyframes scan-vertical {
+  0% {
+    top: 0%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 96%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.2;
+  }
+}
+
+/* Sound Wave animation */
+.voice-wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 20px;
+}
+
+.voice-wave span {
+  display: block;
+  width: 3px;
+  height: 100%;
+  background: var(--qoder-violet);
+  border-radius: 2px;
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+.voice-wave span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.voice-wave span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.voice-wave span:nth-child(4) {
+  animation-delay: 0.1s;
+}
+.voice-wave span:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    height: 5px;
+  }
+  50% {
+    height: 20px;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--qoder-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--qoder-violet);
+}
+
+/* Form Inputs */
+input,
+select,
+textarea {
+  background: var(--qoder-bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  color: var(--text-main);
+  padding: 8px 12px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--qoder-violet);
+  box-shadow: 0 0 0 2px var(--qoder-violet-glow);
+}
+
+/* App Layout Grid */
+.app-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px 20px 80px 20px;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 12px 14px 60px 14px;
+  }
+}
