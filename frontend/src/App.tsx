@@ -294,22 +294,21 @@ export function App() {
             padding: "16px 20px",
             minWidth: 0,
           }}>
-          {/* Workspace module tabs */}
+          {/* Starcloud Signature Module Navigation Pills */}
           <div
             style={{
               display: "flex",
-              gap: 4,
-              marginBottom: 16,
+              gap: 8,
+              marginBottom: 24,
               overflowX: "auto",
-              paddingBottom: 4,
-              borderBottom: "1px dashed var(--border-grid)",
+              paddingBottom: 6,
               whiteSpace: "nowrap",
             }}>
             {[
               {
                 id: "dashboard",
                 fileName: "FarmOverview.tsx",
-                label: isRw ? "Ikaze & Incamake" : "Farm Overview",
+                label: isRw ? "Ikaze & Incamake" : "Platform Overview",
                 icon: Sprout,
               },
               {
@@ -345,7 +344,7 @@ export function App() {
               {
                 id: "marketplace",
                 fileName: "MarketPrices.json",
-                label: isRw ? "Amasoko n'Ibiciro" : "Market Intelligence",
+                label: isRw ? "Amasoko n'Ibiciro" : "Marketplace",
                 icon: Store,
               },
               {
@@ -357,13 +356,13 @@ export function App() {
               {
                 id: "agronomist",
                 fileName: "AgronomistTriage.ts",
-                label: isRw ? "Agronome Portal" : "Agronomist Triage",
+                label: isRw ? "Agronome Portal" : "Agronomist Portal",
                 icon: ShieldCheck,
               },
               {
                 id: "ml-workbench",
                 fileName: "DeepSeekWorkbench.py",
-                label: "ML Architecture",
+                label: "DeepSeek MoE",
                 icon: Cpu,
               },
             ].map((tab) => {
@@ -376,43 +375,36 @@ export function App() {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 6,
-                    padding: "6px 12px",
-                    borderRadius: "0",
-                    border: "1px solid",
-                    borderColor:
-                      isActive ? "var(--border-bright)" : "transparent",
-                    borderBottomColor:
-                      isActive ? "var(--qoder-bg-base)" : "transparent",
-                    background: isActive ? "#ffffff" : "transparent",
-                    color: isActive ? "var(--text-main)" : "var(--text-muted)",
-                    fontSize: "0.8rem",
-                    fontWeight: 600,
+                    gap: 7,
+                    padding: "7px 16px",
+                    borderRadius: 100,
+                    border: isActive
+                      ? "1px solid #ffffff"
+                      : "1px solid rgba(255, 255, 255, 0.12)",
+                    background: isActive
+                      ? "#ffffff"
+                      : "rgba(255, 255, 255, 0.04)",
+                    color: isActive ? "#000000" : "rgba(255, 255, 255, 0.65)",
+                    fontSize: "0.82rem",
+                    fontWeight: 500,
+                    fontFamily: "var(--font-family-aeonik)",
                     cursor: "pointer",
-                    transition: "all 0.15s",
-                    position: "relative",
-                    marginBottom: -1,
+                    transition: "all 0.2s ease",
                   }}>
                   <Icon
-                    size={14}
-                    color={isActive ? "var(--primary)" : "currentColor"}
+                    size={13}
+                    color={isActive ? "#000000" : "#ffffff"}
                   />
+                  <span>{tab.label}</span>
                   <span
                     style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: "0.74rem",
-                      color: isActive ? "var(--primary)" : "var(--text-subtle)",
+                      fontFamily: "var(--font-family-mono)",
+                      fontSize: "0.7rem",
+                      color: isActive ? "rgba(0, 0, 0, 0.5)" : "rgba(255, 255, 255, 0.4)",
+                      marginLeft: 2,
                     }}>
-                    {tab.fileName}
+                    {tab.fileName.split(".")[1] || ""}
                   </span>
-                  <span>•</span>
-                  <span>{tab.label}</span>
-                  {isActive && (
-                    <span
-                      className='qoder-dot qoder-dot-violet'
-                      style={{ width: 5, height: 5, marginLeft: 4 }}
-                    />
-                  )}
                 </button>
               );
             })}
@@ -556,7 +548,7 @@ export function App() {
           width: 50,
           height: 50,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
+          background: "rgba(255, 255, 255, 0.05)",
           border: "none",
           boxShadow: "0 8px 24px rgba(139, 92, 246, 0.45)",
           cursor: "pointer",

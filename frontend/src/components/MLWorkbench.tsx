@@ -315,7 +315,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
             <span
               style={{
-                background: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+                background: 'rgba(255, 255, 255, 0.05)',
                 color: '#fff',
                 fontSize: '0.72rem',
                 fontWeight: 700,
@@ -337,10 +337,10 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
         </div>
 
         <div style={{ display: 'flex', gap: 8 }}>
-          <span className="badge badge-risk-low" style={{ background: 'rgba(139, 92, 246, 0.15)', color: '#c084fc' }}>
+          <span className="badge badge-risk-low" style={{ background: 'rgba(255, 255, 255, 0.12)', color: '#ffffff' }}>
             <GitBranch size={13} /> Apache 2.0 Open Weights
           </span>
-          <span className="badge badge-risk-low" style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#34d399' }}>
+          <span className="badge badge-risk-low" style={{ background: 'rgba(255, 255, 255, 0.12)', color: '#ffffff' }}>
             <CheckCircle2 size={13} /> Val Acc: 99.89%
           </span>
         </div>
@@ -368,8 +368,8 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
                 padding: '8px 16px',
                 borderRadius: 'var(--radius-sm)',
                 border: 'none',
-                background: isActive ? 'rgba(139, 92, 246, 0.2)' : 'transparent',
-                color: isActive ? '#c084fc' : 'var(--text-muted)',
+                background: isActive ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                color: isActive ? '#ffffff' : 'var(--text-muted)',
                 fontWeight: 600,
                 fontSize: '0.84rem',
                 cursor: 'pointer',
@@ -381,12 +381,12 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
               {tab.id === 'deepseek' && (
                 <span
                   style={{
-                    background: 'rgba(139, 92, 246, 0.25)',
-                    color: '#c084fc',
+                    background: 'rgba(255, 255, 255, 0.12)',
+                    color: '#ffffff',
                     fontSize: '0.68rem',
                     padding: '1px 6px',
                     borderRadius: '4px',
-                    border: '1px solid rgba(139, 92, 246, 0.4)',
+                    border: '1px solid rgba(255, 255, 255, 0.12)',
                   }}
                 >
                   CLONED
@@ -403,12 +403,12 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
           {/* DeepSeek Cloned Repo Banner */}
           <div
             style={{
-              background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(14, 17, 23, 0.95) 100%)',
-              border: '1px solid rgba(139, 92, 246, 0.35)',
+              background: 'rgba(255, 255, 255, 0.05) 0%, rgba(14, 17, 23, 0.95) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
               borderRadius: 'var(--radius-md)',
               padding: '18px 22px',
               marginBottom: 20,
-              boxShadow: '0 8px 32px rgba(139, 92, 246, 0.15)',
+              boxShadow: '0 8px 32px rgba(255, 255, 255, 0.12)',
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 14 }}>
@@ -416,7 +416,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
                   <span
                     style={{
-                      background: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+                      background: 'rgba(255, 255, 255, 0.05)',
                       color: '#fff',
                       fontSize: '0.72rem',
                       fontWeight: 800,
@@ -427,7 +427,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
                   >
                     CLONED REPO DETECTED
                   </span>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.82rem', color: '#c084fc' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.82rem', color: '#ffffff' }}>
                     /FarmerAI/DeepSeek-V3/
                   </span>
                 </div>
@@ -441,13 +441,13 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
               </div>
 
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                <span className="badge badge-risk-low" style={{ background: 'rgba(139, 92, 246, 0.2)', color: '#c084fc' }}>
+                <span className="badge badge-risk-low" style={{ background: 'rgba(255, 255, 255, 0.12)', color: '#ffffff' }}>
                   <BrainCircuit size={13} /> 671B MoE (37B Active/Token)
                 </span>
-                <span className="badge badge-risk-low" style={{ background: 'rgba(56, 189, 248, 0.2)', color: '#38bdf8' }}>
+                <span className="badge badge-risk-low" style={{ background: 'rgba(255, 255, 255, 0.12)', color: '#ffffff' }}>
                   <Layers size={13} /> MLA Latent Attention
                 </span>
-                <span className="badge badge-risk-low" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399' }}>
+                <span className="badge badge-risk-low" style={{ background: 'rgba(255, 255, 255, 0.12)', color: '#ffffff' }}>
                   <Zap size={13} /> 256 Routed Experts
                 </span>
               </div>
@@ -458,25 +458,25 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14, marginBottom: 20 }}>
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 14, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Total / Active Parameters</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#c084fc' }}>671B / 37B</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#ffffff' }}>671B / 37B</div>
               <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>Top-8 routed experts per token</div>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 14, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>KV Cache Compression</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#38bdf8' }}>MLA (512-dim)</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#ffffff' }}>MLA (512-dim)</div>
               <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>Multi-Head Latent Attention</div>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 14, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Precision & Acceleration</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#10b981' }}>FP8 / BF16</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#ffffff' }}>FP8 / BF16</div>
               <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>Custom Triton MoE Kernels</div>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 14, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Speculative Decoding</div>
-              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#f59e0b' }}>MTP 1-Token</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#ffffff' }}>MTP 1-Token</div>
               <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>Multi-Token Prediction</div>
             </div>
           </div>
@@ -486,7 +486,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
             style={{
               background: '#090d0b',
               borderRadius: 'var(--radius-md)',
-              border: '1px solid rgba(139, 92, 246, 0.3)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
               padding: '18px',
               marginBottom: 20,
             }}
@@ -494,7 +494,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14, flexWrap: 'wrap', gap: 10 }}>
               <div>
                 <h4 style={{ fontSize: '0.98rem', fontWeight: 700, color: '#fff', display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <Terminal size={16} color="#c084fc" />
+                  <Terminal size={16} color="#ffffff" />
                   Live MoE Agricultural Decision Routing Simulation
                 </h4>
                 <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
@@ -510,7 +510,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
                   padding: '6px 14px',
                   fontSize: '0.8rem',
                   gap: 6,
-                  background: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+                  background: 'rgba(255, 255, 255, 0.05)',
                   opacity: simRunning ? 0.7 : 1,
                 }}
               >
@@ -523,7 +523,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
             <div style={{ marginBottom: 12 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.74rem', color: 'var(--text-muted)', marginBottom: 6 }}>
                 <span>Active Routed Experts (Top-8 of 256):</span>
-                <span style={{ color: '#c084fc', fontFamily: 'var(--font-mono)' }}>
+                <span style={{ color: '#ffffff', fontFamily: 'var(--font-mono)' }}>
                   {simActiveExperts.map((e) => `Expert#${e}`).join(', ')}
                 </span>
               </div>
@@ -536,7 +536,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
                       style={{
                         flex: 1,
                         borderRadius: 2,
-                        background: isActive ? '#c084fc' : 'rgba(255,255,255,0.06)',
+                        background: isActive ? '#ffffff' : 'rgba(255,255,255,0.06)',
                         transition: 'background 0.3s',
                       }}
                       title={`Expert Group ${idx * 8} - ${idx * 8 + 7}`}
@@ -562,22 +562,22 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
               }}
             >
               <div style={{ color: '#9ca3af' }}>&gt; DeepSeek-V3 inference initiated with inputs:</div>
-              <div style={{ color: '#38bdf8' }}>  • Crop & Disease: Tomato — Early Blight (Alternaria solani) [Conf: 94.2%]</div>
-              <div style={{ color: '#38bdf8' }}>  • Microclimate: District Muhanga, RH: 82%, Rain expected 24h: 12.4mm</div>
-              <div style={{ color: '#38bdf8' }}>  • Soil Chemistry: Inceptisol pH 5.1 (Travertine Lime requirement: 2.5 MT/ha)</div>
-              <div style={{ color: '#c084fc', marginTop: 8 }}>
+              <div style={{ color: '#ffffff' }}>  • Crop & Disease: Tomato — Early Blight (Alternaria solani) [Conf: 94.2%]</div>
+              <div style={{ color: '#ffffff' }}>  • Microclimate: District Muhanga, RH: 82%, Rain expected 24h: 12.4mm</div>
+              <div style={{ color: '#ffffff' }}>  • Soil Chemistry: Inceptisol pH 5.1 (Travertine Lime requirement: 2.5 MT/ha)</div>
+              <div style={{ color: '#ffffff', marginTop: 8 }}>
                 &gt; [MLA Attention Layer]: Compressing KV state with 512-dim latent space...
               </div>
-              <div style={{ color: '#10b981' }}>
+              <div style={{ color: '#ffffff' }}>
                 &gt; [Expert #42 (Pathology)]: High spore germination pressure (78%). Foliar fungicide warranted.
               </div>
-              <div style={{ color: '#f59e0b' }}>
+              <div style={{ color: '#ffffff' }}>
                 &gt; [Expert #102 (Weather)]: WARNING: 12.4mm rainfall within 24h will wash chemical spray. DO NOT SPRAY TODAY.
               </div>
-              <div style={{ color: '#ec4899' }}>
+              <div style={{ color: '#ffffff' }}>
                 &gt; [Expert #89 (Kinyarwanda)]: Ntugakoreshe umuti w'amababi uyu munsi kuko imvura igwa izawuhagira.
               </div>
-              <div style={{ color: '#34d399', fontWeight: 600, marginTop: 6 }}>
+              <div style={{ color: '#ffffff', fontWeight: 600, marginTop: 6 }}>
                 &gt; [2G USSD Dispatch]: Generated *844# payload (118 characters). Triage verified.
               </div>
             </div>
@@ -587,20 +587,20 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 14 }}>
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 16, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <h4 style={{ fontSize: '0.88rem', fontWeight: 700, color: '#fff', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 6 }}>
-                <FolderArchive size={15} color="#c084fc" />
+                <FolderArchive size={15} color="#ffffff" />
                 Cloned Repository Files (/DeepSeek-V3/)
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontFamily: 'var(--font-mono)', fontSize: '0.78rem' }}>
-                <li style={{ padding: '4px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#34d399' }}>
+                <li style={{ padding: '4px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#ffffff' }}>
                   📄 inference/requirements.txt (torch==2.4.1, triton==3.0.0, transformers)
                 </li>
-                <li style={{ padding: '4px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#c084fc' }}>
+                <li style={{ padding: '4px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#ffffff' }}>
                   📄 inference/generate.py (Sampling & MoE Inference pipeline)
                 </li>
-                <li style={{ padding: '4px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#38bdf8' }}>
+                <li style={{ padding: '4px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#ffffff' }}>
                   📄 inference/model.py (Transformer, MLA, DeepSeekMoE backbone)
                 </li>
-                <li style={{ padding: '4px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#f59e0b' }}>
+                <li style={{ padding: '4px 0', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#ffffff' }}>
                   📄 inference/kernel.py (Triton fused MoE routing kernels)
                 </li>
                 <li style={{ padding: '4px 0', color: '#9ca3af' }}>
@@ -611,7 +611,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
 
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 16, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <h4 style={{ fontSize: '0.88rem', fontWeight: 700, color: '#fff', marginBottom: 10, display: 'flex', alignItems: 'center', gap: 6 }}>
-                <Server size={15} color="#34d399" />
+                <Server size={15} color="#ffffff" />
                 Dual-Engine Synergy in FarmerAI
               </h4>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: 8 }}>
@@ -632,25 +632,25 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 14, marginBottom: 20 }}>
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 14, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Validation Accuracy</div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#10b981' }}>99.89%</div>
+              <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ffffff' }}>99.89%</div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Top-1 on 38 PlantVillage Classes</div>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 14, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Edge ONNX Latency</div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#38bdf8' }}>38 ms</div>
+              <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ffffff' }}>38 ms</div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>CPU inference per single 224x224 leaf</div>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 14, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Model Weights in Repo</div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#f59e0b' }}>3 Formats</div>
+              <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ffffff' }}>3 Formats</div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>ONNX (80MB) • PyTorch (74MB) • Keras (38MB)</div>
             </div>
 
             <div style={{ background: 'rgba(0,0,0,0.3)', padding: 14, borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Explainability (XAI)</div>
-              <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ec4899' }}>Grad-CAM</div>
+              <div style={{ fontSize: '1.6rem', fontWeight: 800, color: '#ffffff' }}>Grad-CAM</div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Class-activation saliency heatmaps</div>
             </div>
           </div>
@@ -658,13 +658,13 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
           {/* Model Artifact File Directory in Workspace */}
           <div style={{ background: 'rgba(0, 0, 0, 0.4)', borderRadius: 'var(--radius-md)', padding: 16, border: '1px solid var(--border-subtle)', marginBottom: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-              <FolderArchive size={16} color="#8b5cf6" />
+              <FolderArchive size={16} color="#ffffff" />
               <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>Local Model Checkpoints & Configs in this Workspace:</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 10 }}>
               <div style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.03)', borderRadius: 6, border: '1px solid rgba(255,255,255,0.06)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#38bdf8' }}>efficientnet_v2_s_best.onnx</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#ffffff' }}>efficientnet_v2_s_best.onnx</span>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>80.6 MB</span>
                 </div>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: 2 }}>Zero-dependency ONNX Runtime Edge & Browser ready</div>
@@ -672,7 +672,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
 
               <div style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.03)', borderRadius: 6, border: '1px solid rgba(255,255,255,0.06)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#f59e0b' }}>best_model.pth / efficientnet_v2_s_best.pth</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#ffffff' }}>best_model.pth / efficientnet_v2_s_best.pth</span>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>74.7 MB</span>
                 </div>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: 2 }}>PyTorch Checkpoint for transfer learning & fine-tuning</div>
@@ -680,7 +680,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
 
               <div style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.03)', borderRadius: 6, border: '1px solid rgba(255,255,255,0.06)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#10b981' }}>plant_disease_efficientnet.keras</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#ffffff' }}>plant_disease_efficientnet.keras</span>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>38.6 MB</span>
                 </div>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: 2 }}>TensorFlow/Keras model package</div>
@@ -688,7 +688,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
 
               <div style={{ padding: '8px 12px', background: 'rgba(255,255,255,0.03)', borderRadius: 6, border: '1px solid rgba(255,255,255,0.06)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#c084fc' }}>classes.json & class_names.txt</span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#ffffff' }}>classes.json & class_names.txt</span>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>38 Classes</span>
                 </div>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: 2 }}>Class indices, normalization mean [0.485, 0.456, 0.406] and std</div>
@@ -710,8 +710,8 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
                     key={item.id}
                     onClick={() => setSelectedChart(item.id as any)}
                     style={{
-                      background: selectedChart === item.id ? 'rgba(139, 92, 246, 0.25)' : 'transparent',
-                      color: selectedChart === item.id ? '#c084fc' : 'var(--text-muted)',
+                      background: selectedChart === item.id ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                      color: selectedChart === item.id ? '#ffffff' : 'var(--text-muted)',
                       border: 'none',
                       padding: '6px 12px',
                       borderRadius: 'var(--radius-sm)',
@@ -852,14 +852,14 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
                   <tr key={item.index} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
                     <td style={{ padding: '10px 12px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>{item.index}</td>
                     <td style={{ padding: '10px 12px' }}>
-                      <div style={{ fontWeight: 600, color: item.isHealthy ? '#10b981' : '#fff' }}>
+                      <div style={{ fontWeight: 600, color: item.isHealthy ? '#ffffff' : '#fff' }}>
                         {item.crop} — {item.condition}
                       </div>
                       <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--text-muted)' }}>
                         {item.rawLabel}
                       </div>
                     </td>
-                    <td style={{ padding: '10px 12px', color: '#c084fc', fontStyle: 'italic' }}>
+                    <td style={{ padding: '10px 12px', color: '#ffffff', fontStyle: 'italic' }}>
                       {item.kinyarwandaName}
                     </td>
                     <td style={{ padding: '10px 12px' }}>
@@ -911,47 +911,47 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ background: 'rgba(139, 92, 246, 0.08)', borderBottom: '1px solid rgba(139, 92, 246, 0.25)' }}>
-                  <td style={{ padding: '12px', fontWeight: 700, color: '#c084fc' }}>
+                <tr style={{ background: 'rgba(255, 255, 255, 0.12)', borderBottom: '1px solid rgba(255, 255, 255, 0.12)' }}>
+                  <td style={{ padding: '12px', fontWeight: 700, color: '#ffffff' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                       <Sparkles size={14} /> DeepSeek-V3 MoE (Cloned in Root)
                     </div>
                   </td>
                   <td style={{ padding: '12px', color: '#fff' }}>Central Agronomic Reasoning Core (C-ARC) & Kinyarwanda Synthesis</td>
-                  <td style={{ padding: '12px', fontWeight: 700, color: '#c084fc' }}>671B Total (37B Active/Token)</td>
-                  <td style={{ padding: '12px', color: '#38bdf8' }}>~280ms (FP8 MoE)</td>
+                  <td style={{ padding: '12px', fontWeight: 700, color: '#ffffff' }}>671B Total (37B Active/Token)</td>
+                  <td style={{ padding: '12px', color: '#ffffff' }}>~280ms (FP8 MoE)</td>
                   <td style={{ padding: '12px', color: 'var(--text-muted)' }}>RAB Corpus + AEZ Soil + Meteo Rwanda</td>
-                  <td style={{ padding: '12px' }}><span className="badge badge-risk-low" style={{ background: 'rgba(139, 92, 246, 0.2)', color: '#c084fc' }}>DeepSeek License (Free Commercial)</span></td>
+                  <td style={{ padding: '12px' }}><span className="badge badge-risk-low" style={{ background: 'rgba(255, 255, 255, 0.12)', color: '#ffffff' }}>DeepSeek License (Free Commercial)</span></td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                  <td style={{ padding: '12px', fontWeight: 600, color: '#10b981' }}>EfficientNetV2-S (Active)</td>
+                  <td style={{ padding: '12px', fontWeight: 600, color: '#ffffff' }}>EfficientNetV2-S (Active)</td>
                   <td style={{ padding: '12px' }}>Leaf Disease Classification</td>
                   <td style={{ padding: '12px' }}>21.5 Million</td>
-                  <td style={{ padding: '12px', color: '#34d399' }}>~38ms (ONNX CPU)</td>
+                  <td style={{ padding: '12px', color: '#ffffff' }}>~38ms (ONNX CPU)</td>
                   <td style={{ padding: '12px', color: 'var(--text-muted)' }}>PlantVillage (54,306 images, 38 classes)</td>
                   <td style={{ padding: '12px' }}><span className="badge badge-risk-low">Apache 2.0</span></td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                  <td style={{ padding: '12px', fontWeight: 600, color: '#38bdf8' }}>YOLOv11n (Spatial Detector)</td>
+                  <td style={{ padding: '12px', fontWeight: 600, color: '#ffffff' }}>YOLOv11n (Spatial Detector)</td>
                   <td style={{ padding: '12px' }}>Lesion Bounding Boxes & Pest Pinpointing</td>
                   <td style={{ padding: '12px' }}>2.6 Million</td>
-                  <td style={{ padding: '12px', color: '#34d399' }}>~22ms (Edge)</td>
+                  <td style={{ padding: '12px', color: '#ffffff' }}>~22ms (Edge)</td>
                   <td style={{ padding: '12px', color: 'var(--text-muted)' }}>PlantDoc & Field Insects</td>
                   <td style={{ padding: '12px' }}><span className="badge badge-risk-moderate">AGPL-3.0</span></td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                  <td style={{ padding: '12px', fontWeight: 600, color: '#f59e0b' }}>Vision Transformer (ViT-Base)</td>
+                  <td style={{ padding: '12px', fontWeight: 600, color: '#ffffff' }}>Vision Transformer (ViT-Base)</td>
                   <td style={{ padding: '12px' }}>Complex Multi-pathogen Attention</td>
                   <td style={{ padding: '12px' }}>86 Million</td>
-                  <td style={{ padding: '12px', color: '#f87171' }}>~160ms (Heavy)</td>
+                  <td style={{ padding: '12px', color: '#ffffff' }}>~160ms (Heavy)</td>
                   <td style={{ padding: '12px', color: 'var(--text-muted)' }}>ImageNet + PlantDoc</td>
                   <td style={{ padding: '12px' }}><span className="badge badge-risk-low">Apache 2.0</span></td>
                 </tr>
                 <tr>
-                  <td style={{ padding: '12px', fontWeight: 600, color: '#c084fc' }}>Llama-3.2-3B / Qwen2.5 (RAG)</td>
+                  <td style={{ padding: '12px', fontWeight: 600, color: '#ffffff' }}>Llama-3.2-3B / Qwen2.5 (RAG)</td>
                   <td style={{ padding: '12px' }}>Kinyarwanda Advisory & Decision Reasoning</td>
                   <td style={{ padding: '12px' }}>3.2 Billion</td>
-                  <td style={{ padding: '12px', color: '#f59e0b' }}>~320ms (Server vLLM)</td>
+                  <td style={{ padding: '12px', color: '#ffffff' }}>~320ms (Server vLLM)</td>
                   <td style={{ padding: '12px', color: 'var(--text-muted)' }}>RAB Guidelines + Meteo Data</td>
                   <td style={{ padding: '12px' }}><span className="badge badge-risk-low">Open Weights</span></td>
                 </tr>
@@ -985,11 +985,11 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
           >
             <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
               {[
-                { id: 'deepseek', label: 'deepseek_rwanda_pipeline.py (Cloned MoE)', color: '#c084fc' },
+                { id: 'deepseek', label: 'deepseek_rwanda_pipeline.py (Cloned MoE)', color: '#ffffff' },
                 { id: 'train', label: 'train_rwanda_finetune.py', color: '#a78bfa' },
-                { id: 'export', label: 'export_onnx.py', color: '#34d399' },
-                { id: 'fastapi', label: 'main_api.py (FastAPI)', color: '#38bdf8' },
-                { id: 'infer', label: 'infer.py (Local CLI)', color: '#f59e0b' },
+                { id: 'export', label: 'export_onnx.py', color: '#ffffff' },
+                { id: 'fastapi', label: 'main_api.py (FastAPI)', color: '#ffffff' },
+                { id: 'infer', label: 'infer.py (Local CLI)', color: '#ffffff' },
               ].map((btn) => (
                 <button
                   key={btn.id}
@@ -1015,7 +1015,7 @@ def execute_moe_reasoning(vision_logits, weather_data, soil_profile):
               className="btn btn-secondary btn-sm"
               style={{ padding: '4px 10px', fontSize: '0.75rem', gap: 4 }}
             >
-              {copied ? <Check size={13} color="#10b981" /> : <Copy size={13} />}
+              {copied ? <Check size={13} color="#ffffff" /> : <Copy size={13} />}
               <span>{copied ? 'Copied!' : 'Copy Code'}</span>
             </button>
           </div>

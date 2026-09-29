@@ -52,7 +52,7 @@ export const YieldPredictor: React.FC<YieldPredictorProps> = ({ farm, language }
     <div className="glass-panel" style={{ padding: '24px', marginBottom: '24px' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
         <span style={{
-          background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+          background: 'rgba(255, 255, 255, 0.05)',
           color: '#fff',
           fontSize: '0.72rem',
           fontWeight: 700,
@@ -144,7 +144,7 @@ export const YieldPredictor: React.FC<YieldPredictorProps> = ({ farm, language }
                 step="5"
                 value={diseaseDamagePenalty}
                 onChange={(e) => setDiseaseDamagePenalty(parseInt(e.target.value))}
-                style={{ width: '100%', accentColor: '#f59e0b' }}
+                style={{ width: '100%', accentColor: '#ffffff' }}
               />
             </div>
           </div>
@@ -153,7 +153,7 @@ export const YieldPredictor: React.FC<YieldPredictorProps> = ({ farm, language }
         {/* Right Outputs */}
         <div>
           <div style={{
-            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 78, 59, 0.25) 100%)',
+            background: 'rgba(255, 255, 255, 0.05) 0%, rgba(6, 78, 59, 0.25) 100%)',
             border: '1px solid var(--border-bright)',
             borderRadius: 'var(--radius-md)',
             padding: 22,
@@ -163,7 +163,7 @@ export const YieldPredictor: React.FC<YieldPredictorProps> = ({ farm, language }
               {isRw ? 'Umusaruro Uteganyijwe (Yield Range)' : 'Forecasted Yield Range'}
             </span>
             <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#fff', margin: '4px 0 8px 0' }}>
-              {estimatedMinKg.toLocaleString()} – {estimatedMaxKg.toLocaleString()} <span style={{ fontSize: '1.1rem', fontWeight: 500, color: '#a7f3d0' }}>kg</span>
+              {estimatedMinKg.toLocaleString()} – {estimatedMaxKg.toLocaleString()} <span style={{ fontSize: '1.1rem', fontWeight: 500, color: '#ffffff' }}>kg</span>
             </div>
             <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
               ({Math.round((estimatedMinKg / fieldArea) / 1000 * 10) / 10} – {Math.round((estimatedMaxKg / fieldArea) / 1000 * 10) / 10} tons per hectare)

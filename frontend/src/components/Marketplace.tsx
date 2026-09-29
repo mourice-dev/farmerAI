@@ -71,7 +71,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
             <span style={{
-              background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+              background: 'rgba(255, 255, 255, 0.05)',
               color: '#fff',
               fontSize: '0.72rem',
               fontWeight: 700,
@@ -136,7 +136,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({
                       gap: 2,
                       fontSize: '0.72rem',
                       fontWeight: 700,
-                      color: isUp ? '#34d399' : isDown ? '#f87171' : 'var(--text-muted)',
+                      color: isUp ? '#ffffff' : isDown ? '#ffffff' : 'var(--text-muted)',
                     }}>
                       {isUp && <TrendingUp size={12} />}
                       {isDown && <TrendingDown size={12} />}
@@ -194,7 +194,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({
                       {listing.crop} <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>({listing.variety})</span>
                     </h4>
                   </div>
-                  <span className="badge badge-risk-low" style={{ background: 'rgba(16, 185, 129, 0.15)' }}>
+                  <span className="badge badge-risk-low" style={{ background: 'rgba(255, 255, 255, 0.12)' }}>
                     <ShieldCheck size={12} />
                     Verified Farmer
                   </span>
@@ -203,7 +203,7 @@ export const Marketplace: React.FC<MarketplaceProps> = ({
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, margin: '10px 0', background: 'rgba(255,255,255,0.03)', padding: 10, borderRadius: 6 }}>
                   <div>
                     <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Available Quantity</div>
-                    <div style={{ fontSize: '1rem', fontWeight: 700, color: '#34d399' }}>{listing.availableKg} kg</div>
+                    <div style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff' }}>{listing.availableKg} kg</div>
                   </div>
                   <div>
                     <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Ready Date</div>

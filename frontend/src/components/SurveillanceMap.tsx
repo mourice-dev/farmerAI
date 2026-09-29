@@ -81,7 +81,7 @@ export const SurveillanceMap: React.FC<SurveillanceMapProps> = ({
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
             <span style={{
-              background: 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)',
+              background: 'rgba(255, 255, 255, 0.05)',
               color: '#fff',
               fontSize: '0.72rem',
               fontWeight: 700,
@@ -150,10 +150,10 @@ export const SurveillanceMap: React.FC<SurveillanceMapProps> = ({
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-              <Radio size={14} color="#ef4444" className="pulse-icon" />
+              <Radio size={14} color="#ffffff" className="pulse-icon" />
               <span>Live Perimeter Radar (15km radius)</span>
             </div>
-            <span style={{ fontSize: '0.75rem', color: '#34d399', background: 'rgba(16, 185, 129, 0.15)', padding: '2px 8px', borderRadius: 999 }}>
+            <span style={{ fontSize: '0.75rem', color: '#ffffff', background: 'rgba(255, 255, 255, 0.12)', padding: '2px 8px', borderRadius: 999 }}>
               {filteredOutbreaks.length} Active Hotspots
             </span>
           </div>
@@ -163,7 +163,7 @@ export const SurveillanceMap: React.FC<SurveillanceMapProps> = ({
             position: 'relative',
             height: 250,
             width: '100%',
-            background: 'radial-gradient(ellipse at center, rgba(16, 185, 129, 0.05) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse at center, rgba(255, 255, 255, 0.12) 0%, transparent 70%)',
             border: '1px dashed rgba(255, 255, 255, 0.1)',
             borderRadius: 'var(--radius-sm)',
             overflow: 'hidden',
@@ -191,7 +191,7 @@ export const SurveillanceMap: React.FC<SurveillanceMapProps> = ({
               };
 
               const pos = positions[outbreak.district] || { top: '50%', left: '50%' };
-              const color = outbreak.severity === 'critical' ? '#ef4444' : outbreak.severity === 'high' ? '#f97316' : '#fbbf24';
+              const color = outbreak.severity === 'critical' ? '#ffffff' : outbreak.severity === 'high' ? '#f97316' : '#ffffff';
 
               return (
                 <button
@@ -256,13 +256,13 @@ export const SurveillanceMap: React.FC<SurveillanceMapProps> = ({
             <span>Click any hotspot pin to inspect district</span>
             <div style={{ display: 'flex', gap: 10 }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ef4444' }} /> Critical
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ffffff' }} /> Critical
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                 <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#f97316' }} /> High
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#fbbf24' }} /> Moderate
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ffffff' }} /> Moderate
               </span>
             </div>
           </div>
@@ -277,7 +277,7 @@ export const SurveillanceMap: React.FC<SurveillanceMapProps> = ({
                 key={outbreak.id}
                 onClick={() => onSelectDistrict(outbreak.district)}
                 style={{
-                  background: isCurrent ? 'rgba(16, 185, 129, 0.12)' : 'rgba(0, 0, 0, 0.3)',
+                  background: isCurrent ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.3)',
                   border: isCurrent ? '1px solid var(--primary)' : '1px solid var(--border-subtle)',
                   borderRadius: 'var(--radius-sm)',
                   padding: '14px 16px',
@@ -343,11 +343,11 @@ export const SurveillanceMap: React.FC<SurveillanceMapProps> = ({
               <div style={{
                 padding: '24px',
                 textAlign: 'center',
-                background: 'rgba(16, 185, 129, 0.15)',
+                background: 'rgba(255, 255, 255, 0.12)',
                 border: '1px solid var(--primary)',
                 borderRadius: 'var(--radius-sm)',
               }}>
-                <CheckCircle size={36} color="#10b981" style={{ margin: '0 auto 10px auto' }} />
+                <CheckCircle size={36} color="#ffffff" style={{ margin: '0 auto 10px auto' }} />
                 <div style={{ fontSize: '1rem', fontWeight: 700, color: '#fff' }}>
                   {isRw ? 'Raporo Yakiriwe Neza!' : 'Outbreak Report Logged!'}
                 </div>

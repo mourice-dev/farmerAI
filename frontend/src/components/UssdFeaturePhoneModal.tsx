@@ -161,12 +161,12 @@ export const UssdFeaturePhoneModal: React.FC<UssdFeaturePhoneModalProps> = ({
     >
       <div
         style={{
-          background: 'linear-gradient(180deg, #18221c 0%, #0d1510 100%)',
+          background: 'rgba(255, 255, 255, 0.05)',
           borderRadius: 36,
           width: '100%',
           maxWidth: 380,
           border: '4px solid #2d3e33',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(16, 185, 129, 0.2)',
+          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 0.12)',
           padding: '24px 20px',
           position: 'relative',
         }}
@@ -206,14 +206,14 @@ export const UssdFeaturePhoneModal: React.FC<UssdFeaturePhoneModalProps> = ({
           style={{
             background: '#1a3324',
             borderRadius: 12,
-            border: '3px solid #10b981',
+            border: '3px solid #ffffff',
             padding: 14,
             boxShadow: 'inset 0 0 16px rgba(0, 0, 0, 0.6)',
             marginBottom: 16,
           }}
         >
           {/* LCD Status Header */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(16, 185, 129, 0.3)', paddingBottom: 6, marginBottom: 8, fontSize: '0.68rem', color: '#6ee7b7' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255, 255, 255, 0.12)', paddingBottom: 6, marginBottom: 8, fontSize: '0.68rem', color: '#ffffff' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
               <Signal size={12} />
               <span>MTN RW / Airtel</span>
@@ -230,7 +230,7 @@ export const UssdFeaturePhoneModal: React.FC<UssdFeaturePhoneModalProps> = ({
             style={{
               fontFamily: 'Courier, monospace',
               fontSize: '0.75rem',
-              color: '#a7f3d0',
+              color: '#ffffff',
               lineHeight: 1.45,
               whiteSpace: 'pre-wrap',
               minHeight: 165,
@@ -241,8 +241,8 @@ export const UssdFeaturePhoneModal: React.FC<UssdFeaturePhoneModalProps> = ({
           </pre>
 
           {/* User Input Bar */}
-          <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', borderTop: '1px solid rgba(16, 185, 129, 0.3)', paddingTop: 6 }}>
-            <span style={{ color: '#34d399', fontWeight: 700, marginRight: 6 }}>&gt;</span>
+          <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.12)', paddingTop: 6 }}>
+            <span style={{ color: '#ffffff', fontWeight: 700, marginRight: 6 }}>&gt;</span>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: '0.9rem', minHeight: 18 }}>
               {inputVal || <span style={{ color: 'rgba(255,255,255,0.3)' }}>_</span>}
             </span>
@@ -254,7 +254,7 @@ export const UssdFeaturePhoneModal: React.FC<UssdFeaturePhoneModalProps> = ({
           <button
             onClick={handleSend}
             style={{
-              background: '#10b981',
+              background: '#ffffff',
               color: '#fff',
               border: 'none',
               borderRadius: 8,
@@ -274,7 +274,7 @@ export const UssdFeaturePhoneModal: React.FC<UssdFeaturePhoneModalProps> = ({
           <button
             onClick={resetToMain}
             style={{
-              background: '#ef4444',
+              background: '#ffffff',
               color: '#fff',
               border: 'none',
               borderRadius: 8,
@@ -306,7 +306,7 @@ export const UssdFeaturePhoneModal: React.FC<UssdFeaturePhoneModalProps> = ({
               key={k}
               onClick={() => handleKeyPress(k)}
               style={{
-                background: 'linear-gradient(180deg, #27372d 0%, #1c2720 100%)',
+                background: 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid #3d5244',
                 color: '#e5e7eb',
                 borderRadius: 8,

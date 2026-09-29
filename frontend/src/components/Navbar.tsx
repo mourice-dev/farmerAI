@@ -2,20 +2,15 @@
 
 import React from "react";
 import {
-  Sprout,
-  ShieldCheck,
-  Cpu,
-  Mic,
-  AlertTriangle,
-  Globe,
-  Bell,
+  Sparkles,
   MapPin,
   Phone,
+  Mic,
   PanelLeft,
   PanelRight,
-  Sparkles,
   ChevronDown,
-  Box,
+  ArrowUpRight,
+  Cpu,
 } from "lucide-react";
 import { Language, UserRole, RwandaDistrict } from "../types";
 
@@ -61,232 +56,186 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header
       style={{
-        background: "rgba(255, 255, 255, 0.94)",
-        borderBottom: "1px solid var(--border-grid)",
+        background: "rgba(0, 0, 0, 0.85)",
+        backdropFilter: "blur(32px)",
+        WebkitBackdropFilter: "blur(32px)",
+        borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
         position: "sticky",
         top: 0,
         zIndex: 100,
-        padding: "0 16px",
-        height: 52,
+        padding: "0 20px",
+        height: 56,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         userSelect: "none",
-      }}>
-      {/* Left: Brand Logo + Sidebar Toggle + Breadcrumb */}
+        fontFamily: "var(--font-family-aeonik)",
+      }}
+    >
+      {/* Left: Starcloud Geometric Brand Logo + Sidebar Toggle */}
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <button
           onClick={toggleSidebar}
           style={{
-            background:
-              sidebarOpen ? "var(--qoder-violet-subtle)" : "transparent",
-            border: "1px solid var(--border-subtle)",
-            borderRadius: 6,
-            color: sidebarOpen ? "var(--primary)" : "var(--text-muted)",
-            width: 32,
-            height: 32,
+            background: sidebarOpen ? "rgba(255, 255, 255, 0.12)" : "rgba(255, 255, 255, 0.05)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+            borderRadius: 100,
+            color: "#ffffff",
+            width: 30,
+            height: 30,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
+            transition: "all 0.2s ease",
           }}
-          title='Toggle Left Explorer & Context'>
-          <PanelLeft size={16} />
+          title="Toggle Left Context"
+        >
+          <PanelLeft size={14} />
         </button>
 
-        {/* Qoder Brand Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        {/* Brand Logo - Starcloud Style Geometric Emblem */}
+        <div style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer" }}>
           <div
             style={{
-              width: 30,
-              height: 30,
-              borderRadius: 8,
-              background: "var(--primary)",
+              width: 28,
+              height: 28,
+              borderRadius: "50%",
+              background: "#ffffff",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 0 16px rgba(47, 125, 74, 0.2)",
-            }}>
-            <Sparkles size={16} color='#ffffff' />
+              color: "#000000",
+              boxShadow: "0 0 14px rgba(255, 255, 255, 0.35)",
+            }}
+          >
+            <Sparkles size={15} color="#000000" />
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontWeight: 800,
-                fontSize: "1.05rem",
-                letterSpacing: "-0.02em",
-                color: "var(--text-main)",
-              }}>
-              FarmerAI
-            </span>
-            <span
-              style={{
-                fontSize: "0.68rem",
-                fontWeight: 700,
-                background: "rgba(16, 185, 129, 0.15)",
-                color: "var(--primary)",
-                padding: "2px 7px",
-                borderRadius: "var(--radius-full)",
-                border: "1px solid rgba(16, 185, 129, 0.3)",
-              }}>
-              AgriMind Rwanda 🇷🇼
-            </span>
-          </div>
-        </div>
-
-        {/* Breadcrumb path */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-            fontSize: "0.74rem",
-            color: "var(--text-subtle)",
-            fontFamily: "var(--font-mono)",
-            marginLeft: 8,
-            paddingLeft: 12,
-            borderLeft: "1px solid var(--border-subtle)",
-          }}>
-          <span>FarmerAI</span>
-          <span>/</span>
-          <span style={{ color: "#e2e8f0" }}>{district}</span>
-          <span>/</span>
-          <span style={{ color: "#38bdf8" }}>Season A</span>
+          <span
+            style={{
+              fontFamily: "var(--font-family-aeonik)",
+              fontWeight: 600,
+              fontSize: "1.12rem",
+              letterSpacing: "-0.03em",
+              color: "#ffffff",
+            }}
+          >
+            Starcloud
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-family-mono)",
+              fontSize: "0.65rem",
+              color: "rgba(255, 255, 255, 0.5)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              padding: "1px 6px",
+              borderRadius: 100,
+              textTransform: "uppercase",
+              letterSpacing: "0.04em",
+            }}
+          >
+            Agri
+          </span>
         </div>
       </div>
 
-      {/* Center: Model Selector & District Selector */}
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        {/* Model Engine Selector */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-            background: "#f7f9f6",
-            border: "1px solid var(--border-subtle)",
-            borderRadius: "var(--radius-sm)",
-            padding: "4px 10px",
-            fontSize: "0.78rem",
-          }}>
-          <span className='qoder-dot qoder-dot-violet' />
-          <span style={{ color: "var(--text-muted)" }}>Engine:</span>
-          <select
-            value={activeModel}
-            onChange={(e) => setActiveModel(e.target.value)}
-            style={{
-              background: "transparent",
-              border: "none",
-              color: "var(--primary)",
-              fontSize: "0.78rem",
-              fontWeight: 700,
-              padding: 0,
-              cursor: "pointer",
-              width: "auto",
-              fontFamily: "var(--font-mono)",
-            }}>
-            <option value='DeepSeek-V3' style={{ background: "#0e1117" }}>
-              DeepSeek-V3 (671B MoE)
-            </option>
-            <option value='EfficientNetV2-S' style={{ background: "#0e1117" }}>
-              EfficientNetV2-S (ONNX 38ms)
-            </option>
-            <option value='YOLOv11n' style={{ background: "#0e1117" }}>
-              YOLOv11n (Spatial BBoxes)
-            </option>
-            <option value='Llama-3.2-3B' style={{ background: "#0e1117" }}>
-              Llama-3.2 (RAG Local)
-            </option>
-          </select>
-        </div>
+      {/* Center: Starcloud Signature Floating Nav Pill */}
+      <div className="starcloud-nav-pill-container" style={{ padding: "2px 4px" }}>
+        <a href="#platform" className="starcloud-nav-link active" style={{ padding: "5px 12px", fontSize: "0.82rem" }}>Platform</a>
+        <a href="#models" className="starcloud-nav-link" style={{ padding: "5px 12px", fontSize: "0.82rem" }}>Models</a>
+        <a href="#radar" className="starcloud-nav-link" style={{ padding: "5px 12px", fontSize: "0.82rem" }}>Radar</a>
+        <a href="#soil" className="starcloud-nav-link" style={{ padding: "5px 12px", fontSize: "0.82rem" }}>Soil AI</a>
+        <a href="#market" className="starcloud-nav-link" style={{ padding: "5px 12px", fontSize: "0.82rem" }}>Market</a>
+      </div>
 
+      {/* Right Controls: Role, District, Offline USSD, CTA Button */}
+      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
         {/* District Selector Pill */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 6,
-            background: "#f7f9f6",
-            border: "1px solid var(--border-subtle)",
-            borderRadius: "var(--radius-sm)",
+            gap: 5,
+            background: "rgba(255, 255, 255, 0.05)",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+            borderRadius: 100,
             padding: "4px 10px",
-            fontSize: "0.78rem",
-          }}>
-          <MapPin size={13} color='#38bdf8' />
+            fontSize: "0.76rem",
+            color: "#ffffff",
+          }}
+        >
+          <MapPin size={11} color="#ffffff" />
           <select
             value={district}
             onChange={(e) => setDistrict(e.target.value as RwandaDistrict)}
             style={{
               background: "transparent",
               border: "none",
-              color: "var(--text-main)",
-              fontSize: "0.78rem",
-              fontWeight: 600,
+              color: "#ffffff",
+              fontSize: "0.76rem",
+              fontWeight: 500,
               padding: 0,
               cursor: "pointer",
-              width: "auto",
-            }}>
-            <option value='Muhanga' style={{ background: "#0e1117" }}>
-              Muhanga (Southern)
-            </option>
-            <option value='Musanze' style={{ background: "#0e1117" }}>
-              Musanze (Northern)
-            </option>
-            <option value='Ruhango' style={{ background: "#0e1117" }}>
-              Ruhango (Southern)
-            </option>
-            <option value='Huye' style={{ background: "#0e1117" }}>
-              Huye (Southern)
-            </option>
-            <option value='Nyabihu' style={{ background: "#0e1117" }}>
-              Nyabihu (Western)
-            </option>
-            <option value='Rubavu' style={{ background: "#0e1117" }}>
-              Rubavu (Western)
-            </option>
-            <option value='Nyagatare' style={{ background: "#0e1117" }}>
-              Nyagatare (Eastern)
-            </option>
-            <option value='Bugesera' style={{ background: "#0e1117" }}>
-              Bugesera (Eastern)
-            </option>
+            }}
+          >
+            <option value="Muhanga" style={{ background: "#000000" }}>Muhanga</option>
+            <option value="Musanze" style={{ background: "#000000" }}>Musanze</option>
+            <option value="Ruhango" style={{ background: "#000000" }}>Ruhango</option>
+            <option value="Huye" style={{ background: "#000000" }}>Huye</option>
+            <option value="Nyabihu" style={{ background: "#000000" }}>Nyabihu</option>
+            <option value="Rubavu" style={{ background: "#000000" }}>Rubavu</option>
+            <option value="Nyagatare" style={{ background: "#000000" }}>Nyagatare</option>
+            <option value="Bugesera" style={{ background: "#000000" }}>Bugesera</option>
           </select>
         </div>
 
-        {/* Outbreak alert button */}
-        <button
-          onClick={onOpenOutbreaks}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-            background: "#fff8f5",
-            border: "1px solid rgba(244, 63, 94, 0.3)",
-            color: "#fb7185",
-            borderRadius: "var(--radius-sm)",
-            padding: "4px 10px",
-            fontSize: "0.76rem",
-            fontWeight: 600,
-            cursor: "pointer",
-          }}>
-          <AlertTriangle size={13} />
-          <span>{activeOutbreakCount} Outbreaks</span>
-        </button>
-      </div>
-
-      {/* Right side: Role selector, Offline USSD, Voice, Co-Pilot Toggle */}
-      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-        {/* Role switcher */}
+        {/* Model Engine Pill */}
         <div
           style={{
             display: "flex",
-            background: "#f7f9f6",
-            borderRadius: 6,
+            alignItems: "center",
+            gap: 5,
+            background: "rgba(255, 255, 255, 0.05)",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+            borderRadius: 100,
+            padding: "4px 10px",
+            fontSize: "0.76rem",
+            color: "#ffffff",
+          }}
+        >
+          <Cpu size={11} color="#ffffff" />
+          <select
+            value={activeModel}
+            onChange={(e) => setActiveModel(e.target.value)}
+            style={{
+              background: "transparent",
+              border: "none",
+              color: "#ffffff",
+              fontSize: "0.76rem",
+              fontWeight: 500,
+              padding: 0,
+              cursor: "pointer",
+              fontFamily: "var(--font-family-mono)",
+            }}
+          >
+            <option value="DeepSeek-V3" style={{ background: "#000000" }}>DeepSeek-V3</option>
+            <option value="EfficientNetV2-S" style={{ background: "#000000" }}>ONNX 38ms</option>
+            <option value="YOLOv11n" style={{ background: "#000000" }}>YOLOv11</option>
+            <option value="Llama-3.2-3B" style={{ background: "#000000" }}>Llama-3.2</option>
+          </select>
+        </div>
+
+        {/* Role Switcher Pill */}
+        <div
+          style={{
+            display: "flex",
+            background: "rgba(255, 255, 255, 0.05)",
+            borderRadius: 100,
             padding: 2,
-            border: "1px solid var(--border-subtle)",
-          }}>
+            border: "1px solid rgba(255, 255, 255, 0.12)",
+          }}
+        >
           {(["farmer", "agronomist", "developer"] as const).map((r) => {
             const isActive = currentRole === r;
             return (
@@ -294,115 +243,87 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={r}
                 onClick={() => setRole(r)}
                 style={{
-                  background:
-                    isActive ?
-                      r === "farmer" ? "var(--primary)"
-                      : r === "agronomist" ? "#287ca8"
-                      : "#66716a"
-                    : "transparent",
-                  color: isActive ? "#fff" : "var(--text-muted)",
+                  background: isActive ? "#ffffff" : "transparent",
+                  color: isActive ? "#000000" : "rgba(255, 255, 255, 0.6)",
                   border: "none",
-                  padding: "4px 8px",
-                  borderRadius: 4,
-                  fontSize: "0.74rem",
-                  fontWeight: 600,
+                  padding: "3px 8px",
+                  borderRadius: 100,
+                  fontSize: "0.72rem",
+                  fontWeight: 500,
                   cursor: "pointer",
-                  textTransform: "capitalize",
-                }}>
-                {r === "farmer" ?
-                  "Farmer"
-                : r === "agronomist" ?
-                  "Agronomist"
-                : "ML Dev"}
+                  transition: "all 0.15s ease",
+                }}
+              >
+                {r === "farmer" ? "Farmer" : r === "agronomist" ? "Agronomist" : "Dev"}
               </button>
             );
           })}
         </div>
 
-        {/* Offline USSD feature phone launcher */}
+        {/* Offline USSD Pill */}
         <button
           onClick={onOpenUssdModal}
-          className='btn btn-secondary btn-sm'
-          style={{
-            gap: 5,
-            padding: "4px 9px",
-            fontSize: "0.76rem",
-            borderRadius: 6,
-          }}
-          title='Launch *844# Offline Feature Phone USSD Simulator'>
-          <Phone size={12} color='#10b981' />
-          <span>*844# USSD</span>
-        </button>
-
-        {/* Voice Assistant launcher */}
-        <button
-          onClick={onOpenVoiceModal}
-          className='btn btn-outline-gold btn-sm'
-          style={{
-            gap: 5,
-            padding: "4px 9px",
-            fontSize: "0.76rem",
-            borderRadius: 6,
-          }}
-          title='Launch Voice Farming Assistant'>
-          <Mic size={12} />
-          <span>{isRw ? "Ijwi" : "Voice"}</span>
-        </button>
-
-        {/* Language selector */}
-        <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 4,
-            background: "#f7f9f6",
-            borderRadius: 6,
-            padding: "3px 6px",
-            border: "1px solid var(--border-subtle)",
-          }}>
-          <Globe size={12} color='var(--text-muted)' />
-          <select
-            value={language}
-            onChange={(e) => setLanguage(e.target.value as Language)}
-            style={{
-              background: "transparent",
-              border: "none",
-              color: "var(--text-main)",
-              fontSize: "0.74rem",
-              padding: 0,
-              cursor: "pointer",
-              width: "auto",
-            }}>
-            <option value='rw' style={{ background: "#0e1117" }}>
-              RW
-            </option>
-            <option value='en' style={{ background: "#0e1117" }}>
-              EN
-            </option>
-            <option value='fr' style={{ background: "#0e1117" }}>
-              FR
-            </option>
-          </select>
-        </div>
+            gap: 5,
+            background: "rgba(255, 255, 255, 0.05)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+            color: "#ffffff",
+            borderRadius: 100,
+            padding: "5px 12px",
+            fontSize: "0.76rem",
+            fontWeight: 500,
+            cursor: "pointer",
+            fontFamily: "var(--font-family-mono)",
+            transition: "all 0.2s ease",
+          }}
+          title="Launch *844# Offline Feature Phone USSD Simulator"
+        >
+          <Phone size={11} color="#ffffff" />
+          <span>*844#</span>
+        </button>
 
-        {/* Co-Pilot Toggle Button */}
+        {/* Starcloud Signature Primary CTA: Solid White Pill Button */}
+        <button
+          onClick={onOpenVoiceModal}
+          style={{
+            background: "#ffffff",
+            color: "#000000",
+            border: "none",
+            borderRadius: 100,
+            padding: "6px 18px",
+            fontSize: "0.82rem",
+            fontWeight: 500,
+            cursor: "pointer",
+            fontFamily: "var(--font-family-aeonik)",
+            transition: "all 0.2s ease",
+            boxShadow: "0 2px 10px rgba(255, 255, 255, 0.25)",
+            whiteSpace: "nowrap",
+          }}
+        >
+          Get in touch
+        </button>
+
+        {/* Co-Pilot Toggle */}
         <button
           onClick={toggleCopilot}
           style={{
-            background:
-              copilotOpen ? "var(--qoder-violet-subtle)" : "transparent",
-            border: "1px solid var(--border-subtle)",
-            borderRadius: 6,
-            color: copilotOpen ? "var(--primary)" : "var(--text-muted)",
-            width: 32,
-            height: 32,
+            background: copilotOpen ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.05)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+            borderRadius: 100,
+            color: "#ffffff",
+            width: 30,
+            height: 30,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             cursor: "pointer",
+            transition: "all 0.2s ease",
           }}
-          title='Toggle Qoder Agentic Co-Pilot'>
-          <PanelRight size={16} />
+          title="Toggle Agentic Co-Pilot"
+        >
+          <PanelRight size={14} />
         </button>
       </div>
     </header>

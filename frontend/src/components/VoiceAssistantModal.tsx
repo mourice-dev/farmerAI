@@ -168,7 +168,7 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
               width: 38,
               height: 38,
               borderRadius: '50%',
-              background: 'linear-gradient(135deg, #f59e0b 0%, #b45309 100%)',
+              background: 'rgba(255, 255, 255, 0.05)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -255,7 +255,7 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
 
                 <div>
                   <div style={{
-                    background: isUser ? 'linear-gradient(135deg, #10b981, #059669)' : 'rgba(255, 255, 255, 0.06)',
+                    background: isUser ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.06)',
                     color: '#fff',
                     padding: '12px 16px',
                     borderRadius: isUser ? '16px 16px 2px 16px' : '16px 16px 16px 2px',
@@ -299,8 +299,8 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
                           key={idx}
                           onClick={() => handleSendQuery(action)}
                           style={{
-                            background: 'rgba(245, 158, 11, 0.12)',
-                            border: '1px solid rgba(245, 158, 11, 0.3)',
+                            background: 'rgba(255, 255, 255, 0.12)',
+                            border: '1px solid rgba(255, 255, 255, 0.12)',
                             color: 'var(--accent-gold)',
                             borderRadius: 'var(--radius-full)',
                             padding: '4px 10px',
@@ -382,15 +382,15 @@ export const VoiceAssistantModal: React.FC<VoiceAssistantModalProps> = ({
               height: 46,
               borderRadius: '50%',
               background: isListening
-                ? 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)'
-                : 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                ? 'rgba(255, 255, 255, 0.05)'
+                : 'rgba(255, 255, 255, 0.05)',
               border: 'none',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
               color: '#fff',
-              boxShadow: isListening ? '0 0 16px rgba(239, 68, 68, 0.6)' : '0 4px 12px var(--accent-gold-glow)',
+              boxShadow: isListening ? '0 0 16px rgba(255, 255, 255, 0.12)' : '0 4px 12px var(--accent-gold-glow)',
               flexShrink: 0,
               transition: 'all 0.2s',
             }}

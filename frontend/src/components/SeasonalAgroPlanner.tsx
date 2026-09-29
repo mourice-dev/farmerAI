@@ -168,7 +168,7 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
             <span
               style={{
-                background: 'linear-gradient(135deg, #10b981 0%, #047857 100%)',
+                background: 'rgba(255, 255, 255, 0.05)',
                 color: '#fff',
                 fontSize: '0.72rem',
                 fontWeight: 700,
@@ -190,9 +190,9 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
         </div>
 
         {/* Current Active Season Pill */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(16, 185, 129, 0.12)', padding: '6px 14px', borderRadius: 'var(--radius-full)', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
-          <Clock size={15} color="#34d399" />
-          <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#34d399' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(255, 255, 255, 0.12)', padding: '6px 14px', borderRadius: 'var(--radius-full)', border: '1px solid rgba(255, 255, 255, 0.12)' }}>
+          <Clock size={15} color="#ffffff" />
+          <span style={{ fontSize: '0.82rem', fontWeight: 700, color: '#ffffff' }}>
             {isRw ? 'Igihembwe kiriho: Season A (Urugaryi)' : 'Active: Season A (Urugaryi)'}
           </span>
         </div>
@@ -233,7 +233,7 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
               key={s.id}
               onClick={() => setSelectedSeason(s.id as any)}
               style={{
-                background: isSelected ? 'rgba(16, 185, 129, 0.16)' : 'rgba(0, 0, 0, 0.25)',
+                background: isSelected ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.25)',
                 border: isSelected ? '1px solid var(--primary)' : '1px solid var(--border-subtle)',
                 borderRadius: 'var(--radius-sm)',
                 padding: '14px',
@@ -243,10 +243,10 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-                <span style={{ fontWeight: 700, fontSize: '0.92rem', color: isSelected ? '#34d399' : '#fff' }}>
+                <span style={{ fontWeight: 700, fontSize: '0.92rem', color: isSelected ? '#ffffff' : '#fff' }}>
                   {s.title}
                 </span>
-                <Icon size={16} color={isSelected ? '#34d399' : 'var(--text-muted)'} />
+                <Icon size={16} color={isSelected ? '#ffffff' : 'var(--text-muted)'} />
               </div>
               <div style={{ fontSize: '0.74rem', color: 'var(--accent-gold)', marginBottom: 4 }}>
                 {s.sub}
@@ -262,8 +262,8 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
       {/* Synchronized Agro-Meteorological Advisory Banner */}
       <div
         style={{
-          background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(14, 165, 233, 0.04) 100%)',
-          border: '1px solid rgba(56, 189, 248, 0.25)',
+          background: 'rgba(255, 255, 255, 0.05) 0%, rgba(14, 165, 233, 0.04) 100%)',
+          border: '1px solid rgba(255, 255, 255, 0.12)',
           borderRadius: 'var(--radius-sm)',
           padding: '12px 16px',
           display: 'flex',
@@ -275,7 +275,7 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <Droplets size={20} color="#38bdf8" />
+          <Droplets size={20} color="#ffffff" />
           <div>
             <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#fff' }}>
               {isRw
@@ -290,7 +290,7 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
           </div>
         </div>
 
-        <span className="badge badge-risk-low" style={{ background: 'rgba(56, 189, 248, 0.2)', color: '#38bdf8' }}>
+        <span className="badge badge-risk-low" style={{ background: 'rgba(255, 255, 255, 0.12)', color: '#ffffff' }}>
           Meteo Rwanda Live Link
         </span>
       </div>
@@ -304,8 +304,8 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
             <div
               key={idx}
               style={{
-                background: isDone ? 'rgba(16, 185, 129, 0.05)' : 'rgba(0, 0, 0, 0.3)',
-                border: isDone ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid var(--border-subtle)',
+                background: isDone ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.3)',
+                border: isDone ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid var(--border-subtle)',
                 borderRadius: 'var(--radius-md)',
                 padding: '16px 18px',
                 transition: 'all 0.2s',
@@ -316,7 +316,7 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
                   <button
                     onClick={() => toggleStep(stepKey)}
                     style={{
-                      background: isDone ? '#10b981' : 'transparent',
+                      background: isDone ? '#ffffff' : 'transparent',
                       border: isDone ? 'none' : '2px solid var(--text-muted)',
                       width: 22,
                       height: 22,
@@ -361,8 +361,8 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
                       fontSize: '0.72rem',
                       padding: '2px 8px',
                       borderRadius: 'var(--radius-full)',
-                      background: stage.status === 'COMPLETED' ? 'rgba(16, 185, 129, 0.2)' : stage.status === 'IN_PROGRESS' ? 'rgba(245, 158, 11, 0.2)' : 'rgba(255,255,255,0.08)',
-                      color: stage.status === 'COMPLETED' ? '#34d399' : stage.status === 'IN_PROGRESS' ? '#fbbf24' : 'var(--text-muted)',
+                      background: stage.status === 'COMPLETED' ? 'rgba(255, 255, 255, 0.12)' : stage.status === 'IN_PROGRESS' ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255,255,255,0.08)',
+                      color: stage.status === 'COMPLETED' ? '#ffffff' : stage.status === 'IN_PROGRESS' ? '#ffffff' : 'var(--text-muted)',
                       fontWeight: 600,
                     }}
                   >
@@ -377,7 +377,7 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
 
               {/* Action Points Box */}
               <div style={{ background: 'rgba(0,0,0,0.25)', borderRadius: 'var(--radius-sm)', padding: '10px 14px', marginLeft: 32, marginBottom: 10 }}>
-                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#34d399', textTransform: 'uppercase', marginBottom: 4 }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', marginBottom: 4 }}>
                   {isRw ? 'Amabwiriza y\'ingenzi ya RAB:' : 'Key RAB Scientific Action Checklist:'}
                 </div>
                 <ul style={{ margin: 0, paddingLeft: 18, fontSize: '0.8rem', color: '#e2e8f0', lineHeight: 1.5 }}>
@@ -389,7 +389,7 @@ export const SeasonalAgroPlanner: React.FC<SeasonalAgroPlannerProps> = ({
 
               {/* Fertilizer Recommendation Tag */}
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.78rem', color: 'var(--text-muted)', paddingLeft: 32 }}>
-                <FlaskConical size={14} color="#f59e0b" />
+                <FlaskConical size={14} color="#ffffff" />
                 <span>
                   <strong>Target Nutrient:</strong> {stage.fertilizerRecommendation}
                 </span>

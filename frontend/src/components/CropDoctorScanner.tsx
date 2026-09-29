@@ -1,16 +1,15 @@
+/** @format */
+
 import React, { useState } from 'react';
 import {
   Upload,
   Camera,
   CheckCircle2,
-  AlertTriangle,
-  ShieldAlert,
   Sparkles,
-  Info,
   Send,
   Eye,
-  ChevronRight,
   PackageCheck,
+  ShieldCheck,
 } from 'lucide-react';
 import {
   CropType,
@@ -19,7 +18,7 @@ import {
 } from '../types';
 import { DIAGNOSTIC_SAMPLES, DiagnosticSample } from '../data/mockData';
 import { AIPipelineService } from '../services/aiPipelineService';
-import { getTop5PredictionsForDiagnosis, TopKPrediction } from '../services/plantDiseaseModelAdapter';
+import { getTop5PredictionsForDiagnosis } from '../services/plantDiseaseModelAdapter';
 
 interface CropDoctorScannerProps {
   selectedCrop: CropType;
@@ -100,61 +99,101 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
   };
 
   return (
-    <div className="glass-panel" style={{ padding: '24px', marginBottom: '24px' }}>
+    <div
+      style={{
+        padding: '28px',
+        marginBottom: '32px',
+        background: 'rgba(255, 255, 255, 0.03)',
+        border: '1px solid rgba(255, 255, 255, 0.10)',
+        borderRadius: 16,
+        fontFamily: 'var(--font-family-aeonik)',
+      }}
+    >
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         flexWrap: 'wrap',
         gap: 12,
-        marginBottom: 20,
-        paddingBottom: 16,
-        borderBottom: '1px solid var(--border-subtle)',
+        marginBottom: 24,
+        paddingBottom: 20,
+        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
       }}>
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
             <span style={{
-              background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-              color: '#fff',
+              background: 'rgba(255, 255, 255, 0.08)',
+              color: '#ffffff',
+              border: '1px solid rgba(255, 255, 255, 0.18)',
               fontSize: '0.72rem',
-              fontWeight: 700,
-              padding: '2px 8px',
-              borderRadius: 'var(--radius-full)',
+              fontWeight: 500,
+              padding: '2px 10px',
+              borderRadius: 100,
+              fontFamily: 'var(--font-family-mono)',
+              letterSpacing: '0.04em',
             }}>
-              MODULE 1
+              VISION ENGINE
             </span>
-            <h2 style={{ fontSize: '1.4rem' }}>
-              {isRw ? 'Gusuzuma Indwara n\'Ibyonnyi (Vision Model)' : 'AI Crop Doctor & Pest Detector'}
+            <h2 style={{ fontSize: '1.5rem', color: '#ffffff', fontWeight: 500, letterSpacing: '-0.03em' }}>
+              {isRw ? 'Gusuzuma Indwara n\'Ibyonnyi (Vision Model)' : 'AI Crop Doctor & Pathology Detector'}
             </h2>
           </div>
-          <p style={{ fontSize: '0.85rem' }}>
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.65)' }}>
             {isRw
               ? 'Fata ifoto y\'ikibabi cyanduye cyangwa hitamo mu rugero rw\'uburwayi bwo muri Kigali na Musanze.'
-              : 'Multi-model Vision inference (EfficientNet-B4 + YOLOv8) trained on PlantVillage & Rwanda agricultural field samples.'}
+              : 'Multi-model Vision inference (EfficientNetV2-S + YOLOv11) trained on PlantVillage & Rwanda field samples.'}
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: 8 }}>
-          <label className="btn btn-secondary btn-sm" style={{ cursor: 'pointer' }}>
-            <Upload size={14} />
+        <div style={{ display: 'flex', gap: 10 }}>
+          <label
+            style={{
+              background: 'rgba(255, 255, 255, 0.06)',
+              border: '1px solid rgba(255, 255, 255, 0.18)',
+              color: '#ffffff',
+              borderRadius: 100,
+              padding: '8px 18px',
+              fontSize: '0.84rem',
+              fontWeight: 500,
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              transition: 'all 0.2s ease',
+            }}
+          >
+            <Upload size={14} color="#ffffff" />
             <span>{isRw ? 'Shyiramo Ifoto' : 'Upload Photo'}</span>
             <input type="file" accept="image/*" onChange={handleFileUpload} style={{ display: 'none' }} />
           </label>
 
           <button
             onClick={handleRunPostHarvestGrading}
-            className="btn btn-outline-gold btn-sm"
+            style={{
+              background: '#ffffff',
+              color: '#000000',
+              border: 'none',
+              borderRadius: 100,
+              padding: '8px 20px',
+              fontSize: '0.84rem',
+              fontWeight: 500,
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              transition: 'all 0.2s ease',
+            }}
             disabled={isGradingPostHarvest}
           >
-            <PackageCheck size={14} />
+            <PackageCheck size={14} color="#000000" />
             <span>{isGradingPostHarvest ? 'Analyzing...' : isRw ? 'Suzuma Umusaruro (Grade)' : 'Post-Harvest Grader'}</span>
           </button>
         </div>
       </div>
 
       {/* Preset Rwandan Test Samples Row */}
-      <div style={{ marginBottom: 20 }}>
-        <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: 8 }}>
+      <div style={{ marginBottom: 24 }}>
+        <div style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.5)', fontFamily: 'var(--font-family-mono)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>
           {isRw ? 'Hitamo mu ngero z\'ibihingwa byo muri Rwanda:' : 'Interactive Test Library (Rwandan Field Scenarios):'}
         </div>
         <div style={{
@@ -169,16 +208,16 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                 key={sample.id}
                 onClick={() => handleSelectSample(sample)}
                 style={{
-                  background: isSelected ? 'rgba(16, 185, 129, 0.15)' : 'rgba(0, 0, 0, 0.3)',
-                  border: isSelected ? '1px solid var(--primary)' : '1px solid var(--border-subtle)',
-                  borderRadius: 'var(--radius-sm)',
-                  padding: '8px 10px',
+                  background: isSelected ? '#ffffff' : 'rgba(255, 255, 255, 0.04)',
+                  border: isSelected ? '1px solid #ffffff' : '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: 10,
+                  padding: '10px 12px',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: 10,
+                  gap: 12,
                   cursor: 'pointer',
                   textAlign: 'left',
-                  transition: 'all 0.2s',
+                  transition: 'all 0.2s ease',
                 }}
               >
                 <div style={{
@@ -187,7 +226,7 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                   borderRadius: 6,
                   overflow: 'hidden',
                   flexShrink: 0,
-                  background: '#16241e',
+                  background: '#1a1a1a',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -199,10 +238,27 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                   />
                 </div>
                 <div style={{ overflow: 'hidden' }}>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: isSelected ? '#34d399' : '#fff', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+                  <div
+                    style={{
+                      fontSize: '0.82rem',
+                      fontWeight: 500,
+                      color: isSelected ? '#000000' : '#ffffff',
+                      whiteSpace: 'nowrap',
+                      textOverflow: 'ellipsis',
+                      overflow: 'hidden',
+                    }}
+                  >
                     {sample.crop}
                   </div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
+                  <div
+                    style={{
+                      fontSize: '0.74rem',
+                      color: isSelected ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.5)',
+                      whiteSpace: 'nowrap',
+                      textOverflow: 'ellipsis',
+                      overflow: 'hidden',
+                    }}
+                  >
                     {sample.name.split(' ')[0]} {sample.name.split(' ')[1]}
                   </div>
                 </div>
@@ -219,10 +275,20 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
         gap: 24,
         alignItems: 'start',
       }}>
-        {/* Left: Interactive Image Viewport with Bounding Boxes & Laser Beam */}
+        {/* Left: Interactive Image Viewport */}
         <div>
-          <div className="scanner-viewport" style={{ height: 320, background: '#0a0f0d', position: 'relative' }}>
-            {isScanning && <div className="scanner-beam" />}
+          <div
+            className="scanner-viewport"
+            style={{
+              height: 320,
+              background: '#090a0d',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              borderRadius: 12,
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
+            {isScanning && <div className="scanner-beam" style={{ background: 'rgba(255, 255, 255, 0.05) 100%)', borderBottom: '2px solid #ffffff' }} />}
 
             {viewMode === 'rgb' ? (
               <img
@@ -232,7 +298,7 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  filter: isScanning ? 'brightness(0.7) contrast(1.1)' : 'none',
+                  filter: isScanning ? 'brightness(0.8) contrast(1.1)' : 'none',
                   transition: 'filter 0.3s',
                 }}
               />
@@ -251,20 +317,20 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                   position: 'absolute',
                   top: 10,
                   left: 10,
-                  background: 'rgba(0,0,0,0.7)',
-                  color: '#ec4899',
-                  padding: '3px 8px',
-                  borderRadius: 4,
+                  background: '#000000',
+                  color: '#ffffff',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  padding: '3px 10px',
+                  borderRadius: 100,
                   fontSize: '0.7rem',
-                  fontWeight: 700,
-                  border: '1px solid rgba(236, 72, 153, 0.4)',
+                  fontFamily: 'var(--font-family-mono)',
                 }}>
                   Grad-CAM Attention Heatmap
                 </div>
               </div>
             )}
 
-            {/* Bounding box overlays (only in RGB mode) */}
+            {/* Bounding box overlays in Pure White */}
             {viewMode === 'rgb' && !isScanning && showBoundingBoxes && diagnosis?.boundingBoxes?.map((box, i) => (
               <div
                 key={i}
@@ -274,9 +340,9 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                   left: `${box.x}%`,
                   width: `${box.width}%`,
                   height: `${box.height}%`,
-                  border: '2px solid #ef4444',
-                  backgroundColor: 'rgba(239, 68, 68, 0.15)',
-                  boxShadow: '0 0 10px rgba(239, 68, 68, 0.5)',
+                  border: '2px solid #ffffff',
+                  backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                  boxShadow: '0 0 12px rgba(255, 255, 255, 0.4)',
                   pointerEvents: 'none',
                 }}
               >
@@ -284,11 +350,11 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                   position: 'absolute',
                   top: -24,
                   left: -2,
-                  background: '#ef4444',
-                  color: '#fff',
+                  background: '#ffffff',
+                  color: '#000000',
                   fontSize: '0.68rem',
-                  fontWeight: 700,
-                  padding: '2px 6px',
+                  fontWeight: 600,
+                  padding: '2px 8px',
                   borderRadius: '2px',
                   whiteSpace: 'nowrap',
                 }}>
@@ -297,7 +363,7 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
               </div>
             ))}
 
-            {/* Viewport badge controls */}
+            {/* Viewport controls */}
             <div style={{
               position: 'absolute',
               bottom: 12,
@@ -311,16 +377,17 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
             }}>
               <span style={{
                 background: 'rgba(0, 0, 0, 0.75)',
-                backdropFilter: 'blur(8px)',
-                padding: '4px 10px',
-                borderRadius: 'var(--radius-full)',
+                backdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                padding: '5px 12px',
+                borderRadius: 100,
                 fontSize: '0.75rem',
-                color: '#fff',
+                color: '#ffffff',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 6,
               }}>
-                <Camera size={13} color="var(--primary)" />
+                <Camera size={13} color="#ffffff" />
                 {isScanning ? (isRw ? 'AI irimo gusuzuma...' : 'Inference running...') : 'Ready for Analysis'}
               </span>
 
@@ -328,21 +395,22 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                 <button
                   onClick={() => setViewMode(viewMode === 'rgb' ? 'gradcam' : 'rgb')}
                   style={{
-                    background: viewMode === 'gradcam' ? 'rgba(236, 72, 153, 0.8)' : 'rgba(0, 0, 0, 0.75)',
-                    backdropFilter: 'blur(8px)',
+                    background: viewMode === 'gradcam' ? '#ffffff' : 'rgba(0, 0, 0, 0.75)',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
-                    color: '#fff',
-                    borderRadius: 'var(--radius-full)',
-                    padding: '4px 10px',
-                    fontSize: '0.72rem',
+                    color: viewMode === 'gradcam' ? '#000000' : '#ffffff',
+                    borderRadius: 100,
+                    padding: '5px 14px',
+                    fontSize: '0.74rem',
+                    fontWeight: 500,
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 4,
+                    gap: 5,
+                    transition: 'all 0.2s ease',
                   }}
                   title="Toggle Grad-CAM Neural Attention Heatmap"
                 >
-                  <Sparkles size={12} color={viewMode === 'gradcam' ? '#fff' : '#ec4899'} />
+                  <Sparkles size={12} color={viewMode === 'gradcam' ? '#000000' : '#ffffff'} />
                   <span>{viewMode === 'gradcam' ? 'RGB View' : 'Grad-CAM XAI'}</span>
                 </button>
 
@@ -351,19 +419,20 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                     onClick={() => setShowBoundingBoxes(!showBoundingBoxes)}
                     style={{
                       background: 'rgba(0, 0, 0, 0.75)',
-                      backdropFilter: 'blur(8px)',
+                      backdropFilter: 'blur(16px)',
                       border: '1px solid rgba(255, 255, 255, 0.2)',
-                      color: '#fff',
-                      borderRadius: 'var(--radius-full)',
-                      padding: '4px 10px',
-                      fontSize: '0.72rem',
+                      color: '#ffffff',
+                      borderRadius: 100,
+                      padding: '5px 14px',
+                      fontSize: '0.74rem',
+                      fontWeight: 500,
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 4,
+                      gap: 5,
                     }}
                   >
-                    <Eye size={12} />
+                    <Eye size={12} color="#ffffff" />
                     <span>{showBoundingBoxes ? 'Hide Boxes' : 'Show Boxes'}</span>
                   </button>
                 )}
@@ -371,27 +440,28 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
             </div>
           </div>
 
-          {/* OOD (Out-of-Distribution) Sanity Guard Indicator */}
+          {/* OOD Sanity Guard */}
           <div style={{
             marginTop: 10,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            background: 'rgba(0, 0, 0, 0.25)',
-            padding: '8px 12px',
-            borderRadius: 'var(--radius-sm)',
+            background: 'rgba(255, 255, 255, 0.04)',
+            border: '1px solid rgba(255, 255, 255, 0.10)',
+            padding: '10px 14px',
+            borderRadius: 10,
             fontSize: '0.78rem',
-            color: 'var(--text-muted)',
+            color: 'rgba(255, 255, 255, 0.7)',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <ShieldAlert size={14} color="#10b981" />
-              <span>OOD Filter Head: Plant Leaf Verified (OOD score 0.04)</span>
+              <ShieldCheck size={14} color="#ffffff" />
+              <span>OOD Filter: Plant Leaf Verified (OOD score 0.04)</span>
             </div>
-            <span style={{ color: '#10b981', fontWeight: 600 }}>Valid Specimen</span>
+            <span style={{ color: '#ffffff', fontWeight: 500 }}>Valid Specimen</span>
           </div>
         </div>
 
-        {/* Right: Detailed Diagnosis Result & Action Plan */}
+        {/* Right: Detailed Diagnosis Result */}
         <div>
           {isScanning ? (
             <div style={{
@@ -403,103 +473,105 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
               gap: 14,
             }}>
               <div style={{
-                width: 48,
-                height: 48,
+                width: 44,
+                height: 44,
                 borderRadius: '50%',
-                border: '3px solid rgba(16, 185, 129, 0.2)',
-                borderTopColor: '#10b981',
+                border: '3px solid rgba(255, 255, 255, 0.1)',
+                borderTopColor: '#ffffff',
                 animation: 'spin 1s linear infinite',
               }} />
-              <div style={{ fontSize: '0.9rem', color: '#fff', fontWeight: 600 }}>
-                {isRw ? 'Uburyo bwa EfficientNet burimo gusesengura amababi...' : 'Running EfficientNet & YOLOv8 Inference Pipeline...'}
+              <div style={{ fontSize: '0.9rem', color: '#ffffff', fontWeight: 400 }}>
+                {isRw ? 'Uburyo bwa EfficientNet burimo gusesengura amababi...' : 'Running EfficientNetV2-S & YOLO Inference Pipeline...'}
               </div>
             </div>
           ) : diagnosis ? (
             <div>
-              {/* Diagnosis Header with Confidence Badge */}
+              {/* Diagnosis Header */}
               <div style={{
-                background: 'rgba(0, 0, 0, 0.3)',
-                padding: '16px',
-                borderRadius: 'var(--radius-md)',
+                background: 'rgba(255, 255, 255, 0.04)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                borderRadius: 12,
+                padding: '20px',
                 marginBottom: 16,
-                border: '1px solid var(--border-subtle)',
               }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
                   <div>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', letterSpacing: '0.06em', fontFamily: 'var(--font-family-mono)' }}>
                       {isRw ? 'Icyavuye mu isuzuma' : 'Vision Model Diagnosis'}
                     </span>
-                    <h3 style={{ fontSize: '1.25rem', color: '#fff', marginTop: 2 }}>
+                    <h3 style={{ fontSize: '1.35rem', color: '#ffffff', fontWeight: 500, marginTop: 4 }}>
                       {diagnosis.diagnosis}
                     </h3>
-                    <div style={{ fontSize: '0.82rem', color: 'var(--accent-gold)', fontStyle: 'italic' }}>
-                      {diagnosis.scientificName} • <span style={{ color: '#6ee7b7' }}>{diagnosis.kinyarwandaName}</span>
+                    <div style={{ fontSize: '0.84rem', color: 'rgba(255, 255, 255, 0.65)', marginTop: 2 }}>
+                      {diagnosis.scientificName} • <span>{diagnosis.kinyarwandaName}</span>
                     </div>
                   </div>
 
                   <div style={{ textAlign: 'right' }}>
                     <div style={{
-                      fontSize: '1.5rem',
-                      fontWeight: 800,
-                      color: diagnosis.confidence > 0.85 ? '#34d399' : '#fbbf24',
+                      fontSize: '1.75rem',
+                      fontWeight: 600,
+                      color: '#ffffff',
+                      letterSpacing: '-0.03em',
+                      lineHeight: 1,
                     }}>
                       {Math.round(diagnosis.confidence * 100)}%
                     </div>
-                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                      Model Confidence
+                    <div style={{ fontSize: '0.7rem', color: 'rgba(255, 255, 255, 0.5)', fontFamily: 'var(--font-family-mono)', marginTop: 4 }}>
+                      CONFIDENCE
                     </div>
                   </div>
                 </div>
 
-                {/* Progress Bar of confidence */}
+                {/* Progress Bar in Pure White */}
                 <div style={{
-                  height: 6,
+                  height: 4,
                   background: 'rgba(255, 255, 255, 0.1)',
-                  borderRadius: 3,
+                  borderRadius: 2,
                   overflow: 'hidden',
-                  marginTop: 8,
+                  marginTop: 10,
                 }}>
                   <div style={{
                     width: `${Math.round(diagnosis.confidence * 100)}%`,
                     height: '100%',
-                    background: diagnosis.confidence > 0.85 ? 'linear-gradient(90deg, #10b981, #34d399)' : 'linear-gradient(90deg, #f59e0b, #fbbf24)',
-                    borderRadius: 3,
+                    background: '#ffffff',
+                    borderRadius: 2,
                   }} />
                 </div>
 
                 {/* Top-5 Predictions Breakdown */}
                 {top5Predictions.length > 0 && (
-                  <div style={{ marginTop: 14, paddingTop: 12, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                      <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase' }}>
-                        {isRw ? 'Ibyiciro 5 biza imbere (Softmax Probabilities)' : 'Top 5 Model Predictions (Softmax)'}
+                  <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
+                      <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.5)', textTransform: 'uppercase', fontFamily: 'var(--font-family-mono)', letterSpacing: '0.04em' }}>
+                        {isRw ? 'Ibyiciro 5 biza imbere' : 'Top 5 Softmax Predictions'}
                       </span>
-                      <span style={{ fontSize: '0.72rem', color: '#c084fc', fontFamily: 'var(--font-mono)' }}>
+                      <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.5)', fontFamily: 'var(--font-family-mono)' }}>
                         EfficientNetV2-S ONNX
                       </span>
                     </div>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
                       {top5Predictions.map((pred, idx) => (
                         <div key={pred.classIndex} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.76rem' }}>
-                          <span style={{ width: 14, color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>{idx + 1}.</span>
+                          <span style={{ width: 14, color: 'rgba(255, 255, 255, 0.4)', fontFamily: 'var(--font-family-mono)' }}>{idx + 1}.</span>
                           <div style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                            <span style={{ color: idx === 0 ? '#34d399' : '#e2e8f0', fontWeight: idx === 0 ? 700 : 400 }}>
+                            <span style={{ color: '#ffffff', fontWeight: idx === 0 ? 500 : 400 }}>
                               {pred.crop} — {pred.condition}
                             </span>
-                            <span style={{ color: 'var(--text-muted)', fontSize: '0.7rem', marginLeft: 6 }}>
+                            <span style={{ color: 'rgba(255, 255, 255, 0.45)', fontSize: '0.7rem', marginLeft: 6 }}>
                               ({pred.kinyarwandaName})
                             </span>
                           </div>
-                          <div style={{ width: 45, textAlign: 'right', fontWeight: 600, color: idx === 0 ? '#34d399' : 'var(--text-muted)' }}>
+                          <div style={{ width: 45, textAlign: 'right', fontWeight: 500, color: idx === 0 ? '#ffffff' : 'rgba(255, 255, 255, 0.5)' }}>
                             {(pred.probability * 100).toFixed(1)}%
                           </div>
-                          <div style={{ width: 60, height: 4, background: 'rgba(255,255,255,0.08)', borderRadius: 2, overflow: 'hidden' }}>
+                          <div style={{ width: 60, height: 3, background: 'rgba(255, 255, 255, 0.1)', borderRadius: 2, overflow: 'hidden' }}>
                             <div
                               style={{
                                 width: `${Math.min(100, Math.round(pred.probability * 100))}%`,
                                 height: '100%',
-                                background: idx === 0 ? '#10b981' : 'rgba(255,255,255,0.3)',
+                                background: idx === 0 ? '#ffffff' : 'rgba(255, 255, 255, 0.3)',
                               }}
                             />
                           </div>
@@ -514,41 +586,41 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {/* Immediate Cultural Action */}
                 <div style={{
-                  background: 'rgba(245, 158, 11, 0.08)',
-                  border: '1px solid rgba(245, 158, 11, 0.25)',
-                  borderRadius: 'var(--radius-sm)',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: 10,
                   padding: '12px 14px',
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: 'var(--accent-gold)', fontWeight: 600, fontSize: '0.82rem', marginBottom: 4 }}>
-                    <Sparkles size={14} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: '#ffffff', fontWeight: 500, fontSize: '0.82rem', marginBottom: 4 }}>
+                    <Sparkles size={14} color="#ffffff" />
                     <span>{isRw ? 'Icyo Ugomba Gukora Ako Kanya' : 'Immediate Cultural Intervention'}</span>
                   </div>
-                  <div style={{ fontSize: '0.85rem', color: '#f3f4f6' }}>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.7)' }}>
                     {diagnosis.immediateAction}
                   </div>
                 </div>
 
-                {/* RAB Approved Chemical & Organic Controls */}
+                {/* Treatment Protocol */}
                 <div style={{
-                  background: 'rgba(0, 0, 0, 0.25)',
-                  border: '1px solid var(--border-subtle)',
-                  borderRadius: 'var(--radius-sm)',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: 10,
                   padding: '12px 14px',
                 }}>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 700, color: '#fff', marginBottom: 6 }}>
+                  <div style={{ fontSize: '0.82rem', color: '#ffffff', fontWeight: 500, marginBottom: 6 }}>
                     {isRw ? 'Umuti wemewe na RAB (Organic & Chemical)' : 'RAB Recommended Treatment Protocol'}
                   </div>
-                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: 6 }}>
+                  <div style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.65)', marginBottom: 4 }}>
                     🌿 <strong>Organic:</strong> {diagnosis.recommendedOrganicTreatment}
                   </div>
-                  <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                  <div style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.65)' }}>
                     🧪 <strong>Chemical:</strong> {diagnosis.recommendedChemicalTreatment}
                   </div>
                 </div>
 
-                {/* Agronomist Escalation Button */}
+                {/* Agronomist Escalation */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 }}>
-                  <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                  <div style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.45)' }}>
                     {diagnosis.confidence < 0.85 || diagnosis.agronomistReviewRecommended
                       ? (isRw ? '⚠️ Icyizere kiri munsi ya 85% cyangwa uburwayi bukomeye' : '⚠️ Low confidence or quarantine pest detected')
                       : (isRw ? 'Isuzuma ririzewe (High confidence)' : 'Standard confidence passed')}
@@ -557,17 +629,28 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
                   <button
                     onClick={handleEscalate}
                     disabled={escalated}
-                    className="btn btn-outline-gold btn-sm"
-                    style={{ gap: 6 }}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      color: '#ffffff',
+                      borderRadius: 100,
+                      padding: '6px 16px',
+                      fontSize: '0.8rem',
+                      fontWeight: 500,
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 6,
+                    }}
                   >
                     {escalated ? (
                       <>
-                        <CheckCircle2 size={14} color="#10b981" />
+                        <CheckCircle2 size={14} color="#ffffff" />
                         <span>{isRw ? 'Byoherejwe kuri Agronome' : 'Escalated to Agronomist'}</span>
                       </>
                     ) : (
                       <>
-                        <Send size={14} />
+                        <Send size={14} color="#ffffff" />
                         <span>{isRw ? 'Ohereza kuri Agronome' : 'Triage to District Agronomist'}</span>
                       </>
                     )}
@@ -579,50 +662,50 @@ export const CropDoctorScanner: React.FC<CropDoctorScannerProps> = ({
         </div>
       </div>
 
-      {/* Post Harvest Quality Modal / Result Panel if active */}
+      {/* Post Harvest Quality Modal / Result Panel */}
       {postHarvestResult && (
         <div style={{
-          marginTop: 20,
-          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(16, 25, 21, 0.9) 100%)',
-          border: '1px solid rgba(245, 158, 11, 0.35)',
-          borderRadius: 'var(--radius-md)',
-          padding: '18px 20px',
+          marginTop: 24,
+          background: 'rgba(255, 255, 255, 0.03)',
+          border: '1px solid rgba(255, 255, 255, 0.12)',
+          borderRadius: 12,
+          padding: '20px 24px',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-            <PackageCheck size={18} color="var(--accent-gold)" />
-            <h4 style={{ fontSize: '1rem', color: '#fff' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 16 }}>
+            <PackageCheck size={18} color="#ffffff" />
+            <h4 style={{ fontSize: '1.05rem', color: '#ffffff', fontWeight: 500 }}>
               {isRw ? 'Isuzuma ry\'Ubwiza bw\'Umusaruro (Post-Harvest Quality AI)' : 'AI Post-Harvest Loss & Produce Grading'}
             </h4>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 12, marginBottom: 12 }}>
-            <div style={{ background: 'rgba(0, 0, 0, 0.35)', padding: '10px', borderRadius: 8, textAlign: 'center' }}>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Grade A (Export/Premium)</div>
-              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#34d399' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 14, marginBottom: 14 }}>
+            <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: 10, padding: '12px', textAlign: 'center' }}>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.5)', fontFamily: 'var(--font-family-mono)' }}>Grade A (Export/Premium)</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 600, color: '#ffffff', marginTop: 4 }}>
                 {postHarvestResult.gradeA}%
               </div>
             </div>
-            <div style={{ background: 'rgba(0, 0, 0, 0.35)', padding: '10px', borderRadius: 8, textAlign: 'center' }}>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Grade B (Local Retail)</div>
-              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fbbf24' }}>
+            <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: 10, padding: '12px', textAlign: 'center' }}>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.5)', fontFamily: 'var(--font-family-mono)' }}>Grade B (Local Retail)</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 600, color: '#ffffff', marginTop: 4 }}>
                 {postHarvestResult.gradeB}%
               </div>
             </div>
-            <div style={{ background: 'rgba(0, 0, 0, 0.35)', padding: '10px', borderRadius: 8, textAlign: 'center' }}>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Damaged / Overripe</div>
-              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#f87171' }}>
+            <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: 10, padding: '12px', textAlign: 'center' }}>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.5)', fontFamily: 'var(--font-family-mono)' }}>Damaged / Overripe</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 600, color: 'rgba(255, 255, 255, 0.6)', marginTop: 4 }}>
                 {postHarvestResult.damaged}%
               </div>
             </div>
-            <div style={{ background: 'rgba(0, 0, 0, 0.35)', padding: '10px', borderRadius: 8, textAlign: 'center' }}>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Est. Shelf Life</div>
-              <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#38bdf8' }}>
+            <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: 10, padding: '12px', textAlign: 'center' }}>
+              <div style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.5)', fontFamily: 'var(--font-family-mono)' }}>Est. Shelf Life</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: 600, color: '#ffffff', marginTop: 4 }}>
                 {postHarvestResult.shelfLifeDays} days
               </div>
             </div>
           </div>
 
-          <div style={{ fontSize: '0.85rem', color: '#f3f4f6' }}>
+          <div style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.7)' }}>
             💡 {isRw ? postHarvestResult.recommendationRw : postHarvestResult.recommendation}
           </div>
         </div>

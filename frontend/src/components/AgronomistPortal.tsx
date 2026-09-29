@@ -59,7 +59,7 @@ export const AgronomistPortal: React.FC<AgronomistPortalProps> = ({
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
             <span style={{
-              background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
+              background: 'rgba(255, 255, 255, 0.05)',
               color: '#fff',
               fontSize: '0.72rem',
               fontWeight: 700,
@@ -85,7 +85,7 @@ export const AgronomistPortal: React.FC<AgronomistPortalProps> = ({
           padding: '6px 14px',
           borderRadius: 'var(--radius-full)',
           fontSize: '0.8rem',
-          color: '#38bdf8',
+          color: '#ffffff',
           display: 'flex',
           alignItems: 'center',
           gap: 6,
@@ -119,7 +119,7 @@ export const AgronomistPortal: React.FC<AgronomistPortalProps> = ({
                   }}
                   style={{
                     background: isSelected ? 'rgba(2, 132, 199, 0.15)' : 'rgba(0,0,0,0.3)',
-                    border: isSelected ? '1px solid #0284c7' : '1px solid var(--border-subtle)',
+                    border: isSelected ? '1px solid #ffffff' : '1px solid var(--border-subtle)',
                     borderRadius: 'var(--radius-sm)',
                     padding: '12px 14px',
                     cursor: 'pointer',
@@ -135,8 +135,8 @@ export const AgronomistPortal: React.FC<AgronomistPortalProps> = ({
                       fontWeight: 700,
                       padding: '2px 8px',
                       borderRadius: 999,
-                      background: isPending ? 'rgba(245, 158, 11, 0.15)' : 'rgba(16, 185, 129, 0.15)',
-                      color: isPending ? '#fbbf24' : '#34d399',
+                      background: isPending ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255, 255, 255, 0.12)',
+                      color: isPending ? '#ffffff' : '#ffffff',
                     }}>
                       {c.status}
                     </span>
@@ -186,7 +186,7 @@ export const AgronomistPortal: React.FC<AgronomistPortalProps> = ({
                 {selectedCase.aiSuggestedDiagnosis} ({Math.round(selectedCase.aiConfidence * 100)}% conf)
               </div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: 4 }}>
-                Status: <strong style={{ color: selectedCase.status === 'VERIFIED' ? '#34d399' : '#fbbf24' }}>{selectedCase.status}</strong>
+                Status: <strong style={{ color: selectedCase.status === 'VERIFIED' ? '#ffffff' : '#ffffff' }}>{selectedCase.status}</strong>
               </div>
             </div>
           </div>
@@ -230,7 +230,7 @@ export const AgronomistPortal: React.FC<AgronomistPortalProps> = ({
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 6 }}>
               {successBadge ? (
-                <span style={{ fontSize: '0.82rem', color: '#34d399', display: 'flex', alignItems: 'center', gap: 4 }}>
+                <span style={{ fontSize: '0.82rem', color: '#ffffff', display: 'flex', alignItems: 'center', gap: 4 }}>
                   <Check size={14} /> Prescription issued & sent via SMS to farmer!
                 </span>
               ) : (

@@ -79,7 +79,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
             <span style={{
-              background: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+              background: 'rgba(255, 255, 255, 0.05)',
               color: '#fff',
               fontSize: '0.72rem',
               fontWeight: 700,
@@ -138,9 +138,9 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                 <label style={{ fontSize: '0.82rem', fontWeight: 600 }}>
-                  Soil pH: <strong style={{ color: pH < 5.5 ? '#f87171' : '#34d399' }}>{pH.toFixed(1)}</strong>
+                  Soil pH: <strong style={{ color: pH < 5.5 ? '#ffffff' : '#ffffff' }}>{pH.toFixed(1)}</strong>
                 </label>
-                <span style={{ fontSize: '0.75rem', color: pH < 5.5 ? '#f87171' : 'var(--text-muted)' }}>
+                <span style={{ fontSize: '0.75rem', color: pH < 5.5 ? '#ffffff' : 'var(--text-muted)' }}>
                   {pH < 5.2 ? 'Strongly Acidic (Gusharira cyane)' : pH < 5.8 ? 'Moderately Acidic' : 'Optimal (6.0 - 7.0)'}
                 </span>
               </div>
@@ -151,7 +151,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
                 step="0.1"
                 value={pH}
                 onChange={(e) => setPH(parseFloat(e.target.value))}
-                style={{ width: '100%', accentColor: pH < 5.5 ? '#ef4444' : '#10b981' }}
+                style={{ width: '100%', accentColor: pH < 5.5 ? '#ffffff' : '#ffffff' }}
               />
             </div>
 
@@ -159,7 +159,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                 <label style={{ fontSize: '0.82rem', fontWeight: 600 }}>
-                  Nitrogen (N): <strong style={{ color: '#38bdf8' }}>{nitrogen} mg/kg</strong>
+                  Nitrogen (N): <strong style={{ color: '#ffffff' }}>{nitrogen} mg/kg</strong>
                 </label>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                   {nitrogen < 20 ? 'Low (Gicye)' : nitrogen < 40 ? 'Medium' : 'High'}
@@ -171,7 +171,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
                 max="60"
                 value={nitrogen}
                 onChange={(e) => setNitrogen(parseInt(e.target.value))}
-                style={{ width: '100%', accentColor: '#38bdf8' }}
+                style={{ width: '100%', accentColor: '#ffffff' }}
               />
             </div>
 
@@ -179,7 +179,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                 <label style={{ fontSize: '0.82rem', fontWeight: 600 }}>
-                  Phosphorus (P): <strong style={{ color: '#fbbf24' }}>{phosphorus} mg/kg</strong>
+                  Phosphorus (P): <strong style={{ color: '#ffffff' }}>{phosphorus} mg/kg</strong>
                 </label>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                   {phosphorus < 15 ? 'Deficient (Bikabije)' : phosphorus < 30 ? 'Adequate' : 'Rich'}
@@ -191,7 +191,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
                 max="50"
                 value={phosphorus}
                 onChange={(e) => setPhosphorus(parseInt(e.target.value))}
-                style={{ width: '100%', accentColor: '#fbbf24' }}
+                style={{ width: '100%', accentColor: '#ffffff' }}
               />
             </div>
 
@@ -199,7 +199,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                 <label style={{ fontSize: '0.82rem', fontWeight: 600 }}>
-                  Potassium (K): <strong style={{ color: '#c084fc' }}>{potassium} mg/kg</strong>
+                  Potassium (K): <strong style={{ color: '#ffffff' }}>{potassium} mg/kg</strong>
                 </label>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                   {potassium < 100 ? 'Low' : 'Optimal'}
@@ -211,7 +211,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
                 max="350"
                 value={potassium}
                 onChange={(e) => setPotassium(parseInt(e.target.value))}
-                style={{ width: '100%', accentColor: '#c084fc' }}
+                style={{ width: '100%', accentColor: '#ffffff' }}
               />
             </div>
 
@@ -219,7 +219,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                 <label style={{ fontSize: '0.82rem', fontWeight: 600 }}>
-                  Organic Matter: <strong style={{ color: '#34d399' }}>{organicMatter.toFixed(1)}%</strong>
+                  Organic Matter: <strong style={{ color: '#ffffff' }}>{organicMatter.toFixed(1)}%</strong>
                 </label>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
                   {organicMatter < 3.0 ? 'Needs Compost / Manure' : 'Healthy Organic Layer'}
@@ -232,7 +232,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
                 step="0.1"
                 value={organicMatter}
                 onChange={(e) => setOrganicMatter(parseFloat(e.target.value))}
-                style={{ width: '100%', accentColor: '#34d399' }}
+                style={{ width: '100%', accentColor: '#ffffff' }}
               />
             </div>
           </div>
@@ -257,16 +257,16 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 16 }}>
               {/* Agricultural Lime */}
               <div style={{
-                background: limeRequiredKgHa > 0 ? 'rgba(239, 68, 68, 0.12)' : 'rgba(16, 185, 129, 0.1)',
+                background: limeRequiredKgHa > 0 ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255, 255, 255, 0.12)',
                 padding: '12px',
                 borderRadius: 8,
                 textAlign: 'center',
-                border: `1px solid ${limeRequiredKgHa > 0 ? 'rgba(239, 68, 68, 0.3)' : 'rgba(16, 185, 129, 0.3)'}`,
+                border: `1px solid ${limeRequiredKgHa > 0 ? 'rgba(255, 255, 255, 0.12)' : 'rgba(255, 255, 255, 0.12)'}`,
               }}>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
                   {isRw ? 'Ingwa / Chaux (Lime)' : 'Agri-Lime (Travertine)'}
                 </div>
-                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: limeRequiredKgHa > 0 ? '#f87171' : '#34d399' }}>
+                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: limeRequiredKgHa > 0 ? '#ffffff' : '#ffffff' }}>
                   {fieldLime} kg
                 </div>
                 <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
@@ -276,16 +276,16 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
 
               {/* Basal DAP / NPK */}
               <div style={{
-                background: 'rgba(245, 158, 11, 0.1)',
+                background: 'rgba(255, 255, 255, 0.12)',
                 padding: '12px',
                 borderRadius: 8,
                 textAlign: 'center',
-                border: '1px solid rgba(245, 158, 11, 0.3)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
               }}>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
                   {isRw ? 'DAP / NPK (Itangiriro)' : 'Basal DAP / NPK'}
                 </div>
-                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#fbbf24' }}>
+                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#ffffff' }}>
                   {fieldDap} kg
                 </div>
                 <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
@@ -295,16 +295,16 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
 
               {/* Top-Dressing Urea */}
               <div style={{
-                background: 'rgba(56, 189, 248, 0.1)',
+                background: 'rgba(255, 255, 255, 0.12)',
                 padding: '12px',
                 borderRadius: 8,
                 textAlign: 'center',
-                border: '1px solid rgba(56, 189, 248, 0.3)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
               }}>
                 <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
                   {isRw ? 'Urea (Gufumbira hejuru)' : 'Top-Dress Urea'}
                 </div>
-                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#38bdf8' }}>
+                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#ffffff' }}>
                   {fieldUrea} kg
                 </div>
                 <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>
@@ -316,7 +316,7 @@ export const SoilAdvisor: React.FC<SoilAdvisorProps> = ({ farm, language }) => {
             {/* Application Instructions */}
             <div style={{ fontSize: '0.85rem', color: '#f3f4f6', lineHeight: 1.6 }}>
               {pH < 5.5 ? (
-                <div style={{ background: 'rgba(239, 68, 68, 0.08)', padding: '10px 12px', borderRadius: 6, marginBottom: 8 }}>
+                <div style={{ background: 'rgba(255, 255, 255, 0.12)', padding: '10px 12px', borderRadius: 6, marginBottom: 8 }}>
                   ⚠️ <strong>{isRw ? 'Ubutaka bwawe burasharira (pH ' + pH.toFixed(1) + '):' : 'Soil Acidity Alert (pH ' + pH.toFixed(1) + '):'}</strong>{' '}
                   {isRw
                     ? `Shyiramo ibiro ${fieldLime} by'ingwa y'ifu (Agricultural Lime) ibyumweru 2 mbere yo gutera, maze uyingingize mu butaka kugira ngo ifumbire ya DAP n'ifumbire mvaruganda biticwa n'ubusharire.`

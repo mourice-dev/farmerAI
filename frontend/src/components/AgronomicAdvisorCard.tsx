@@ -1,12 +1,11 @@
+/** @format */
+
 import React from 'react';
 import {
   Droplets,
   Wind,
   ShieldCheck,
-  AlertOctagon,
   Clock,
-  Compass,
-  ArrowRight,
   Sparkles,
 } from 'lucide-react';
 import { DecisionFusionAdvice, FarmProfile, Language, WeatherData } from '../types';
@@ -27,26 +26,38 @@ export const AgronomicAdvisorCard: React.FC<AgronomicAdvisorCardProps> = ({
   const isRw = language === 'rw';
 
   return (
-    <div className="glass-panel" style={{ padding: '24px', marginBottom: '24px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+    <div
+      style={{
+        padding: '28px',
+        marginBottom: '32px',
+        background: 'rgba(255, 255, 255, 0.03)',
+        border: '1px solid rgba(255, 255, 255, 0.10)',
+        borderRadius: 16,
+        fontFamily: 'var(--font-family-aeonik)',
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
         <span style={{
-          background: 'linear-gradient(135deg, #0284c7 0%, #0369a1 100%)',
-          color: '#fff',
+          background: 'rgba(255, 255, 255, 0.08)',
+          color: '#ffffff',
+          border: '1px solid rgba(255, 255, 255, 0.18)',
           fontSize: '0.72rem',
-          fontWeight: 700,
-          padding: '2px 8px',
-          borderRadius: 'var(--radius-full)',
+          fontWeight: 500,
+          padding: '2px 10px',
+          borderRadius: 100,
+          fontFamily: 'var(--font-family-mono)',
+          letterSpacing: '0.04em',
         }}>
-          MODULE 2
+          DECISION FUSION
         </span>
-        <h2 style={{ fontSize: '1.4rem' }}>
-          {isRw ? 'Umujyanama w\'Imyanzuro y\'Ubuhinzi (Decision Fusion)' : 'Agronomic Decision Fusion Engine'}
+        <h2 style={{ fontSize: '1.5rem', color: '#ffffff', fontWeight: 500, letterSpacing: '-0.03em' }}>
+          {isRw ? 'Umujyanama w\'Imyanzuro y\'Ubuhinzi (Decision Fusion)' : 'Autonomous Decision Fusion Engine'}
         </h2>
       </div>
-      <p style={{ fontSize: '0.85rem', marginBottom: 20 }}>
+      <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.65)', marginBottom: 24 }}>
         {isRw
           ? 'Guhuza ibyavuye mu isuzuma ry\'indwara + Iteganyagihe + Uko ibihingwa bikuze + Ubutaka bwawe.'
-          : 'Synthesizing Vision diagnosis + Live microclimate + Phenological growth stage + Rwanda agro-ecological zone.'}
+          : 'Synthesizing Vision diagnosis + Live atmospheric microclimate + Phenological growth stage + Rwanda agro-ecological zone.'}
       </p>
 
       <div style={{
@@ -57,117 +68,160 @@ export const AgronomicAdvisorCard: React.FC<AgronomicAdvisorCardProps> = ({
       }}>
         {/* Card A: Irrigation Prescription */}
         <div style={{
-          background: advice.irrigationAdvice.action === 'DO_NOT_IRRIGATE'
-            ? 'rgba(239, 68, 68, 0.08)'
-            : 'rgba(16, 185, 129, 0.08)',
-          border: `1px solid ${advice.irrigationAdvice.action === 'DO_NOT_IRRIGATE' ? 'rgba(239, 68, 68, 0.3)' : 'rgba(16, 185, 129, 0.3)'}`,
-          borderRadius: 'var(--radius-md)',
-          padding: '18px 20px',
+          background: 'rgba(255, 255, 255, 0.03)',
+          border: '1px solid rgba(255, 255, 255, 0.10)',
+          borderRadius: 12,
+          padding: '20px',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-            <Droplets size={18} color={advice.irrigationAdvice.action === 'DO_NOT_IRRIGATE' ? '#f87171' : '#34d399'} />
-            <h4 style={{ fontSize: '1rem', color: '#fff' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+            <div style={{
+              width: 32,
+              height: 32,
+              borderRadius: 8,
+              background: 'rgba(255, 255, 255, 0.08)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#ffffff',
+            }}>
+              <Droplets size={16} />
+            </div>
+            <h4 style={{ fontSize: '0.98rem', color: '#ffffff', fontWeight: 500 }}>
               {isRw ? 'Imyanzuro yo Kuhira (Irrigation)' : "Today's Irrigation Protocol"}
             </h4>
           </div>
 
-          <div style={{
-            fontSize: '1.15rem',
-            fontWeight: 700,
-            color: advice.irrigationAdvice.action === 'DO_NOT_IRRIGATE' ? '#f87171' : '#34d399',
-            marginBottom: 8,
-          }}>
+          <div
+            style={{
+              fontSize: '1.15rem',
+              color: '#ffffff',
+              fontWeight: 500,
+              letterSpacing: '-0.02em',
+              marginBottom: 8,
+            }}
+          >
             {isRw ? advice.irrigationAdvice.headlineRw : advice.irrigationAdvice.headline}
           </div>
 
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+          <p style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.65)', lineHeight: 1.55 }}>
             {advice.irrigationAdvice.reason}
           </p>
 
           <div style={{
-            marginTop: 12,
-            paddingTop: 10,
+            marginTop: 14,
+            paddingTop: 12,
             borderTop: '1px solid rgba(255, 255, 255, 0.08)',
             fontSize: '0.78rem',
             display: 'flex',
             justifyContent: 'space-between',
-            color: 'var(--text-muted)',
+            color: 'rgba(255, 255, 255, 0.5)',
+            fontFamily: 'var(--font-family-mono)',
           }}>
-            <span>Soil Moisture: <strong>{weather.soilMoisturePercentage}%</strong></span>
-            <span>24h Rain: <strong>{weather.expectedRainfallMm} mm</strong></span>
+            <span>Soil Moisture: <strong style={{ color: '#ffffff' }}>{weather.soilMoisturePercentage}%</strong></span>
+            <span>24h Rain: <strong style={{ color: '#ffffff' }}>{weather.expectedRainfallMm} mm</strong></span>
           </div>
         </div>
 
         {/* Card B: Spray & Fungicide Window */}
         <div style={{
-          background: !advice.sprayAdvice.isSafeToSpray
-            ? 'rgba(245, 158, 11, 0.08)'
-            : 'rgba(16, 185, 129, 0.08)',
-          border: `1px solid ${!advice.sprayAdvice.isSafeToSpray ? 'rgba(245, 158, 11, 0.3)' : 'rgba(16, 185, 129, 0.3)'}`,
-          borderRadius: 'var(--radius-md)',
-          padding: '18px 20px',
+          background: 'rgba(255, 255, 255, 0.03)',
+          border: '1px solid rgba(255, 255, 255, 0.10)',
+          borderRadius: 12,
+          padding: '20px',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-            <Wind size={18} color={!advice.sprayAdvice.isSafeToSpray ? '#fbbf24' : '#34d399'} />
-            <h4 style={{ fontSize: '1rem', color: '#fff' }}>
-              {isRw ? 'Igihe cyo Gutera Umuti (Spray Window)' : 'Fungicide & Pesticide Window'}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+            <div style={{
+              width: 32,
+              height: 32,
+              borderRadius: 8,
+              background: 'rgba(255, 255, 255, 0.08)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#ffffff',
+            }}>
+              <Wind size={16} />
+            </div>
+            <h4 style={{ fontSize: '0.98rem', color: '#ffffff', fontWeight: 500 }}>
+              {isRw ? 'Igihe cyo Gutera Umuti (Spray Window)' : 'Fungicide & Spray Window'}
             </h4>
           </div>
 
-          <div style={{
-            fontSize: '1.15rem',
-            fontWeight: 700,
-            color: !advice.sprayAdvice.isSafeToSpray ? '#fbbf24' : '#34d399',
-            marginBottom: 8,
-          }}>
+          <div
+            style={{
+              fontSize: '1.15rem',
+              color: '#ffffff',
+              fontWeight: 500,
+              letterSpacing: '-0.02em',
+              marginBottom: 8,
+            }}
+          >
             {isRw ? advice.sprayAdvice.headlineRw : advice.sprayAdvice.headline}
           </div>
 
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+          <p style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.65)', lineHeight: 1.55 }}>
             {advice.sprayAdvice.explanation}
           </p>
 
           <div style={{
-            marginTop: 12,
-            paddingTop: 10,
+            marginTop: 14,
+            paddingTop: 12,
             borderTop: '1px solid rgba(255, 255, 255, 0.08)',
             fontSize: '0.78rem',
             display: 'flex',
             alignItems: 'center',
             gap: 6,
-            color: 'var(--accent-gold)',
+            color: '#ffffff',
+            fontFamily: 'var(--font-family-mono)',
           }}>
-            <Clock size={13} />
-            <span>Optimal Window: <strong>{advice.sprayAdvice.bestWindow}</strong></span>
+            <Clock size={13} color="#ffffff" />
+            <span>Window: <strong>{advice.sprayAdvice.bestWindow}</strong></span>
           </div>
         </div>
 
-        {/* Card C: Drainage & Field Hygiene Warning */}
+        {/* Card C: Drainage & Field Sanitation */}
         <div style={{
-          background: advice.drainageWarning ? 'rgba(239, 68, 68, 0.12)' : 'rgba(0, 0, 0, 0.3)',
-          border: `1px solid ${advice.drainageWarning ? 'rgba(239, 68, 68, 0.35)' : 'var(--border-subtle)'}`,
-          borderRadius: 'var(--radius-md)',
-          padding: '18px 20px',
+          background: 'rgba(255, 255, 255, 0.03)',
+          border: '1px solid rgba(255, 255, 255, 0.10)',
+          borderRadius: 12,
+          padding: '20px',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-            <AlertOctagon size={18} color={advice.drainageWarning ? '#ef4444' : '#10b981'} />
-            <h4 style={{ fontSize: '1rem', color: '#fff' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+            <div style={{
+              width: 32,
+              height: 32,
+              borderRadius: 8,
+              background: 'rgba(255, 255, 255, 0.08)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#ffffff',
+            }}>
+              <ShieldCheck size={16} />
+            </div>
+            <h4 style={{ fontSize: '0.98rem', color: '#ffffff', fontWeight: 500 }}>
               {isRw ? 'Ubugenzuzi bw\'Umurima (Drainage & Hygiene)' : 'Field Drainage & Sanitation'}
             </h4>
           </div>
 
-          <div style={{
-            fontSize: '1.15rem',
-            fontWeight: 700,
-            color: advice.drainageWarning ? '#f87171' : '#34d399',
-            marginBottom: 8,
-          }}>
+          <div
+            style={{
+              fontSize: '1.15rem',
+              color: '#ffffff',
+              fontWeight: 500,
+              letterSpacing: '-0.02em',
+              marginBottom: 8,
+            }}
+          >
             {advice.drainageWarning
               ? (isRw ? 'Icyago cy\'Amazi Adasohoka!' : 'High Stagnant Water Risk!')
               : (isRw ? 'Imirongo y\'amazi imeze neza' : 'Drainage Conditions Normal')}
           </div>
 
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+          <p style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.65)', lineHeight: 1.55 }}>
             {advice.drainageWarning
               ? (isRw
                   ? 'Imvura ikomeye ishobora gutuma amazi yidika mu murima wawe, bigateza kubora kw\'imizi no gukura kw\'ibihumyo (fungi). Sukura imiferege y\'amazi ubu!'
@@ -178,29 +232,30 @@ export const AgronomicAdvisorCard: React.FC<AgronomicAdvisorCardProps> = ({
           </p>
 
           <div style={{
-            marginTop: 12,
-            paddingTop: 10,
+            marginTop: 14,
+            paddingTop: 12,
             borderTop: '1px solid rgba(255, 255, 255, 0.08)',
             fontSize: '0.78rem',
-            color: 'var(--text-muted)',
+            color: 'rgba(255, 255, 255, 0.5)',
+            fontFamily: 'var(--font-family-mono)',
           }}>
-            Soil Type: <strong>{farm.soilType}</strong> • Altitude: <strong>{farm.altitudeMeters}m</strong>
+            Soil Type: <strong style={{ color: '#ffffff' }}>{farm.soilType}</strong> • Altitude: <strong style={{ color: '#ffffff' }}>{farm.altitudeMeters}m</strong>
           </div>
         </div>
       </div>
 
       {/* Comprehensive Fused Summary Note */}
       <div style={{
-        background: 'rgba(0, 0, 0, 0.4)',
-        padding: '14px 18px',
-        borderRadius: 'var(--radius-sm)',
-        borderLeft: '4px solid var(--primary)',
+        background: 'rgba(255, 255, 255, 0.04)',
+        padding: '16px 20px',
+        border: '1px solid rgba(255, 255, 255, 0.12)',
+        borderRadius: 12,
         display: 'flex',
         alignItems: 'center',
         gap: 12,
       }}>
-        <Sparkles size={20} color="var(--primary)" style={{ flexShrink: 0 }} />
-        <div style={{ fontSize: '0.88rem', color: '#f3f4f6' }}>
+        <Sparkles size={18} color="#ffffff" style={{ flexShrink: 0 }} />
+        <div style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.5 }}>
           {isRw ? advice.agronomicSummaryRw : advice.agronomicSummary}
         </div>
       </div>
