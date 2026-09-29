@@ -1,6 +1,12 @@
 # 🌱 FarmerAI: Next-Generation Agricultural Decision & Diagnostics System
 ## Dual-Engine Architecture: Vision Neural Networks + DeepSeek Reasoning
 
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB.svg)
+![React](https://img.shields.io/badge/Frontend-React%20%7C%20Vite%20%7C%20TypeScript-61DAFB.svg)
+![ONNX](https://img.shields.io/badge/Inference-ONNX%20Runtime%20(38ms)-005CED.svg)
+![DeepSeek](https://img.shields.io/badge/Reasoning-DeepSeek--V3%20MoE-8B5CF6.svg)
+
 This repository is organized into **two dedicated folders** separating the user-facing application from the AI inference and model engines:
 
 ```
