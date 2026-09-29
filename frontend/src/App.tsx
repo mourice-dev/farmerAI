@@ -61,6 +61,9 @@ import { UssdFeaturePhoneModal } from "./components/UssdFeaturePhoneModal";
 import { QoderActivitySidebar } from "./components/QoderActivitySidebar";
 import { QoderAgenticCopilot } from "./components/QoderAgenticCopilot";
 import { QoderStatusBar } from "./components/QoderStatusBar";
+import { ChatGptSidebar } from "./components/ChatGptSidebar";
+import { ChatGptHeader } from "./components/ChatGptHeader";
+import { ChatGptInterface } from "./components/ChatGptInterface";
 
 export function App() {
   // Global App State
@@ -70,7 +73,12 @@ export function App() {
   const [activeTab, setActiveTab] = useState<string>("dashboard");
   const [activeModel, setActiveModel] = useState<string>("DeepSeek-V3");
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(true);
-  const [copilotOpen, setCopilotOpen] = useState<boolean>(true);
+  const [copilotOpen, setCopilotOpen] = useState<boolean>(false);
+
+  // ChatGPT View Mode: 'chat' (ChatGPT screen from screenshot) or 'work' (Agricultural AI tools)
+  const [activeMode, setActiveMode] = useState<"chat" | "work">("chat");
+  const [activeChatTitle, setActiveChatTitle] = useState<string | undefined>(undefined);
+  const [chatKey, setChatKey] = useState<number>(1);
 
   // Farm Profile
   const [farm, setFarm] = useState<FarmProfile>({
@@ -235,67 +243,87 @@ export function App() {
     setOutbreaks((prev) => [newAlert, ...prev]);
   };
 
+  const handleNewChat = () => {
+    setActiveMode("chat");
+    setActiveChatTitle(undefined);
+    setChatKey((k) => k + 1);
+  };
+
+  const handleSelectChat = (title: string) => {
+    setActiveMode("chat");
+    setActiveChatTitle(title);
+    setChatKey((k) => k + 1);
+  };
+
+  const handleOpenWorkTab = (tabId: string) => {
+    setActiveMode("work");
+    setActiveTab(tabId);
+  };
+
   const isRw = language === "rw";
 
   return (
     <div
       className='farmer-app-shell'
       style={{
-        minHeight: "100vh",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
-        background: "var(--qoder-bg-base)",
-        paddingBottom: 28,
+        background: "#000000",
+        overflow: "hidden",
       }}>
-      {/* FarmerAI workspace navigation */}
-      <Navbar
-        currentRole={currentRole}
-        setRole={(role) => {
-          setRole(role);
-          if (role === "agronomist") setActiveTab("agronomist");
-          else if (role === "developer") setActiveTab("ml-workbench");
-          else setActiveTab("dashboard");
-        }}
-        language={language}
-        setLanguage={setLanguage}
-        district={district}
-        setDistrict={setDistrict}
-        activeOutbreakCount={outbreaks.length}
-        onOpenVoiceModal={() => setVoiceModalOpen(true)}
-        onOpenOutbreaks={() => setActiveTab("surveillance")}
-        onOpenUssdModal={() => setUssdModalOpen(true)}
-        activeModel={activeModel}
-        setActiveModel={setActiveModel}
+      {/* Top Header matching ChatGPT screen with [ Chat | + Work ] segmented control */}
+      <ChatGptHeader
         sidebarOpen={sidebarOpen}
-        toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
-        copilotOpen={copilotOpen}
-        toggleCopilot={() => setCopilotOpen(!copilotOpen)}
+        onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+        activeMode={activeMode}
+        onSelectMode={setActiveMode}
+        district={district}
+        onSelectDistrict={setDistrict}
+        language={language}
+        onToggleLanguage={() => setLanguage(language === "en" ? "rw" : "en")}
+        activeModel={activeModel}
+        onSelectModel={setActiveModel}
       />
 
-      {/* Main FarmerAI workspace */}
+      {/* Main Workspace: Left Sidebar + Center View */}
       <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
-        {/* Left Activity Sidebar (Context & Quests Explorer) */}
-        {sidebarOpen && (
-          <QoderActivitySidebar
-            currentDistrict={district}
-            onSelectDistrict={setDistrict}
-            farm={farm}
-            language={language}
-            onSelectTab={setActiveTab}
-          />
-        )}
+        {/* Left ChatGPT Sidebar matching screenshot */}
+        <ChatGptSidebar
+          isOpen={sidebarOpen}
+          onToggle={() => setSidebarOpen(false)}
+          onNewChat={handleNewChat}
+          onSelectChat={handleSelectChat}
+          activeChatTitle={activeChatTitle}
+          onOpenWorkTab={handleOpenWorkTab}
+        />
 
-        {/* Center Main Editor / Canvas Area */}
-        <main
-          className='farmer-main'
-          style={{
-            flex: 1,
-            overflowY: "auto",
-            padding: "16px 20px",
-            minWidth: 0,
-          }}>
-          {/* Starcloud Signature Module Navigation Pills */}
-          <div
+        {/* Center Area: Chat Mode OR Work Studio */}
+        {activeMode === "chat" ? (
+          <ChatGptInterface
+            key={chatKey}
+            district={district}
+            language={language}
+            weather={weather}
+            advice={advice}
+            activeModel={activeModel}
+            onOpenVoiceModal={() => setVoiceModalOpen(true)}
+            onOpenWorkTab={handleOpenWorkTab}
+            initialChatTitle={activeChatTitle}
+          />
+        ) : (
+          <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+            {/* Center Main Editor / Canvas Area */}
+            <main
+              className='farmer-main'
+              style={{
+                flex: 1,
+                overflowY: "auto",
+                padding: "16px 20px",
+                minWidth: 0,
+              }}>
+              {/* Starcloud Signature Module Navigation Pills */}
+              <div
             style={{
               display: "flex",
               gap: 8,
@@ -517,26 +545,17 @@ export function App() {
           )}
 
           {activeTab === "ml-workbench" && <MLWorkbench language={language} />}
-        </main>
+            </main>
 
-        {/* Right Sidebar: Qoder Agentic Co-Pilot */}
-        <QoderAgenticCopilot
-          farm={farm}
-          weather={weather}
-          recentDiagnosis={recentDiagnosis}
-          language={language}
-          isOpen={copilotOpen}
-          onToggle={() => setCopilotOpen(!copilotOpen)}
-          activeModel={activeModel}
-        />
+            {/* Qoder IDE Bottom Status Bar */}
+            <QoderStatusBar
+              district={district}
+              weather={weather}
+              activeModel={activeModel}
+            />
+          </div>
+        )}
       </div>
-
-      {/* Qoder IDE Bottom Status Bar */}
-      <QoderStatusBar
-        district={district}
-        weather={weather}
-        activeModel={activeModel}
-      />
 
       {/* Floating Voice Assistant Trigger button */}
       <button
