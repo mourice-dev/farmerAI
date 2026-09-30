@@ -1,609 +1,267 @@
-/** @format */
+import React, { useState } from 'react';
+import { 
+  MessageSquare, 
+  Camera, 
+  CloudSun, 
+  BookOpen, 
+  Plus, 
+  PanelLeftClose, 
+  PanelLeft, 
+  Sparkles, 
+  MapPin, 
+  ChevronRight,
+  Leaf
+} from 'lucide-react';
+import { ChatView } from './components/ChatView';
+import { ScannerView } from './components/ScannerView';
+import { WeatherView } from './components/WeatherView';
+import { LibraryView } from './components/LibraryView';
+import { DiagnosisData } from './services/apiService';
 
-import React, { useState, useEffect } from "react";
-import {
-  Sprout,
-  Activity,
-  CloudRain,
-  ShieldAlert,
-  Radio,
-  FlaskConical,
-  Store,
-  TrendingUp,
-  ShieldCheck,
-  Cpu,
-  Mic,
-  MessageSquare,
-  CheckCircle,
-  Calendar,
-  FileCode,
-  Box,
-  Layers,
-  Sparkles,
-} from "lucide-react";
-import {
-  AgronomistCase,
-  CropType,
-  DecisionFusionAdvice,
-  DiseaseDetectionResult,
-  FarmProfile,
-  ForwardContractListing,
-  Language,
-  MarketPriceItem,
-  OutbreakAlert,
-  RwandaDistrict,
-  UserRole,
-  WeatherData,
-} from "./types";
-import {
-  DISTRICT_COORDINATES,
-  INITIAL_FARM,
-  MOCK_AGRONOMIST_CASES,
-  MOCK_FORWARD_CONTRACTS,
-  MOCK_MARKET_PRICES,
-  MOCK_OUTBREAKS,
-} from "./data/mockData";
-import { fetchAgroWeather } from "./services/weatherService";
-import { AIPipelineService } from "./services/aiPipelineService";
-import { Navbar } from "./components/Navbar";
-import { HeroFarmStatus } from "./components/HeroFarmStatus";
-import { CropDoctorScanner } from "./components/CropDoctorScanner";
-import { AgronomicAdvisorCard } from "./components/AgronomicAdvisorCard";
-import { SurveillanceMap } from "./components/SurveillanceMap";
-import { VoiceAssistantModal } from "./components/VoiceAssistantModal";
-import { SoilAdvisor } from "./components/SoilAdvisor";
-import { Marketplace } from "./components/Marketplace";
-import { YieldPredictor } from "./components/YieldPredictor";
-import { AgronomistPortal } from "./components/AgronomistPortal";
-import { MLWorkbench } from "./components/MLWorkbench";
-import { SeasonalAgroPlanner } from "./components/SeasonalAgroPlanner";
-import { UssdFeaturePhoneModal } from "./components/UssdFeaturePhoneModal";
-import { QoderActivitySidebar } from "./components/QoderActivitySidebar";
-import { QoderAgenticCopilot } from "./components/QoderAgenticCopilot";
-import { QoderStatusBar } from "./components/QoderStatusBar";
-import { ChatGptSidebar } from "./components/ChatGptSidebar";
-import { ChatGptHeader } from "./components/ChatGptHeader";
-import { ChatGptInterface } from "./components/ChatGptInterface";
+type ViewMode = 'chat' | 'scanner' | 'weather' | 'library';
 
-export function App() {
-  // Global App State
-  const [language, setLanguage] = useState<Language>("en");
-  const [currentRole, setRole] = useState<UserRole>("farmer");
-  const [district, setDistrict] = useState<RwandaDistrict>("Muhanga");
-  const [activeTab, setActiveTab] = useState<string>("dashboard");
-  const [activeModel, setActiveModel] = useState<string>("DeepSeek-V3");
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(true);
-  const [copilotOpen, setCopilotOpen] = useState<boolean>(false);
-
-  // ChatGPT View Mode: 'chat' (ChatGPT screen from screenshot) or 'work' (Agricultural AI tools)
-  const [activeMode, setActiveMode] = useState<"chat" | "work">("chat");
-  const [activeChatTitle, setActiveChatTitle] = useState<string | undefined>(undefined);
-  const [chatKey, setChatKey] = useState<number>(1);
-
-  // Farm Profile
-  const [farm, setFarm] = useState<FarmProfile>({
-    ...INITIAL_FARM,
-    district: "Muhanga",
-  });
-
-  // Weather & Agronomic Decision State
-  const [weather, setWeather] = useState<WeatherData>({
-    district: "Muhanga",
-    tempCelsius: 24,
-    humidityPercentage: 82,
-    rainChance24h: 70,
-    expectedRainfallMm: 12.4,
-    windSpeedKmh: 8,
-    soilMoisturePercentage: 34,
-    soilTempCelsius: 22,
-    uvIndex: 6,
-    forecastSummary: "Rain expected tomorrow. High relative humidity.",
-    sporeGerminationIndex: 78,
-    leafWetnessHours: 8,
-    isRainExpectedNext24h: true,
-  });
-
-  const [recentDiagnosis, setRecentDiagnosis] =
-    useState<DiseaseDetectionResult | null>(null);
-  const [advice, setAdvice] = useState<DecisionFusionAdvice>({
-    riskLevel: "high",
-    irrigationAdvice: {
-      action: "DO_NOT_IRRIGATE",
-      headline: "Don't Irrigate Today (Rain Expected)",
-      headlineRw: "Ntukuhire Uyu Munsi (Imvura Iraza)",
-      reason:
-        "Rainfall expected within 24h will supply sufficient moisture. Over-irrigation promotes fungal blight.",
-    },
-    sprayAdvice: {
-      isSafeToSpray: false,
-      headline: "Avoid Spraying Today (Rain Washout Risk)",
-      headlineRw: "Wikoresha Umuti Uyu Munsi (Imvura Yawuhagira)",
-      explanation:
-        "Rain showers will wash off chemical foliar protection before absorption.",
-      bestWindow: "Wait 24h until rain clears and leaves dry.",
-    },
-    drainageWarning: false,
-    agronomicSummary:
-      "District Muhanga: Conditions are warm & damp. Fungal spore germination pressure is elevated.",
-    agronomicSummaryRw:
-      "Akarere ka Muhanga: Ikirere gifite ubuhehere bwo hejuru. Witera umuti uyu munsi kubera imvura.",
-  });
-
-  // Outbreaks, Market, and Agronomist Queues
-  const [outbreaks, setOutbreaks] = useState<OutbreakAlert[]>(MOCK_OUTBREAKS);
-  const [marketPrices, setMarketPrices] =
-    useState<MarketPriceItem[]>(MOCK_MARKET_PRICES);
-  const [contracts, setContracts] = useState<ForwardContractListing[]>(
-    MOCK_FORWARD_CONTRACTS,
-  );
-  const [agronomistCases, setAgronomistCases] = useState<AgronomistCase[]>(
-    MOCK_AGRONOMIST_CASES,
-  );
-  const [voiceModalOpen, setVoiceModalOpen] = useState<boolean>(false);
-  const [ussdModalOpen, setUssdModalOpen] = useState<boolean>(false);
-
-  // Fetch real weather when district changes
-  useEffect(() => {
-    let isMounted = true;
-    fetchAgroWeather(district).then((w) => {
-      if (isMounted) {
-        setWeather(w);
-        const coords = DISTRICT_COORDINATES[district];
-        setFarm((prev) => ({
-          ...prev,
-          district,
-          altitudeMeters: coords?.altitude || prev.altitudeMeters,
-          soilType: coords?.soilDefault || prev.soilType,
-        }));
-      }
-    });
-    return () => {
-      isMounted = false;
-    };
-  }, [district]);
-
-  // Re-compute decision fusion when weather, diagnosis, or farm updates
-  useEffect(() => {
-    const dummyDiagnosis: DiseaseDetectionResult = recentDiagnosis || {
-      id: "default",
-      crop: farm.crop,
-      diagnosis: "Early Blight (Alternaria solani)",
-      scientificName: "Alternaria solani",
-      kinyarwandaName: "Uburwayi bw'Inyanya",
-      confidence: 0.88,
-      isOOD: false,
-      oodScore: 0.04,
-      category: "fungal",
-      symptoms: ["Target spots"],
-      immediateAction: "Prune lower leaves",
-      preventativeMeasures: ["Mulch"],
-      recommendedOrganicTreatment: "Copper Hydroxide",
-      recommendedChemicalTreatment: "Mancozeb",
-      safetyAdvice: "7 days PHI",
-      agronomistReviewRecommended: false,
-    };
-
-    const newAdvice = AIPipelineService.computeDecisionFusion(
-      dummyDiagnosis,
-      weather,
-      farm,
-    );
-    setAdvice(newAdvice);
-  }, [weather, recentDiagnosis, farm]);
-
-  const handleDiagnosisComplete = (result: DiseaseDetectionResult) => {
-    setRecentDiagnosis(result);
-  };
-
-  const handleEscalateToAgronomist = (result: DiseaseDetectionResult) => {
-    const newCase: AgronomistCase = {
-      id: `case-${Date.now().toString().slice(-4)}`,
-      farmerName: farm.farmerName,
-      farmerPhone: farm.farmerPhone,
-      district: farm.district,
-      crop: result.crop,
-      submissionDate: new Date().toISOString().split("T")[0],
-      imageUrl:
-        "https://images.unsplash.com/photo-1592417817098-8f3d6ef23a49?auto=format&fit=crop&w=600&q=80",
-      aiSuggestedDiagnosis: result.diagnosis,
-      aiConfidence: result.confidence,
-      status: "PENDING_REVIEW",
-      agronomistNotes:
-        "Farmer initiated high-priority escalation via AgriMind App.",
-    };
-
-    setAgronomistCases((prev) => [newCase, ...prev]);
-  };
-
-  const handleVerifyCase = (
-    caseId: string,
-    verifiedDiagnosis: string,
-    prescription: string,
-  ) => {
-    setAgronomistCases((prev) =>
-      prev.map((c) =>
-        c.id === caseId ?
-          {
-            ...c,
-            status: "VERIFIED",
-            verifiedDiagnosis,
-            issuedPrescription: prescription,
-            agronomistName: "Dr. Alexis Kayiranga (RAB Certified)",
-          }
-        : c,
-      ),
-    );
-  };
-
-  const handleAddContract = (listing: ForwardContractListing) => {
-    setContracts((prev) => [listing, ...prev]);
-  };
-
-  const handleReportOutbreak = (newAlert: OutbreakAlert) => {
-    setOutbreaks((prev) => [newAlert, ...prev]);
-  };
+export const App: React.FC = () => {
+  const [viewMode, setViewMode] = useState<ViewMode>('chat');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [district, setDistrict] = useState('Musanze');
+  const [activeDiagnosis, setActiveDiagnosis] = useState<DiagnosisData | null>(null);
+  const [chatKey, setChatKey] = useState(1); // Increment to clear/restart chat
 
   const handleNewChat = () => {
-    setActiveMode("chat");
-    setActiveChatTitle(undefined);
-    setChatKey((k) => k + 1);
+    setActiveDiagnosis(null);
+    setChatKey(prev => prev + 1);
+    setViewMode('chat');
   };
 
-  const handleSelectChat = (title: string) => {
-    setActiveMode("chat");
-    setActiveChatTitle(title);
-    setChatKey((k) => k + 1);
+  const handleApplyDiagnosisToChat = (diagnosis: DiagnosisData) => {
+    setActiveDiagnosis(diagnosis);
+    setViewMode('chat');
   };
 
-  const handleOpenWorkTab = (tabId: string) => {
-    setActiveMode("work");
-    setActiveTab(tabId);
+  const handleAskWeatherInChat = (weatherSummary: string) => {
+    setViewMode('chat');
+    // We can let the ChatView naturally pick up the district
   };
 
-  const isRw = language === "rw";
+  const handleAskAboutDisease = (crop: string, disease: string) => {
+    setViewMode('chat');
+    // User will see chat ready to ask
+  };
 
   return (
-    <div
-      className='farmer-app-shell'
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        background: "#000000",
-        overflow: "hidden",
-      }}>
-      {/* Top Header matching ChatGPT screen with [ Chat | + Work ] segmented control */}
-      <ChatGptHeader
-        sidebarOpen={sidebarOpen}
-        onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
-        activeMode={activeMode}
-        onSelectMode={setActiveMode}
-        district={district}
-        onSelectDistrict={setDistrict}
-        language={language}
-        onToggleLanguage={() => setLanguage(language === "en" ? "rw" : "en")}
-        activeModel={activeModel}
-        onSelectModel={setActiveModel}
-      />
+    <div className="app-layout">
+      {/* ChatGPT Collapsible Sidebar */}
+      <aside className={`chat-sidebar ${!isSidebarOpen ? 'collapsed' : ''}`}>
+        <div className="sidebar-header">
+          <button className="new-chat-btn" onClick={handleNewChat}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div style={{
+                width: '22px',
+                height: '22px',
+                borderRadius: '50%',
+                background: '#10a37f',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <Sparkles size={13} color="#fff" />
+              </div>
+              <span>New Conversation</span>
+            </div>
+            <Plus size={16} />
+          </button>
+        </div>
 
-      {/* Main Workspace: Left Sidebar + Center View */}
-      <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
-        {/* Left ChatGPT Sidebar matching screenshot */}
-        <ChatGptSidebar
-          isOpen={sidebarOpen}
-          onToggle={() => setSidebarOpen(false)}
-          onNewChat={handleNewChat}
-          onSelectChat={handleSelectChat}
-          activeChatTitle={activeChatTitle}
-          onOpenWorkTab={handleOpenWorkTab}
-        />
+        {/* Hierarchical Agronomy Options */}
+        <div className="sidebar-nav-section">
+          <span className="nav-section-title">Agronomy Tools</span>
+          
+          <button 
+            className={`nav-item ${viewMode === 'chat' ? 'active' : ''}`}
+            onClick={() => setViewMode('chat')}
+          >
+            <MessageSquare size={17} color={viewMode === 'chat' ? '#10a37f' : '#b4b4b4'} />
+            <span>Chat Advisor</span>
+          </button>
 
-        {/* Center Area: Chat Mode OR Work Studio */}
-        {activeMode === "chat" ? (
-          <ChatGptInterface
+          <button 
+            className={`nav-item ${viewMode === 'scanner' ? 'active' : ''}`}
+            onClick={() => setViewMode('scanner')}
+          >
+            <Camera size={17} color={viewMode === 'scanner' ? '#10a37f' : '#b4b4b4'} />
+            <span>Leaf Doctor (Scanner)</span>
+            <span className="nav-badge">Vision NN</span>
+          </button>
+
+          <button 
+            className={`nav-item ${viewMode === 'weather' ? 'active' : ''}`}
+            onClick={() => setViewMode('weather')}
+          >
+            <CloudSun size={17} color={viewMode === 'weather' ? '#10a37f' : '#b4b4b4'} />
+            <span>Climate & Radar</span>
+          </button>
+
+          <button 
+            className={`nav-item ${viewMode === 'library' ? 'active' : ''}`}
+            onClick={() => setViewMode('library')}
+          >
+            <BookOpen size={17} color={viewMode === 'library' ? '#10a37f' : '#b4b4b4'} />
+            <span>Disease Library</span>
+            <span style={{ marginLeft: 'auto', fontSize: '11px', color: '#8e8e8e' }}>38 crops</span>
+          </button>
+        </div>
+
+        {/* District Selector Pill inside Sidebar */}
+        <div style={{ padding: '8px 12px' }}>
+          <span className="nav-section-title">Farm Location</span>
+          <div style={{
+            background: 'var(--bg-tertiary)',
+            border: '1px solid var(--border-subtle)',
+            borderRadius: '10px',
+            padding: '8px 12px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            fontSize: '13px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#ececec' }}>
+              <MapPin size={14} color="#10a37f" />
+              <span>{district}, Rwanda</span>
+            </div>
+            <select
+              value={district}
+              onChange={(e) => setDistrict(e.target.value)}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: '#10a37f',
+                fontSize: '12px',
+                fontWeight: 600,
+                outline: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              <option value="Musanze" style={{ background: '#212121' }}>Musanze</option>
+              <option value="Huye" style={{ background: '#212121' }}>Huye</option>
+              <option value="Kigali" style={{ background: '#212121' }}>Kigali</option>
+              <option value="Rubavu" style={{ background: '#212121' }}>Rubavu</option>
+              <option value="Nyagatare" style={{ background: '#212121' }}>Nyagatare</option>
+              <option value="Muhanga" style={{ background: '#212121' }}>Muhanga</option>
+              <option value="Rusizi" style={{ background: '#212121' }}>Rusizi</option>
+            </select>
+          </div>
+        </div>
+
+        <div className="sidebar-chat-list">
+          <span className="nav-section-title">Recent Topics</span>
+          <button className="chat-history-item active" onClick={() => setViewMode('chat')}>
+            <span>🍃 Tomato late blight prevention</span>
+          </button>
+          <button className="chat-history-item" onClick={() => setViewMode('chat')}>
+            <span>🥔 Musanze potato seed spacing</span>
+          </button>
+          <button className="chat-history-item" onClick={() => setViewMode('chat')}>
+            <span>🌽 Maize rust fungicide safety</span>
+          </button>
+        </div>
+
+        {/* Sidebar Footer */}
+        <div className="sidebar-footer">
+          <div className="status-indicator">
+            <span className="status-dot" />
+            <span>Dual Engine: EfficientNet + Groq 120B</span>
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Panel */}
+      <main className="main-content">
+        {/* Top Minimal Navigation Bar */}
+        <header className="top-navbar">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <button 
+              className="icon-action-btn"
+              onClick={() => setIsSidebarOpen(prev => !prev)}
+              title={isSidebarOpen ? "Close sidebar" : "Open sidebar"}
+            >
+              {isSidebarOpen ? <PanelLeftClose size={18} /> : <PanelLeft size={18} />}
+            </button>
+
+            <button className="model-badge-dropdown" onClick={() => setViewMode('chat')}>
+              <span>FarmerAI</span>
+              <span style={{ fontSize: '11px', color: '#10a37f', background: 'rgba(16, 163, 127, 0.15)', padding: '2px 8px', borderRadius: '12px' }}>
+                4.0 Groq
+              </span>
+            </button>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            {viewMode !== 'chat' && (
+              <button
+                onClick={() => setViewMode('chat')}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '6px 12px',
+                  borderRadius: '9999px',
+                  background: 'rgba(16, 163, 127, 0.15)',
+                  border: '1px solid rgba(16, 163, 127, 0.3)',
+                  color: '#34d399',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  cursor: 'pointer'
+                }}
+              >
+                <MessageSquare size={14} />
+                <span>Return to Chat</span>
+              </button>
+            )}
+
+            <button 
+              className="icon-action-btn"
+              onClick={handleNewChat}
+              title="Start a new chat"
+            >
+              <Plus size={18} />
+            </button>
+          </div>
+        </header>
+
+        {/* Hierarchical View Content */}
+        {viewMode === 'chat' && (
+          <ChatView
             key={chatKey}
             district={district}
-            language={language}
-            weather={weather}
-            advice={advice}
-            activeModel={activeModel}
-            onOpenVoiceModal={() => setVoiceModalOpen(true)}
-            onOpenWorkTab={handleOpenWorkTab}
-            initialChatTitle={activeChatTitle}
+            onDistrictChange={setDistrict}
+            activeDiagnosis={activeDiagnosis}
+            onClearActiveDiagnosis={() => setActiveDiagnosis(null)}
+            onSwitchToScanner={() => setViewMode('scanner')}
           />
-        ) : (
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
-            {/* Center Main Editor / Canvas Area */}
-            <main
-              className='farmer-main'
-              style={{
-                flex: 1,
-                overflowY: "auto",
-                padding: "16px 20px",
-                minWidth: 0,
-              }}>
-              {/* Starcloud Signature Module Navigation Pills */}
-              <div
-            style={{
-              display: "flex",
-              gap: 8,
-              marginBottom: 24,
-              overflowX: "auto",
-              paddingBottom: 6,
-              whiteSpace: "nowrap",
-            }}>
-            {[
-              {
-                id: "dashboard",
-                fileName: "FarmOverview.tsx",
-                label: isRw ? "Ikaze & Incamake" : "Platform Overview",
-                icon: Sprout,
-              },
-              {
-                id: "crop-doctor",
-                fileName: "CropDoctor.vision",
-                label: isRw ? "Gusuzuma Indwara" : "AI Crop Doctor",
-                icon: Activity,
-              },
-              {
-                id: "decision-fusion",
-                fileName: "DecisionFusion.py",
-                label: isRw ? "Umujyanama mu Myanzuro" : "Decision Fusion",
-                icon: CloudRain,
-              },
-              {
-                id: "seasonal-planner",
-                fileName: "AgroCalendar.season",
-                label: isRw ? "Iteganyamurimo (A,B,C)" : "Agro-Calendar",
-                icon: Calendar,
-              },
-              {
-                id: "surveillance",
-                fileName: "OutbreakRadar.map",
-                label: isRw ? "Ikarita y'Ibyorezo" : "Outbreak Radar",
-                icon: Radio,
-              },
-              {
-                id: "soil-advisor",
-                fileName: "SoilAdvisor.sql",
-                label: isRw ? "Ubutaka n'Ifumbire" : "Soil & Lime Advisor",
-                icon: FlaskConical,
-              },
-              {
-                id: "marketplace",
-                fileName: "MarketPrices.json",
-                label: isRw ? "Amasoko n'Ibiciro" : "Marketplace",
-                icon: Store,
-              },
-              {
-                id: "yield-predictor",
-                fileName: "YieldPredictor.py",
-                label: isRw ? "Iteganyamururo" : "Yield AI",
-                icon: TrendingUp,
-              },
-              {
-                id: "agronomist",
-                fileName: "AgronomistTriage.ts",
-                label: isRw ? "Agronome Portal" : "Agronomist Portal",
-                icon: ShieldCheck,
-              },
-              {
-                id: "ml-workbench",
-                fileName: "DeepSeekWorkbench.py",
-                label: "DeepSeek MoE",
-                icon: Cpu,
-              },
-            ].map((tab) => {
-              const Icon = tab.icon;
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 7,
-                    padding: "7px 16px",
-                    borderRadius: 100,
-                    border: isActive
-                      ? "1px solid #ffffff"
-                      : "1px solid rgba(255, 255, 255, 0.12)",
-                    background: isActive
-                      ? "#ffffff"
-                      : "rgba(255, 255, 255, 0.04)",
-                    color: isActive ? "#000000" : "rgba(255, 255, 255, 0.65)",
-                    fontSize: "0.82rem",
-                    fontWeight: 500,
-                    fontFamily: "var(--font-family-aeonik)",
-                    cursor: "pointer",
-                    transition: "all 0.2s ease",
-                  }}>
-                  <Icon
-                    size={13}
-                    color={isActive ? "#000000" : "#ffffff"}
-                  />
-                  <span>{tab.label}</span>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-family-mono)",
-                      fontSize: "0.7rem",
-                      color: isActive ? "rgba(0, 0, 0, 0.5)" : "rgba(255, 255, 255, 0.4)",
-                      marginLeft: 2,
-                    }}>
-                    {tab.fileName.split(".")[1] || ""}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Hero Farm Status Banner */}
-          <HeroFarmStatus
-            farm={farm}
-            weather={weather}
-            advice={advice}
-            language={language}
-            onScanLeafClick={() => setActiveTab("crop-doctor")}
-          />
-
-          {/* Tab Content Rendering */}
-          {activeTab === "dashboard" && (
-            <div>
-              <CropDoctorScanner
-                selectedCrop={farm.crop}
-                growthStage={farm.growthStage}
-                language={language}
-                onDiagnosisComplete={handleDiagnosisComplete}
-                onEscalateToAgronomist={handleEscalateToAgronomist}
-              />
-
-              <AgronomicAdvisorCard
-                advice={advice}
-                weather={weather}
-                farm={farm}
-                language={language}
-              />
-
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-                  gap: 20,
-                }}>
-                <SurveillanceMap
-                  outbreaks={outbreaks}
-                  currentDistrict={district}
-                  language={language}
-                  onSelectDistrict={setDistrict}
-                  onReportOutbreak={handleReportOutbreak}
-                />
-              </div>
-            </div>
-          )}
-
-          {activeTab === "crop-doctor" && (
-            <CropDoctorScanner
-              selectedCrop={farm.crop}
-              growthStage={farm.growthStage}
-              language={language}
-              onDiagnosisComplete={handleDiagnosisComplete}
-              onEscalateToAgronomist={handleEscalateToAgronomist}
-            />
-          )}
-
-          {activeTab === "decision-fusion" && (
-            <AgronomicAdvisorCard
-              advice={advice}
-              weather={weather}
-              farm={farm}
-              language={language}
-            />
-          )}
-
-          {activeTab === "seasonal-planner" && (
-            <SeasonalAgroPlanner
-              farm={farm}
-              weather={weather}
-              language={language}
-            />
-          )}
-
-          {activeTab === "surveillance" && (
-            <SurveillanceMap
-              outbreaks={outbreaks}
-              currentDistrict={district}
-              language={language}
-              onSelectDistrict={setDistrict}
-              onReportOutbreak={handleReportOutbreak}
-            />
-          )}
-
-          {activeTab === "soil-advisor" && (
-            <SoilAdvisor farm={farm} language={language} />
-          )}
-
-          {activeTab === "marketplace" && (
-            <Marketplace
-              prices={marketPrices}
-              contracts={contracts}
-              language={language}
-              onAddContract={handleAddContract}
-            />
-          )}
-
-          {activeTab === "yield-predictor" && (
-            <YieldPredictor farm={farm} language={language} />
-          )}
-
-          {activeTab === "agronomist" && (
-            <AgronomistPortal
-              cases={agronomistCases}
-              language={language}
-              onVerifyCase={handleVerifyCase}
-            />
-          )}
-
-          {activeTab === "ml-workbench" && <MLWorkbench language={language} />}
-            </main>
-
-            {/* Qoder IDE Bottom Status Bar */}
-            <QoderStatusBar
-              district={district}
-              weather={weather}
-              activeModel={activeModel}
-            />
-          </div>
         )}
-      </div>
 
-      {/* Floating Voice Assistant Trigger button */}
-      <button
-        onClick={() => setVoiceModalOpen(true)}
-        style={{
-          position: "fixed",
-          bottom: 40,
-          right: copilotOpen ? 355 : 24,
-          width: 50,
-          height: 50,
-          borderRadius: "50%",
-          background: "rgba(255, 255, 255, 0.05)",
-          border: "none",
-          boxShadow: "0 8px 24px rgba(139, 92, 246, 0.45)",
-          cursor: "pointer",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "#fff",
-          zIndex: 90,
-          transition: "all 0.2s",
-        }}
-        title='Open Voice Agricultural Assistant'
-        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.08)")}
-        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1.0)")}>
-        <Mic size={22} />
-      </button>
+        {viewMode === 'scanner' && (
+          <ScannerView 
+            onApplyDiagnosisToChat={handleApplyDiagnosisToChat} 
+          />
+        )}
 
-      {/* Voice Assistant Modal */}
-      <VoiceAssistantModal
-        isOpen={voiceModalOpen}
-        onClose={() => setVoiceModalOpen(false)}
-        farm={farm}
-        weather={weather}
-        recentDiagnosis={recentDiagnosis}
-        language={language}
-      />
+        {viewMode === 'weather' && (
+          <WeatherView
+            currentDistrict={district}
+            onSelectDistrict={setDistrict}
+            onAskChatWithWeather={handleAskWeatherInChat}
+          />
+        )}
 
-      {/* Offline USSD Feature Phone Simulator Modal */}
-      <UssdFeaturePhoneModal
-        isOpen={ussdModalOpen}
-        onClose={() => setUssdModalOpen(false)}
-        farm={farm}
-        weather={weather}
-        language={language}
-      />
+        {viewMode === 'library' && (
+          <LibraryView
+            onAskAboutDisease={handleAskAboutDisease}
+          />
+        )}
+      </main>
     </div>
   );
-}
+};
 
 export default App;

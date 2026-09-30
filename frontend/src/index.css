@@ -1,564 +1,726 @@
 /* ==========================================================================
-   FarmerAI Design System — Starcloud (starcloud.com) Pure Black & White Theme
-   Featuring authentic Aeonik & Aeonik Mono typeface family
+   FarmerAI — ChatGPT-Inspired Clean Agronomy Platform
+   Typography: Authentic Söhne / Söhne Mono Typeface Stack
    ========================================================================== */
 
-/* 1. Official Starcloud Typeface Definitions (Aeonik & Aeonik Mono) */
+/* 1. Söhne Font Family Fallbacks and WebFont Definitions */
 @font-face {
-  font-family: 'Aeonik';
-  src: url('./assets/fonts/Aeonik-Regular.woff2') format('woff2'),
-       url('https://cdn.prod.website-files.com/66c1eabc58c4c392a9fba788/6aa7a18151840df183bfca12_Aeonik-Regular.woff2') format('woff2');
+  font-family: 'Söhne';
+  src: local('Söhne'), local('Sohne'),
+       url('https://assets.website-files.com/64b5952f190ffeb49980d466/64b5952f190ffeb49980d507_Sohne-Buch.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Aeonik';
-  src: url('./assets/fonts/Aeonik-Medium.woff2') format('woff2'),
-       url('https://cdn.prod.website-files.com/66c1eabc58c4c392a9fba788/6aa7a18170deb410c6f33ce5_Aeonik-Medium.woff2') format('woff2');
+  font-family: 'Söhne';
+  src: local('Söhne Medium'), local('Sohne-Medium'),
+       url('https://assets.website-files.com/64b5952f190ffeb49980d466/64b5952f190ffeb49980d506_Sohne-Kraftig.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Aeonik';
-  src: url('./assets/fonts/Aeonik-Medium.woff2') format('woff2'),
-       url('https://cdn.prod.website-files.com/66c1eabc58c4c392a9fba788/6aa7a18170deb410c6f33ce5_Aeonik-Medium.woff2') format('woff2');
+  font-family: 'Söhne';
+  src: local('Söhne Halbfett'), local('Sohne-Halbfett'),
+       url('https://assets.website-files.com/64b5952f190ffeb49980d466/64b5952f190ffeb49980d508_Sohne-Halbfett.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Aeonik';
-  src: url('./assets/fonts/Aeonik-Medium.woff2') format('woff2'),
-       url('https://cdn.prod.website-files.com/66c1eabc58c4c392a9fba788/6aa7a18170deb410c6f33ce5_Aeonik-Medium.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Mono';
-  src: url('./assets/fonts/AeonikMono-Regular.woff2') format('woff2'),
-       url('https://cdn.prod.website-files.com/66c1eabc58c4c392a9fba788/6aa7a181801f1afcf6f88386_AeonikMono-Regular.woff2') format('woff2');
+  font-family: 'Söhne Mono';
+  src: local('Söhne Mono'), local('Sohne Mono'),
+       url('https://assets.website-files.com/64b5952f190ffeb49980d466/64b5952f190ffeb49980d50b_SohneMono-Buch.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Mono';
-  src: url('./assets/fonts/AeonikMono-Medium.woff2') format('woff2'),
-       url('https://cdn.prod.website-files.com/66c1eabc58c4c392a9fba788/6aa7a1816ec858a6967e6093_AeonikMono-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Also alias Söhne to Aeonik to support legacy Söhne classes seamlessly */
-@font-face {
-  font-family: 'Söhne';
-  src: url('./assets/fonts/Aeonik-Regular.woff2') format('woff2');
-  font-weight: 400;
-}
-@font-face {
-  font-family: 'Söhne';
-  src: url('./assets/fonts/Aeonik-Medium.woff2') format('woff2');
-  font-weight: 650;
 }
 
 :root {
-  /* Starcloud Core Swatches (Strictly Black and White Only) */
-  --swatch--bg-black: #000000;
-  --swatch--brand-bg: #000000;
-  --swatch--brand-text: #ffffff;
-  --swatch--bg-light-black: #0a0d11;
-  --swatch--bg-white: #ffffff;
-  --swatch--transparent: transparent;
+  --font-sohne: "Söhne", "Sohne", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Söhne Mono", "Sohne Mono", "SF Mono", Monaco, Consolas, monospace;
 
-  /* Starcloud Text Opacity Hierarchy */
-  --swatch--text-white: #ffffff;
-  --swatch--text-white-70: rgba(255, 255, 255, 0.70);
-  --swatch--text-white-60: rgba(255, 255, 255, 0.60);
-  --swatch--text-white-50: rgba(255, 255, 255, 0.50);
-  --swatch--text-white-40: rgba(255, 255, 255, 0.40);
-  --swatch--text-white-30: rgba(255, 255, 255, 0.30);
+  /* ChatGPT Color System */
+  --bg-primary: #212121;
+  --bg-secondary: #171717;
+  --bg-tertiary: #2f2f2f;
+  --bg-hover: #383838;
+  --bg-active: #424242;
 
-  /* Starcloud Surface & Glassmorphism Backgrounds */
-  --swatch--bg-white-3: rgba(255, 255, 255, 0.03);
-  --swatch--bg-white-5: rgba(255, 255, 255, 0.05);
-  --swatch--bg-white-8: rgba(255, 255, 255, 0.08);
-  --swatch--bg-white-12: rgba(255, 255, 255, 0.12);
-  --swatch--bg-white-16: rgba(255, 255, 255, 0.16);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --border-strong: rgba(255, 255, 255, 0.25);
 
-  /* Starcloud Border Hierarchy */
-  --border-color--white-5: rgba(255, 255, 255, 0.05);
-  --border-color--white-8: rgba(255, 255, 255, 0.08);
-  --border-color--white-10: rgba(255, 255, 255, 0.10);
-  --border-color--white-15: rgba(255, 255, 255, 0.15);
-  --border-color--white-25: rgba(255, 255, 255, 0.25);
-  --border-color--white-40: rgba(255, 255, 255, 0.40);
+  --text-primary: #ececec;
+  --text-secondary: #b4b4b4;
+  --text-muted: #8e8e8e;
+  --text-inverse: #0d0d0d;
 
-  /* Global Token Mappings */
-  --bg-base: #000000;
-  --bg-surface: #0a0d11;
-  --bg-subtle: #080a0d;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-card-hover: rgba(255, 255, 255, 0.06);
-  --bg-input: rgba(255, 255, 255, 0.05);
+  /* Brand Emerald (FarmerAI + ChatGPT Accent) */
+  --accent-emerald: #10a37f;
+  --accent-emerald-hover: #1a7f64;
+  --accent-emerald-subtle: rgba(16, 163, 127, 0.12);
+  --accent-amber: #eab308;
+  --accent-rose: #ef4444;
+  --accent-blue: #3b82f6;
 
-  --text-main: #ffffff;
-  --text-heading: #ffffff;
-  --text-body: rgba(255, 255, 255, 0.85);
-  --text-muted: rgba(255, 255, 255, 0.60);
-  --text-subtle: rgba(255, 255, 255, 0.38);
-
-  --border-subtle: rgba(255, 255, 255, 0.10);
-  --border-grid: rgba(255, 255, 255, 0.08);
-  --border-dashed: rgba(255, 255, 255, 0.16);
-  --border-dark: rgba(255, 255, 255, 0.25);
-
-  /* Strict Black and White Accents (NO COLOR) */
-  --primary: #ffffff;
-  --primary-glow: rgba(255, 255, 255, 0.15);
-  --green-primary: #ffffff;
-  --green-hover: #ffffff;
-  --green-dark: #ffffff;
-  --green-subtle: rgba(255, 255, 255, 0.08);
-  --green-border: rgba(255, 255, 255, 0.20);
-  --green-glow: rgba(255, 255, 255, 0.12);
-
-  --qoder-violet: #ffffff;
-  --qoder-violet-hover: #ffffff;
-  --qoder-violet-glow: rgba(255, 255, 255, 0.2);
-  --qoder-violet-subtle: rgba(255, 255, 255, 0.08);
-  --qoder-emerald: #ffffff;
-  --qoder-emerald-hover: #ffffff;
-  --qoder-emerald-glow: rgba(255, 255, 255, 0.2);
-  --qoder-emerald-subtle: rgba(255, 255, 255, 0.08);
-  --qoder-cyan: rgba(255, 255, 255, 0.7);
-  --qoder-amber: rgba(255, 255, 255, 0.7);
-  --qoder-rose: #ffffff;
-
-  --qoder-bg-base: var(--bg-base);
-  --qoder-bg-surface: var(--bg-surface);
-  --qoder-bg-card: var(--bg-card);
-  --qoder-bg-card-hover: var(--bg-card-hover);
-  --qoder-bg-input: var(--bg-input);
-
-  --accent-gold: #ffffff;
-  --accent-cyan: #ffffff;
-  --bg-deep: #000000;
-  --success: #ffffff;
-  --success-bg: rgba(255, 255, 255, 0.08);
-  --warning: #ffffff;
-  --warning-bg: rgba(255, 255, 255, 0.08);
-  --danger: #ffffff;
-  --danger-bg: rgba(255, 255, 255, 0.08);
-
-  /* Typography Families */
-  --font-family-aeonik: 'Aeonik', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-family-mono: 'Aeonik Mono', monospace;
-  --font-family-sohne: var(--font-family-aeonik);
-  --font-heading: var(--font-family-aeonik);
-  --font-body: var(--font-family-aeonik);
-  --font-mono: var(--font-family-mono);
-
-  /* Font Weights */
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 600;
-  --font-weight-black: 700;
-  --font-weight-buch: 400;
-  --font-weight-halbfett: 500;
-
-  /* Starcloud Radii */
-  --radius-xs: 4px;
+  --sidebar-width: 270px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
-  --radius-full: 100px;
+  --radius-full: 9999px;
+  --shadow-popup: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
 }
 
+/* Reset & Global */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-  background-color: #000000;
-  color: var(--text-body);
-  font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 1.5;
+body {
+  font-family: var(--font-sohne);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* Starcloud Space Background with subtle radial ambient glow */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  line-height: 1.5;
+  overflow: hidden;
+  height: 100vh;
   width: 100vw;
-  height: 60vh;
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.07) 0%, rgba(0, 0, 0, 0) 70%);
-  pointer-events: none;
-  z-index: 0;
 }
 
-/* Typography Utilities */
-.font-aeonik {
-  font-family: var(--font-family-aeonik);
+button, input, textarea, select {
+  font-family: inherit;
+  color: inherit;
 }
 
-.font-aeonik-mono {
-  font-family: var(--font-family-mono);
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
-.font-sohne-buch {
-  font-family: var(--font-family-aeonik);
-  font-weight: 400;
+/* App Shell */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-primary);
+  position: relative;
 }
 
-.font-sohne-regular {
-  font-family: var(--font-family-aeonik);
-  font-weight: 400;
+/* Sidebar (Collapsible) */
+.chat-sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 40;
+  flex-shrink: 0;
 }
 
-.font-sohne-halbfett {
-  font-family: var(--font-family-aeonik);
+.chat-sidebar.collapsed {
+  width: 0;
+  overflow: hidden;
+  border-right: none;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  padding: 14px 14px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new-chat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 14px;
   font-weight: 500;
+  transition: all 0.15s ease;
+}
+.new-chat-btn:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-medium);
+}
+
+/* Hierarchical Navigation / Tools */
+.sidebar-nav-section {
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  padding: 8px 10px 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: all 0.15s ease;
+}
+.nav-item:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+.nav-item.active {
+  background-color: var(--bg-tertiary);
+  color: #fff;
+  font-weight: 500;
+}
+.nav-item .nav-badge {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  background: rgba(16, 163, 127, 0.18);
+  color: #10a37f;
+  font-weight: 600;
+}
+
+/* Recent Conversations */
+.sidebar-chat-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chat-history-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.15s ease;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+.chat-history-item:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+.chat-history-item.active {
+  background-color: var(--bg-tertiary);
+  color: #fff;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 12px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 4px 6px;
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+  box-shadow: 0 0 8px rgba(16, 163, 127, 0.6);
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+/* Top App Bar */
+.top-navbar {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.model-badge-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.model-badge-dropdown:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+/* Chat Scroll View (Centered max-w) */
+.chat-scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 160px; /* Room for floating bottom input */
+}
+
+.chat-center-wrapper {
+  width: 100%;
+  max-width: 768px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ChatGPT Welcome / Hero Screen */
+.chatgpt-hero {
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 16px 20px;
+}
+
+.hero-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #10a37f 0%, #059669 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(16, 163, 127, 0.35);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
   letter-spacing: -0.02em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+.hero-subtitle {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: 32px;
 }
 
-/* Starcloud Signature Floating Nav Menu Pill */
-.starcloud-nav-pill-container {
+/* Prompt Suggestion Cards (ChatGPT Grid) */
+.prompt-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 680px;
+}
+
+.prompt-chip {
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.prompt-chip:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-medium);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+.prompt-chip strong {
+  font-weight: 500;
+  color: var(--text-primary);
   display: flex;
   align-items: center;
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 100px;
-  min-height: 2.25rem;
-  padding: 3px 6px;
+  gap: 6px;
+}
+.prompt-chip span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Chat Message Turn */
+.chat-turn {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.chat-turn.user {
+  justify-content: flex-end;
+}
+
+.user-bubble {
+  max-width: 80%;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: 12px 18px;
+  border-radius: 20px 20px 4px 20px;
+  font-size: 15px;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.assistant-response {
+  width: 100%;
+  display: flex;
+  gap: 14px;
+}
+
+.assistant-avatar-small {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #10a37f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.assistant-text-content {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+/* Markdown Formatting */
+.assistant-text-content p {
+  margin-bottom: 12px;
+}
+.assistant-text-content p:last-child {
+  margin-bottom: 0;
+}
+.assistant-text-content ul, .assistant-text-content ol {
+  margin: 10px 0 14px 20px;
+}
+.assistant-text-content li {
+  margin-bottom: 6px;
+}
+.assistant-text-content h1, .assistant-text-content h2, .assistant-text-content h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 16px 0 8px;
+  color: #fff;
+}
+.assistant-text-content strong {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Urgency & Context Badges */
+.context-pill-banner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+}
+.badge-tag.critical, .badge-tag.high {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+.badge-tag.moderate, .badge-tag.soon {
+  background: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+.badge-tag.monitor, .badge-tag.low {
+  background: rgba(16, 163, 127, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 163, 127, 0.3);
+}
+.badge-tag.weather {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Staged Leaf Preview in Input Bar */
+.staged-leaf-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  background-color: var(--bg-hover);
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+  width: fit-content;
+  border: 1px solid var(--border-medium);
+}
+.staged-leaf-preview img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.staged-leaf-preview span {
+  font-size: 12px;
+  color: var(--text-secondary);
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.staged-remove-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+.staged-remove-btn:hover {
+  color: #fff;
+}
+
+/* ChatGPT Bottom Floating Input Bar */
+.bottom-input-anchor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(33, 33, 33, 0) 0%, rgba(33, 33, 33, 0.95) 40%, rgba(33, 33, 33, 1) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 16px 18px;
+  pointer-events: none;
+}
+
+.input-container-pill {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 768px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-medium);
+  border-radius: 26px;
+  padding: 8px 12px 8px 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.15s ease;
+}
+.input-container-pill:focus-within {
+  border-color: var(--border-strong);
+  background-color: #333333;
+}
+
+.input-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.chat-textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.5;
+  resize: none;
+  max-height: 160px;
+  min-height: 24px;
+  padding: 6px 0;
+}
+.chat-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.input-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-action-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.icon-action-btn:hover {
+  background-color: var(--bg-hover);
+  color: #fff;
+}
+
+.send-round-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.send-round-btn:disabled {
+  background: #4a4a4a;
+  color: #8c8c8c;
+  cursor: not-allowed;
+}
+
+.input-bottom-disclaimer {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Secondary Views: Leaf Doctor, Weather Radar, Library */
+.secondary-tool-view {
+  width: 100%;
+  max-width: 900px;
+  padding: 24px 20px 80px;
   margin: 0 auto;
 }
 
-.starcloud-nav-link {
-  padding: 6px 14px;
-  color: var(--swatch--text-white-60);
-  font-family: var(--font-family-aeonik);
-  font-size: 0.88rem;
-  font-weight: 400;
-  text-decoration: none;
-  border-radius: 100px;
-  transition: all 0.2s ease;
+.tool-header-card {
+  margin-bottom: 24px;
+}
+.tool-header-card h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.tool-header-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Scanner Dropzone */
+.leaf-dropzone {
+  border: 2px dashed var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 40px 20px;
+  text-align: center;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.starcloud-nav-link:hover {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.06);
-}
-
-.starcloud-nav-link.active {
-  color: #000000;
-  background-color: #ffffff;
-  font-weight: 500;
-}
-
-/* Starcloud Signature Glass Cards */
-.starcloud-card,
-.glass-panel {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: var(--radius-md);
-  position: relative;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.starcloud-card:hover,
-.glass-panel:hover {
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.glass-panel-elevated {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: var(--radius-md);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Starcloud Buttons (Pure Black & White) */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px 18px;
-  border-radius: var(--radius-full);
-  font-family: var(--font-family-aeonik);
-  font-size: 0.88rem;
-  font-weight: 500;
-  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.02);
   transition: all 0.2s ease;
-  border: 1px solid transparent;
-  text-decoration: none;
+}
+.leaf-dropzone:hover {
+  border-color: var(--accent-emerald);
+  background-color: var(--accent-emerald-subtle);
 }
 
-/* Primary Button: Solid White, Black Text */
-.btn-primary,
-.btn-green {
-  background: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chat-sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.6);
+  }
+  .prompt-chips-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
-.btn-primary:hover,
-.btn-green:hover {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(255, 255, 255, 0.88);
-  transform: translateY(-1px);
-}
-
-/* Secondary Button: Subtle Dark Glass with White Border */
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.10);
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.btn-pill {
-  border-radius: var(--radius-full);
-  padding: 7px 20px;
-}
-
-.btn-sm {
-  padding: 5px 14px;
-  font-size: 0.78rem;
-}
-
-/* Starcloud Badges (Monochrome Black & White) */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
-  font-family: var(--font-family-aeonik);
-}
-
-.badge-risk-low,
-.badge-risk-moderate,
-.badge-risk-critical,
-.badge-green,
-.badge-black {
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-/* White Live Pulsing Indicator Dot */
-.qoder-dot,
-.qoder-dot-violet,
-.qoder-dot-emerald {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  display: inline-block;
-  background: #ffffff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-}
-
-/* Dashed Grid & Crosshair utilities (styled in sleek white-on-black) */
-.qoder-dashed-grid-container {
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: var(--radius-md);
-}
-
-.qoder-crosshair {
-  position: absolute;
-  color: rgba(255, 255, 255, 0.35);
-  font-family: var(--font-family-mono);
-  font-size: 13px;
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-  z-index: 2;
-}
-
-.qoder-crosshair-tl { top: -6px; left: -5px; }
-.qoder-crosshair-tr { top: -6px; right: -5px; }
-.qoder-crosshair-bl { bottom: -7px; left: -5px; }
-.qoder-crosshair-br { bottom: -7px; right: -5px; }
-
-.qoder-feature-cell {
-  padding: 32px 28px;
-  position: relative;
-  background: transparent;
-  border-right: 1px solid rgba(255, 255, 255, 0.10);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-  transition: background 0.2s ease;
-}
-
-.qoder-feature-cell:hover {
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.qoder-icon-box {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  margin-bottom: 18px;
-}
-
-.qoder-cell-title {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: #ffffff;
-  margin-bottom: 8px;
-  font-family: var(--font-heading);
-}
-
-.qoder-cell-desc {
-  font-size: 0.88rem;
-  font-weight: 400;
-  color: var(--swatch--text-white-60);
-  line-height: 1.6;
-  font-family: var(--font-body);
-}
-
-/* Form Elements */
-input, select, textarea {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  font-family: var(--font-body);
-  border-radius: var(--radius-sm);
-  padding: 8px 12px;
-  font-size: 0.88rem;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-input:focus, select:focus, textarea:focus {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
-}
-
-/* Starcloud Hide Scrollbar */
-::-webkit-scrollbar {
-  display: none;
-}
-* {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-/* ==========================================================================
-   ChatGPT Theme & Utility Classes (chatgpt.com exact replica)
-   ========================================================================== */
-
-.chatgpt-icon-hover:hover {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  color: #ffffff !important;
-}
-
-.chatgpt-nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.07) !important;
-  color: #ffffff !important;
-}
-
-.chatgpt-newchat-btn:hover {
-  background-color: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.25) !important;
-}
-
-.chatgpt-user-row:hover {
-  background-color: rgba(255, 255, 255, 0.06) !important;
-}
-
-.chatgpt-claim-offer-btn:hover {
-  background-color: #2a2a2a !important;
-  border-color: rgba(255, 255, 255, 0.25) !important;
-}
-
-.chatgpt-header-title-btn:hover {
-  background-color: rgba(255, 255, 255, 0.06) !important;
-}
-
-.chatgpt-model-badge:hover {
-  background-color: rgba(255, 255, 255, 0.06) !important;
-}
-
-.chatgpt-input-bar:focus-within {
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
-}
-
-.chatgpt-blue-btn:hover {
-  background-color: #1d4ed8 !important;
-  transform: scale(1.04);
-}
-
-.chatgpt-suggestion-btn:hover {
-  color: #ffffff !important;
-  background-color: rgba(255, 255, 255, 0.05) !important;
-}
-
-.chatgpt-scrollbar::-webkit-scrollbar {
-  display: block;
-  width: 6px;
-}
-.chatgpt-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-.chatgpt-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-}
-.chatgpt-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.28);
-}
-
