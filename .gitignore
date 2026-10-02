@@ -19,6 +19,7 @@ env/
 venv/
 .venv/
 ENV/
+.pytest_cache/
 
 # Logs
 logs
@@ -28,11 +29,20 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Environment & Editor
+# Environment & Secrets — NEVER commit API keys
 .env
 .env.local
+.env.production
+backend/.env
+
+# Editor & IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
 Thumbs.db
+
+# OS files
+*.swp
+*.swo
+*~
