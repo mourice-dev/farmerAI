@@ -1,5 +1,19 @@
 import { RwandaDistrict, WeatherData } from '../types';
-import { DISTRICT_COORDINATES } from '../data/mockData';
+
+export const DISTRICT_COORDINATES: Record<string, { lat: number; lng: number; altitude: number; soilDefault: 'Volcanic' | 'Ferralsol' | 'Clay Loam' }> = {
+  Muhanga: { lat: -2.0833, lng: 29.7500, altitude: 1820, soilDefault: 'Clay Loam' },
+  Musanze: { lat: -1.5000, lng: 29.6333, altitude: 2200, soilDefault: 'Volcanic' },
+  Ruhango: { lat: -2.2167, lng: 29.7833, altitude: 1750, soilDefault: 'Ferralsol' },
+  Huye: { lat: -2.6000, lng: 29.7400, altitude: 1720, soilDefault: 'Ferralsol' },
+  Nyabihu: { lat: -1.6500, lng: 29.5000, altitude: 2350, soilDefault: 'Volcanic' },
+  Rubavu: { lat: -1.6800, lng: 29.3500, altitude: 1500, soilDefault: 'Volcanic' },
+  Nyagatare: { lat: -1.3000, lng: 30.3200, altitude: 1400, soilDefault: 'Ferralsol' },
+  Bugesera: { lat: -2.1800, lng: 30.0800, altitude: 1350, soilDefault: 'Clay Loam' },
+  Kicukiro: { lat: -1.9800, lng: 30.1200, altitude: 1520, soilDefault: 'Clay Loam' },
+  Gakenke: { lat: -1.7000, lng: 29.7800, altitude: 1950, soilDefault: 'Clay Loam' },
+  Nyamagabe: { lat: -2.4700, lng: 29.5600, altitude: 2100, soilDefault: 'Ferralsol' },
+  Rwamagana: { lat: -1.9500, lng: 30.4300, altitude: 1480, soilDefault: 'Ferralsol' },
+};
 
 export async function fetchAgroWeather(district: RwandaDistrict): Promise<WeatherData> {
   const coords = DISTRICT_COORDINATES[district] || DISTRICT_COORDINATES['Muhanga'];
