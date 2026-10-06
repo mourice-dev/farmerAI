@@ -1,9 +1,9 @@
 /**
  * apiService.ts — FarmerAI Real Backend API Client
- * Connects directly to FastAPI backend on http://127.0.0.1:8000
+ * Connects to FastAPI backend (configurable via VITE_API_BASE_URL)
  */
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = (import.meta.env?.VITE_API_BASE_URL as string) || 'http://127.0.0.1:8000';
 
 export interface DiagnosisData {
   crop: string;
