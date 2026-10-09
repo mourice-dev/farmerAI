@@ -59,6 +59,8 @@ const PROMPT_SUGGESTIONS = [
   }
 ];
 
+const STORAGE_KEY = 'farmerai_chat_history_v1';
+
 export const ChatView: React.FC<ChatViewProps> = ({
   district,
   onDistrictChange,
@@ -66,7 +68,18 @@ export const ChatView: React.FC<ChatViewProps> = ({
   onClearActiveDiagnosis,
   onSwitchToScanner
 }) => {
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) return parsed;
+      }
+    } catch (err) {
+      console.warn('[FarmerAI] Could not load saved chat history:', err);
+    }
+    return [];
+  });
   const [inputText, setInputText] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [stagedImage, setStagedImage] = useState<{ file: File; previewUrl: string } | null>(null);
@@ -74,6 +87,28 @@ export const ChatView: React.FC<ChatViewProps> = ({
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Sync messages to localStorage
+  useEffect(() => {
+    try {
+      const serialized = messages.map(m => ({
+        ...m,
+        leafImage: m.leafImage?.startsWith('blob:') ? undefined : m.leafImage
+      }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(serialized));
+    } catch (err) {
+      console.warn('[FarmerAI] Could not save chat history to localStorage:', err);
+    }
+  }, [messages]);
+
+  const handleClearHistory = () => {
+    setMessages([]);
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (e) {
+      // ignore
+    }
+  };
 
   // Auto-scroll on new message / streaming tokens
   useEffect(() => {
@@ -326,6 +361,27 @@ export const ChatView: React.FC<ChatViewProps> = ({
           </div>
         ) : (
           <div style={{ width: '100%', paddingTop: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '8px' }}>
+              <button
+                onClick={handleClearHistory}
+                style={{
+                  background: 'transparent',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  borderRadius: '6px',
+                  color: 'rgba(255, 255, 255, 0.55)',
+                  fontSize: '0.75rem',
+                  padding: '4px 10px',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px'
+                }}
+                title="Clear current saved chat session"
+              >
+                <RotateCcw size={12} />
+                Clear conversation
+              </button>
+            </div>
             {messages.map(msg => (
               <div key={msg.id} className={`chat-turn ${msg.role}`}>
                 {msg.role === 'user' ? (
