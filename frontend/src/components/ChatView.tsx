@@ -134,6 +134,19 @@ export const ChatView: React.FC<ChatViewProps> = ({
     }
   };
 
+  const handlePaste = (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
+    if (e.clipboardData.files && e.clipboardData.files.length > 0) {
+      const file = e.clipboardData.files[0];
+      if (file.type.startsWith('image/')) {
+        e.preventDefault();
+        setStagedImage({
+          file,
+          previewUrl: URL.createObjectURL(file)
+        });
+      }
+    }
+  };
+
   const removeStagedImage = () => {
     if (stagedImage) URL.revokeObjectURL(stagedImage.previewUrl);
     setStagedImage(null);
@@ -484,6 +497,7 @@ export const ChatView: React.FC<ChatViewProps> = ({
               value={inputText}
               onChange={handleTextChange}
               onKeyDown={handleKeyDown}
+              onPaste={handlePaste}
               disabled={isGenerating}
             />
 
