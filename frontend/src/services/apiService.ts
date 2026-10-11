@@ -274,3 +274,30 @@ export async function sendAdvise(
 
   return res.json();
 }
+
+/** Check health and model readiness of the FastAPI backend */
+export async function checkBackendHealth(): Promise<{
+  online: boolean;
+  model: string;
+  accuracy: string;
+  classCount: number;
+}> {
+  try {
+    const res = await fetch(`${API_BASE}/api/v1/classes`, { signal: AbortSignal.timeout(3500) });
+    if (!res.ok) throw new Error(`Status ${res.status}`);
+    const data = await res.json();
+    return {
+      online: true,
+      model: data.model || 'EfficientNetV2-S',
+      accuracy: data.val_accuracy || '99.89%',
+      classCount: data.count || 38,
+    };
+  } catch {
+    return {
+      online: false,
+      model: 'EfficientNetV2-S',
+      accuracy: '99.89%',
+      classCount: 38,
+    };
+  }
+}

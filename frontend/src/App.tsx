@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   MessageSquare, 
   Camera, 
@@ -16,7 +16,7 @@ import { ChatView } from './components/ChatView';
 import { ScannerView } from './components/ScannerView';
 import { WeatherView } from './components/WeatherView';
 import { LibraryView } from './components/LibraryView';
-import { DiagnosisData } from './services/apiService';
+import { DiagnosisData, checkBackendHealth } from './services/apiService';
 
 type ViewMode = 'chat' | 'scanner' | 'weather' | 'library';
 
@@ -26,6 +26,35 @@ export const App: React.FC = () => {
   const [district, setDistrict] = useState('Musanze');
   const [activeDiagnosis, setActiveDiagnosis] = useState<DiagnosisData | null>(null);
   const [chatKey, setChatKey] = useState(1); // Increment to clear/restart chat
+  const [backendStatus, setBackendStatus] = useState<{
+    online: boolean;
+    model: string;
+    accuracy: string;
+  }>({
+    online: false,
+    model: 'EfficientNetV2-S',
+    accuracy: '99.89%',
+  });
+
+  useEffect(() => {
+    let isMounted = true;
+    const probe = async () => {
+      const health = await checkBackendHealth();
+      if (isMounted) {
+        setBackendStatus({
+          online: health.online,
+          model: health.model,
+          accuracy: health.accuracy,
+        });
+      }
+    };
+    probe();
+    const interval = setInterval(probe, 25000);
+    return () => {
+      isMounted = false;
+      clearInterval(interval);
+    };
+  }, []);
 
   const handleNewChat = () => {
     setActiveDiagnosis(null);
@@ -167,9 +196,20 @@ export const App: React.FC = () => {
 
         {/* Sidebar Footer */}
         <div className="sidebar-footer">
-          <div className="status-indicator">
-            <span className="status-dot" />
-            <span>Dual Engine: EfficientNet + Groq 120B</span>
+          <div 
+            className="status-indicator" 
+            title={backendStatus.online ? `Connected to FastAPI: ${backendStatus.model} (${backendStatus.accuracy})` : "Backend not responding at configured API URL"}
+          >
+            <span 
+              className="status-dot" 
+              style={{
+                background: backendStatus.online ? '#10a37f' : '#f59e0b',
+                boxShadow: backendStatus.online ? '0 0 8px rgba(16, 163, 127, 0.6)' : '0 0 8px rgba(245, 158, 11, 0.4)'
+              }}
+            />
+            <span style={{ fontSize: '11px', color: '#a3a3a3' }}>
+              {backendStatus.online ? `${backendStatus.model} (${backendStatus.accuracy})` : 'Offline Mode (Local UI)'}
+            </span>
           </div>
         </div>
       </aside>
