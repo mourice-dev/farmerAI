@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { CloudRain, Sun, Wind, Droplets, MapPin, AlertCircle, ArrowRight, Loader2 } from 'lucide-react';
+import { CloudRain, Sun, Wind, Droplets, MapPin, AlertCircle, ArrowRight, Loader2, RotateCcw } from 'lucide-react';
 import { getWeather, WeatherData } from '../services/apiService';
+import { fetchAgroWeather } from '../services/weatherService';
+import { RwandaDistrict } from '../types';
 
 interface WeatherViewProps {
   currentDistrict: string;
@@ -41,7 +43,24 @@ export const WeatherView: React.FC<WeatherViewProps> = ({
       const wx = await getWeather(district);
       setData(wx);
     } catch (err: any) {
-      setError(err.message || 'Failed to fetch weather');
+      console.warn('[WeatherView] Backend weather failed, falling back to direct Open-Meteo radar:', err);
+      try {
+        const clientWx = await fetchAgroWeather(district as RwandaDistrict);
+        setData({
+          status: 'ok (direct)',
+          location: district,
+          latitude: 0,
+          longitude: 0,
+          summary: clientWx.forecastSummary,
+          temperature_c: clientWx.tempCelsius,
+          humidity_percent: clientWx.humidityPercentage,
+          precipitation_mm_now: 0,
+          precipitation_mm_next_24h: clientWx.expectedRainfallMm,
+          weather_description: clientWx.forecastSummary,
+        });
+      } catch (fallbackErr: any) {
+        setError(fallbackErr.message || 'Failed to fetch weather data. Please check internet connection.');
+      }
     } finally {
       setIsLoading(false);
     }
@@ -117,11 +136,35 @@ export const WeatherView: React.FC<WeatherViewProps> = ({
           background: 'rgba(239, 68, 68, 0.12)',
           border: '1px solid rgba(239, 68, 68, 0.3)',
           borderRadius: '12px',
-          padding: '14px',
+          padding: '14px 18px',
           color: '#f87171',
-          fontSize: '14px'
+          fontSize: '14px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '12px',
+          marginBottom: '20px'
         }}>
-          ⚠️ {error}
+          <div>⚠️ {error}</div>
+          <button
+            onClick={() => fetchDistrictWeather(currentDistrict)}
+            style={{
+              background: '#ef4444',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '6px',
+              padding: '6px 12px',
+              fontSize: '12px',
+              fontWeight: 600,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px'
+            }}
+          >
+            <RotateCcw size={12} />
+            Retry
+          </button>
         </div>
       )}
 
