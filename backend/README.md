@@ -71,7 +71,7 @@ curl -X POST http://localhost:8000/api/v1/advise \
 ```bash
 cd backend
 set MOCK_LLM=1
-pytest test_backend.py -q
+pytest test_backend.py test_mcp.py -q
 ```
 
 Optional live LLM test (requires real API key, no MOCK_LLM):
@@ -80,10 +80,19 @@ Optional live LLM test (requires real API key, no MOCK_LLM):
 pytest test_backend.py -q -m live
 ```
 
+## Model Context Protocol (MCP) Server
+
+Run the MCP server over stdio for Claude Desktop or Cursor:
+
+```bash
+python mcp_server.py
+```
+
 ## Architecture
 
 ```
 backend_bridge.py     → HTTP routes, rate limits
+mcp_server.py         → FastMCP server (tools, resources, prompts)
 vision_service.py     → ONNX inference
 disease_knowledge.py  → 38-class agronomy facts
 disease_search.py     → Text → disease retrieval

@@ -132,6 +132,7 @@ def root():
         "llm_model": get_model(),
         "diseases_supported": len(classes_list),
         "model_loaded": ONNX_MODEL_FILE.exists(),
+        "mcp_enabled": True,
         "endpoints": {
             "diagnose": "POST /api/v1/diagnose",
             "chat": "POST /api/v1/chat",
@@ -142,6 +143,7 @@ def root():
             "classes": "GET /api/v1/classes",
             "diseases": "GET /api/v1/diseases",
             "disease_info": "GET /api/v1/diseases/{class_label}",
+            "mcp_server": "stdio (python backend/mcp_server.py)",
         },
     }
 

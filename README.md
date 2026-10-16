@@ -40,6 +40,7 @@ FarmerAI is a production-grade agricultural decision support platform engineered
 
 ### Core Capabilities
 - **Neural Vision Engine**: 38-class leaf disease detector on PlantVillage dataset (~38ms CPU inference via ONNX Runtime).
+- **Model Context Protocol (MCP) Server**: FastMCP stdio server enabling Claude Desktop, Cursor, and external AI agents to invoke leaf diagnostics, agronomic treatments, and spore risk.
 - **Conversational Agronomist**: Context-grounded advisory with SSE streaming in English and Kinyarwanda.
 - **Multimodal Advise Endpoint**: Direct image + prompt diagnosis with immediate treatment protocols.
 - **Microclimate Weather Radar**: Live temperature, humidity, precipitation, and fungal spore germination index for Rwanda districts.
@@ -81,6 +82,48 @@ npm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 🔌 Model Context Protocol (MCP) Server
+
+FarmerAI includes an official Model Context Protocol (MCP) server powered by `FastMCP`. External AI assistants and IDEs (such as Claude Desktop, Cursor, and Antigravity) can directly connect over `stdio` to run neural vision diagnoses, look up disease remedies, and check fungal spore germination indices.
+
+### Available MCP Tools & Capabilities
+
+| Tool | Parameters | Description |
+|------|------------|-------------|
+| `diagnose_plant_leaf` | `image_path`, `crop_hint` | Classifies leaf pathology from file path via EfficientNetV2-S ONNX with treatment advice. |
+| `diagnose_plant_leaf_base64` | `image_base64`, `crop_hint` | Classifies leaf pathology from base64 string for remote/webhook agents. |
+| `get_disease_treatment_guide` | `class_label` | Retrieves full agronomic dossier, symptoms, organic remedies, and chemical controls. |
+| `search_plant_diseases` | `query`, `limit` | Ranked symptom and keyword search across all 38 PlantVillage classes. |
+| `get_rwanda_district_weather` | `district` | Live temperature, humidity, rainfall, and fungal spore germination risk for Rwanda districts. |
+| `get_coordinates_weather` | `latitude`, `longitude` | Microclimate weather and spore proliferation radar for arbitrary GPS coordinates. |
+| `list_supported_crops_and_diseases` | _None_ | Complete catalogue of supported crops, diseases, and model performance metrics. |
+
+### MCP Resources & Prompts
+- **Resources**: `farmerai://classes`, `farmerai://districts`, `farmerai://knowledge/{class_label}`
+- **Prompt**: `crop_consultation` — structured agronomist advisory prompt.
+
+### Quick Start: Running the MCP Server
+```bash
+python backend/mcp_server.py
+```
+
+### Claude Desktop & Cursor Integration
+Add to your `claude_desktop_config.json` (or Cursor MCP settings):
+
+```json
+{
+  "mcpServers": {
+    "farmerai": {
+      "command": "python",
+      "args": ["-m", "backend.mcp_server"],
+      "cwd": "C:\\Users\\nshut\\OneDrive\\Attachments\\Documents\\Projects\\FarmerAI"
+    }
+  }
+}
+```
 
 ---
 
